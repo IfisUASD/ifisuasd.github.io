@@ -1,5 +1,5 @@
 ---
-title: My Site
+title: Instituto de Física
 toc: false
 ---
 
@@ -12,6 +12,6 @@ This is the landing page.
   {{< card link="about" title="About" icon="user" >}}
 {{< /cards >}}
 
-## Documentation
+## Normativas y Reglamentos
 
 For more information, visit [Hextra](https://imfing.github.io/hextra).
