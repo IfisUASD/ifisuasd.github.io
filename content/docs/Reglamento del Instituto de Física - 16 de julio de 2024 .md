@@ -1,4 +1,9 @@
-
+---
+title: Reglamento del Instituto de Física
+type: docs
+prev: /
+next: docs/folder/
+---
 
 ## Misión {#misión}
 
