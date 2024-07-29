@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute of Physics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --bg-color: #eef7f9;
+            --primary-color: #3cb3f3;
+            --secondary-color: #81d1e8;
+            --accent-color-1: #52ccf4;
+            --accent-color-2: #6cdcf4;
+            --accent-color-3: #3ca4e8;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .atom-animation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+        }
+
+        .nucleus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color-3);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-color-3);
+        }
+
+        .electron-shell {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .electron-shell:nth-child(2) { width: 100px; height: 100px; }
+        .electron-shell:nth-child(3) { width: 180px; height: 180px; }
+        .electron-shell:nth-child(4) { width: 260px; height: 260px; }
+
+        .electron {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-color-2);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-color-2);
+        }
+
+        @keyframes orbit1 {
+            from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+
+        @keyframes orbit2 {
+            from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+        }
+
+        @keyframes orbit3 {
+            from { transform: rotate(0deg) translateX(130px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(130px) rotate(-360deg); }
+        }
+
+        .electron:nth-child(5) { animation: orbit1 3s linear infinite; }
+        .electron:nth-child(6) { animation: orbit2 5s linear infinite; }
+        .electron:nth-child(7) { animation: orbit3 7s linear infinite; }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color-3);
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color-1);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color-3);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Institute of Physics</h1>
+        <div class="atom-animation">
+            <div class="nucleus"></div>
+            <div class="electron-shell"></div>
+            <div class="electron-shell"></div>
+            <div class="electron-shell"></div>
+            <div class="electron"></div>
+            <div class="electron"></div>
+            <div class="electron"></div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#faculty">Faculty</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="hero">
+            <h2>Advancing the Frontiers of Physics</h2>
+            <p>We bring together world-renowned scientists and students to explore the fundamental laws of nature.</p>
+            <a href="#" class="cta-button">Explore Our Research</a>
+        </section>
+        
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Quantum Mechanics</h3>
+                <p>Our team has made groundbreaking discoveries in quantum mechanics, potentially revolutionizing the field of computing.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Astrophysics</h3>
+                <p>Explore the mysteries of the universe with our cutting-edge research in dark matter and exoplanets.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Particle Physics</h3>
+                <p>Join our efforts to unravel the secrets of subatomic particles and fundamental forces.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Institute of Physics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
