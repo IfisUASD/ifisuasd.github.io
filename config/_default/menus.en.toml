@@ -10,6 +10,26 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
+[[main]]
+  name = "Research"
+  pageRef = "/areas" # Apunta a la sección de áreas
+  weight = 10
+
+[[main]]
+  name = "Members"
+  pageRef = "/authors"
+  weight = 20
+
+[[main]]
+  name = "Theses"
+  pageRef = "/theses"
+  weight = 30
+
+[[main]]
+name = "About"
+pageRef = "/about"
+weight = 5 # Un peso bajo para que aparezca al principio
+
 #[[main]]
 #  name = "Blog"
 #  pageRef = "posts"

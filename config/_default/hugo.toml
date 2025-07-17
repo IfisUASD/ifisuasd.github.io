@@ -25,10 +25,13 @@ googleAnalytics = "G-S71TGJY11G"
   anchor = 'Center'
 
 [taxonomies]
-  tag = "tags"
-  category = "categories"
   author = "authors"
-  series = "series"
+  area = "areas"
+  group = "groups"
+  project = "projects"
+  program = "programs"
+  funder = "funders"
+  role = "roles"
 
 [sitemap]
   changefreq = 'daily'
