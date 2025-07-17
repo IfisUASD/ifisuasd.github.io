@@ -1,6 +1,6 @@
 +++
-title = "Institute of Physics"
-layout = "simple" # Usamos un layout simple para centrar el contenido
+title = ""
+layout = "blowfish" # Usamos un layout simple para centrar el contenido
 +++
 
 ## We Are Building Our New Digital Home 🔬

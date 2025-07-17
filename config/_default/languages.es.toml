@@ -2,15 +2,15 @@ disabled = false
 languageCode = "es"
 languageName = "Español"
 weight = 1
-title = "Blowfish"
+title = "Instituto de Física"
 
 [params]
   displayName = "ES"
   isoCode = "es"
   rtl = false
   dateFormat = "2 de enero de 2006"
-  # logo = "img/logo.png"
-  # secondaryLogo = "img/secondary-logo.png"
+  logo = "uasd-ifis-logo-azul.png"
+  secondaryLogo = "assets/uasd-ifis-logo-azul-small.png"
   description = "Un centro de excelencia en investigación."
   # copyright = "Copy, _right?_ :thinking_face:"
 
