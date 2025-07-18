@@ -17,7 +17,7 @@
 
 [[main]]
   name = "Members"
-  pageRef = "/members"
+  pageRef = "/people" # Apunta a la sección de miembros
   weight = 20
 
 [[main]]
