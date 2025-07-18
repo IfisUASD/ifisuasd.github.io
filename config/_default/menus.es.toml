@@ -17,7 +17,7 @@
 
 [[main]]
   name = "Miembros"
-  pageRef = "/members"
+  pageRef = "/miembros"
   weight = 20
 
 [[main]]
