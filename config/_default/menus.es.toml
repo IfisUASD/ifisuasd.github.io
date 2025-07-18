@@ -17,12 +17,12 @@
 
 [[main]]
   name = "Miembros"
-  pageRef = "/authors"
+  pageRef = "/miembros"
   weight = 20
 
 [[main]]
-  name = "Tesis"
-  pageRef = "/theses"
+  name = "Publicaciones"
+  pageRef = "/publications"
   weight = 30
 
 [[main]]

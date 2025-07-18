@@ -24,14 +24,6 @@ googleAnalytics = "G-S71TGJY11G"
 [imaging]
   anchor = 'Center'
 
-[taxonomies]
-  author = "authors"
-  area = "areas"
-  group = "groups"
-  project = "projects"
-  program = "programs"
-  funder = "funders"
-  role = "roles"
 
 [sitemap]
   changefreq = 'daily'

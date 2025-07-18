@@ -14,6 +14,15 @@ title = "Institute of Physics"
   description = "A center of excellence in research"
   # copyright = "Copy, _right?_ :thinking_face:"
 
+[taxonomies]
+  member = "members"
+  area = "areas"
+  group = "groups"
+  project = "projects"
+  program = "programs"
+  funder = "funders"
+  role = "roles"
+
 # [params.author]
 #   name = "Your name here"
 #   email = "youremail@example.com"
