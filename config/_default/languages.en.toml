@@ -14,7 +14,7 @@ title = "Institute of Physics"
   description = "A center of excellence in research"
   # copyright = "Copy, _right?_ :thinking_face:"
 
-[taxonomies]
+[language.en.taxonomies]
   member = "members"
   area = "areas"
   group = "groups"

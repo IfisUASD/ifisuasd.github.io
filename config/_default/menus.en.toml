@@ -25,10 +25,10 @@
   pageRef = "/publications"
   weight = 30
 
-[[main]]
-name = "About"
-pageRef = "/about"
-weight = 5 # Un peso bajo para que aparezca al principio
+#[[main]]
+#name = "About"
+#pageRef = "/about"
+#weight = 5 # Un peso bajo para que aparezca al principio
 
 #[[main]]
 #  name = "Blog"

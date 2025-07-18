@@ -18,6 +18,21 @@
     />
   </url>
   <url>
+    <loc>http://localhost:1313/en/publications/paper-nature-2025/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="es"
+      href="http://localhost:1313/publications/paper-nature-2025/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="http://localhost:1313/en/publications/paper-nature-2025/"
+    />
+  </url>
+  <url>
     <loc>http://localhost:1313/en/about/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -48,6 +63,21 @@
     />
   </url>
   <url>
+    <loc>http://localhost:1313/en/members/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="es"
+      href="http://localhost:1313/members/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="http://localhost:1313/en/members/"
+    />
+  </url>
+  <url>
     <loc>http://localhost:1313/en/publications/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -60,21 +90,6 @@
       rel="alternate"
       hreflang="en"
       href="http://localhost:1313/en/publications/"
-    />
-  </url>
-  <url>
-    <loc>http://localhost:1313/en/publications/paper-nature-2025/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="es"
-      href="http://localhost:1313/publications/paper-nature-2025/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="http://localhost:1313/en/publications/paper-nature-2025/"
     />
   </url>
 </urlset>

@@ -17,7 +17,7 @@
 
 [[main]]
   name = "Miembros"
-  pageRef = "/miembros"
+  pageRef = "/members"
   weight = 20
 
 [[main]]
@@ -25,10 +25,10 @@
   pageRef = "/publications"
   weight = 30
 
-[[main]]
-  name = "Nosotros"
-  pageRef = "/about"
-  weight = 5 # Un peso bajo para que aparezca al principio
+#[[main]]
+#  name = "Nosotros"
+#  pageRef = "/about"
+#  weight = 5 # Un peso bajo para que aparezca al principio
 
 #[[main]]
 #  name = "Blog"
