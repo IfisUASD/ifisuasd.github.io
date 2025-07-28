@@ -1,9 +1,9 @@
 +++
 title = "Dr. Juan Pérez"
-# ¡Se usan los MISMOS identificadores para mantener la conexión!
-roles = ["principal-investigator", "area-coordinator"]
-email = "juan.perez@email.com"
-photo = "/img/authors/juan-perez.jpg"
+roles = ["investigador-principal"]
+photo = "/img/people/juan-perez.jpg"
+# ¡Añade el ORCID iD aquí!
+orcid = "0000-0002-1825-0097"
 +++
 
-La biografía del Dr. Pérez va aquí. Es un experto líder en...
+Biografía del Dr. Pérez...

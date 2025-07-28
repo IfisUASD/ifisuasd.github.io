@@ -1,5 +1,14 @@
+[published_in]
+other = "Published in"
+[authors]
+other = "Authors"
+[abstract]
+other = "Abstract"
+[research_context]
+other = "Research Context"
+[projects]
+other = "Projects"
+[research_areas]
+other = "Research Areas"
 [funded_by]
-other = "Funded By"
-
-[related_projects]
-other = "Related Projects"
+other = "Funded by"

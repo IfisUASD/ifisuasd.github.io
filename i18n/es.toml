@@ -1,5 +1,14 @@
+[published_in]
+other = "Publicado en"
+[authors]
+other = "Autores"
+[abstract]
+other = "Resumen"
+[research_context]
+other = "Contexto de la Investigación"
+[projects]
+other = "Proyectos"
+[research_areas]
+other = "Áreas de Investigación"
 [funded_by]
 other = "Financiado por"
-
-[related_projects]
-other = "Proyectos Relacionados"
