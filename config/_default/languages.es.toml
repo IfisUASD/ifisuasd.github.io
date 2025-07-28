@@ -9,8 +9,8 @@ title = "Instituto de Física"
   isoCode = "es"
   rtl = false
   dateFormat = "2 de enero de 2006"
-  logo = "uasd-ifis-logo-azul.png"
-  secondaryLogo = "assets/uasd-ifis-logo-azul-small.png"
+  logo = "uasd-ifis-logo-azul-small.png"
+  #secondaryLogo = "uasd-ifis-logo-azul-small.png"
   description = "Un centro de excelencia en investigación."
   # copyright = "Copy, _right?_ :thinking_face:"
 
