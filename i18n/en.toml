@@ -12,3 +12,7 @@ other = "Projects"
 other = "Research Areas"
 [funded_by]
 other = "Funded by"
+[publications]
+other = "Scientific Publications"
+[blog_posts]
+other = "Blog Posts"

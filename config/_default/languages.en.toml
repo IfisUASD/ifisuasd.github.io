@@ -12,10 +12,10 @@ title = "Institute of Physics"
   logo = "uasd-ifis-logo-azul-small.png"
   #secondaryLogo = "uasd-ifis-logo-azul-small.png"
   description = "A center of excellence in research"
-  # copyright = "Copy, _right?_ :thinking_face:"
+  copyright = "© 2025, Universidad Autónoma de Santo Domingo https://uasd.edu.do/"
 
 [taxonomies]
-  member = "members"
+  staff = "staff"
   area = "areas"
   group = "groups"
   project = "projects"

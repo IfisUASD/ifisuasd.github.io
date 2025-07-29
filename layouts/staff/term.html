@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="container max-w-screen-lg py-10">
+  <article>
+    <div class="prose dark:prose-invert max-w-none">
+      <h1>{{ .Title }}</h1>
+
+      {{ .Content }} {{ with .Params.email }}
+      <p><strong>Email:</strong> <a href="mailto:{{ . }}">{{ . }}</a></p>
+      {{ end }} {{ with .Params.google_scholar }}
+      <p>
+        <strong>Google Scholar:</strong>
+        <a href="{{ . }}" target="_blank" rel="noopener">Perfil</a>
+      </p>
+      {{ end }}
+    </div>
+
+    <hr class="my-8" />
+
+    <div class="flex flex-col gap-y-8">
+      {{ $pubs := where .Pages "Section" "publicaciones" }} {{ if gt (len $pubs)
+      0 }}
+      <div>
+        <h2 class="text-2xl font-bold mb-4">{{ T "publications" }}</h2>
+        <ul class="list-disc pl-5">
+          {{ range $pubs }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }} {{ $blogs := where .Pages "Section" "blog" }} {{ if gt (len
+      $blogs) 0 }}
+      <div>
+        <h2 class="text-2xl font-bold mb-4">{{ T "blog_posts" }}</h2>
+        <ul class="list-disc pl-5">
+          {{ range $blogs }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </article>
+</div>
+{{ end }}

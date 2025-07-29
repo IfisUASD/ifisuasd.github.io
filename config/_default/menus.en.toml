@@ -15,10 +15,13 @@
   pageRef = "/areas" # Apunta a la sección de áreas
   weight = 10
 
+
 [[main]]
-  name = "Members"
-  pageRef = "/people" # Apunta a la sección de miembros
+  name = "Staff"
+  pageRef = "/staff" # Apunta a la sección de personal
   weight = 20
+  [main.params]
+    icon = "users"
 
 [[main]]
   name = "Publications"

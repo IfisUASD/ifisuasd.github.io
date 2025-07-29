@@ -12,3 +12,7 @@ other = "Proyectos"
 other = "Áreas de Investigación"
 [funded_by]
 other = "Financiado por"
+[publications]
+other = "Publicaciones Científicas"
+[blog_posts]
+other = "Artículos de Divulgación"

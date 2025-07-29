@@ -1,66 +1,155 @@
 import os
-import frontmatter
-from pybtex.database import parse_file
+import requests
+import yaml # Lo mantenemos para leer los YAML existentes y evitar errores
+import toml # La nueva librería para escribir TOML
+import datetime
+from slugify import slugify
 
-# --- (El código para construir el mapa de ORCID sigue igual) ---
-print("🔍 Escaneando perfiles de miembros para crear mapa de ORCID...")
-orcid_to_member_map = {}
-# ... (código existente aquí) ...
-print("\n--- Mapa de ORCID creado con éxito ---\n")
+# --- CONFIGURACIÓN ---
+# Directorio donde se guardarán las publicaciones.
+PUBLICATIONS_DIR = "content/publications"
+# Tu email, es una buena práctica para usar APIs públicas.
+CROSSREF_MAILTO = "dperez42@uasd.edu.do" 
 
+def get_existing_dois(directory):
+    """
+    Escanea el directorio de publicaciones y extrae todos los DOI existentes,
+    soportando tanto front matter YAML (---) como TOML (+++).
+    """
+    existing_dois = set()
+    if not os.path.exists(directory):
+        return existing_dois
 
-# --- PROCESAR EL ARCHIVO BIBTEX (CON LÓGICA MEJORADA) ---
-bib_file = 'referencias.bib'
-data_dir = 'data/publications/'
-content_dir = 'content/publications/'
+    for filename in os.listdir(directory):
+        if filename.endswith(".md"):
+            filepath = os.path.join(directory, filename)
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    
+                    # Determinar el tipo de front matter por el delimitador
+                    if content.strip().startswith('---'):
+                        delimiter = '---'
+                        loader = yaml.safe_load
+                    elif content.strip().startswith('+++'):
+                        delimiter = '+++'
+                        loader = toml.loads
+                    else:
+                        continue # No es un archivo con front matter que reconozcamos
 
-os.makedirs(data_dir, exist_ok=True)
-os.makedirs(content_dir, exist_ok=True)
+                    parts = content.split(delimiter)
+                    if len(parts) > 2:
+                        front_matter = loader(parts[1])
+                        if front_matter and 'doi' in front_matter:
+                            existing_dois.add(str(front_matter['doi']).lower())
 
-bib_data = parse_file(bib_file)
-print(f"📚 Procesando {len(bib_data.entries)} publicaciones desde {bib_file}...")
-
-for key, entry in bib_data.entries.items():
-    fields = entry.fields
+            except Exception as e:
+                print(f"Advertencia: No se pudo leer el archivo {filepath}. Error: {e}")
     
-    # --- LÓGICA DE DETECCIÓN DE MIEMBROS POR ORCID ---
-    orcids_in_pub = fields.get('note', '').replace('ORCID:', '').split(',')
-    found_members = []
-    for orcid in orcids_in_pub:
-        orcid = orcid.strip()
-        if orcid in orcid_to_member_map:
-            member_slug = orcid_to_member_map[orcid]
-            if member_slug not in found_members:
-                found_members.append(member_slug)
-    
-    # --- ¡NUEVO! OBTENER LA LISTA COMPLETA DE AUTORES ---
-    # Esto extrae todos los nombres de los autores como texto.
-    all_authors_list = [str(person) for person in entry.persons.get('author', [])]
+    return existing_dois
 
-    # Crear el diccionario de datos para el YAML
-    yaml_data = {
-        'title': fields.get('title', 'No Title').replace('{', '').replace('}', ''),
-        'abstract': fields.get('abstract', '').replace('{', '').replace('}', ''),
-        'journal': fields.get('journal', ''),
-        'year': fields.get('year', ''),
-        'doi': fields.get('doi', ''),
-        # Lista de todos los autores (para mostrar)
-        'all_authors': all_authors_list,
-        # Lista de solo los miembros internos (para enlazar)
-        'members': found_members,
+def fetch_doi_metadata(doi):
+    """
+    Obtiene los metadatos de un DOI usando la API de Crossref.
+    """
+    print(f"Buscando metadatos para DOI: {doi}...")
+    url = f"https://api.crossref.org/works/{doi}"
+    headers = {
+        'User-Agent': f'HugoPublicationsScript/1.0 (mailto:{CROSSREF_MAILTO})'
     }
-    
-    # Escribir el archivo .yaml
-    yaml_filename = os.path.join(data_dir, f"{key}.yaml")
-    with open(yaml_filename, 'w', encoding='utf-8') as f:
-        # Usaremos un formato más robusto para listas
-        import yaml
-        yaml.dump(yaml_data, f, allow_unicode=True)
-            
-    # Crear el archivo puntero .md
-    md_filename = os.path.join(content_dir, f"{key}.md")
-    with open(md_filename, 'w', encoding='utf-8') as f:
-        # Pasamos los miembros aquí también para que Hugo los reconozca como taxonomía
-        f.write(f'+++\ndatafile: "publications/{key}.yaml"\nmembers: {found_members}\n+++')
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        print("Metadatos encontrados.")
+        return response.json()['message']
+    except requests.exceptions.RequestException as e:
+        print(f"Error al obtener datos para el DOI {doi}: {e}")
+        return None
 
-print("\n✅ ¡Proceso completado!")
+def create_publication_file(metadata, staff):
+    """
+    Crea el archivo .md con el front matter en formato TOML.
+    """
+    # 1. Extraer y formatear datos
+    title = metadata.get('title', ['Sin Título'])[0]
+    
+    try:
+        date_parts = metadata.get('published', {}).get('date-parts', [[None]])[0]
+        # TOML requiere un objeto de fecha y hora completo
+        publish_date = datetime.datetime(date_parts[0], date_parts[1], date_parts[2])
+    except (TypeError, IndexError, ValueError):
+        publish_date = datetime.datetime.now()
+
+    authors_list = []
+    if 'author' in metadata:
+        for author in metadata['author']:
+            author_name = f"{author.get('given', '')} {author.get('family', '')}".strip()
+            if author_name:
+                authors_list.append(author_name)
+
+    # 2. Construir el diccionario para el front matter
+    front_matter = {
+        'title': title,
+        'date': publish_date, # Usamos el objeto datetime completo
+        'doi': str(metadata.get('DOI', '')).lower(),
+        'staff': staff,
+        'publication': metadata.get('container-title', [''])[0],
+        'authors': authors_list,
+        'draft': False
+    }
+
+    # 3. Crear nombre de archivo
+    first_author_family = metadata.get('author', [{}])[0].get('family', 'unknown')
+    year = publish_date.strftime("%Y")
+    slug_title = slugify(title, max_length=40)
+    filename = f"{first_author_family.lower()}-{year}-{slug_title}.md"
+    filepath = os.path.join(PUBLICATIONS_DIR, filename)
+
+    # 4. Escribir el archivo con formato TOML
+    print(f"Creando archivo: {filepath}")
+    os.makedirs(PUBLICATIONS_DIR, exist_ok=True)
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write('+++\n')
+        # Convertimos el diccionario a una cadena en formato TOML
+        toml_string = toml.dumps(front_matter)
+        f.write(toml_string)
+        f.write('+++\n\n')
+        f.write("\n")
+    print("¡Archivo creado con éxito!")
+
+def main():
+    """
+    Función principal del script.
+    """
+    # --- LISTA DE PUBLICACIONES PARA AÑADIR ---
+    # Edita esta lista con los DOI y los miembros del instituto asociados.
+    publications_to_add = [
+        {"doi": "10.56048/MQR20225.9.2.2025.e664", "staff": ["franmis-rodriguez", "erika-montero"]},
+        {"doi": "10.21071/edmetic.v10i2.13240", "staff": ["franmis-rodriguez"]},
+        {"doi": "10.15517/revedu.v48i1.55892", "staff": ["franmis-rodriguez"]}, # Ejemplo sin miembros
+        # Añade aquí más publicaciones
+    ]
+    # ---------------------------------------------
+
+    print("--- Iniciando script para añadir publicaciones (formato TOML) ---")
+    existing_dois = get_existing_dois(PUBLICATIONS_DIR)
+    print(f"Se encontraron {len(existing_dois)} DOI existentes.")
+
+    for pub in publications_to_add:
+        doi_to_check = pub['doi'].lower()
+        
+        if doi_to_check in existing_dois:
+            print(f"El DOI {doi_to_check} ya existe. Saltando.")
+            continue
+        
+        metadata = fetch_doi_metadata(pub['doi'])
+        
+        if metadata:
+            create_publication_file(metadata, pub['staff'])
+        
+        print("-" * 20)
+
+    print("--- Script finalizado ---")
+
+if __name__ == "__main__":
+    main()

@@ -16,9 +16,11 @@
   weight = 10
 
 [[main]]
-  name = "Miembros"
-  pageRef = "/people" # Apunta a la sección de miembros
+  name = "Personal"
+  pageRef = "/staff" # Apunta a la sección de personal
   weight = 20
+  [main.params]
+    icon = "users"
 
 [[main]]
   name = "Publicaciones"
