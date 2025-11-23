@@ -94,5 +94,5 @@ Objetivo: Que Go sea capaz de leer todos los archivos Markdown, YAML y BibTeX y 
 
 **Objetivo:** Automatizar todo en GitHub.
 
-* [ ] **GitHub Actions** (deploy.yml).  
-* [ ] **Documentación** (README.md).
+* [x] **GitHub Actions** (deploy.yml).  
+* [x] **Documentación** (README.md).

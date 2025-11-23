@@ -9,8 +9,6 @@ social:
   scholar: "https://scholar.google.com/citations?user=AnaS"
   twitter: "https://twitter.com/asanchez"
 ---
-# About Me
-
 I am a co-investigator at the UASD Institute of Physics, specializing in theoretical physics and astrophysics. I have collaborated on several galaxy simulation projects and the development of astronomical data analysis algorithms. My research focuses on the dynamics of star clusters and star formation in high-density environments.
 
 ## Experience

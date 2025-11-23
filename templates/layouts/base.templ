@@ -63,6 +63,15 @@ templ Base(title string, lang string, meta MetaTags, dict map[string]string) {
 				})();
 			</script>
 		</head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-S71TGJY11G"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-S71TGJY11G');
+		</script>
 		<body class="min-h-screen bg-base-100 text-base-content flex flex-col">
 			<!-- Navbar -->
 			@components.Navbar(lang, dict)
