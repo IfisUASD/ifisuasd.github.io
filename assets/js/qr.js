@@ -59,8 +59,28 @@
   async function updateQR() {
     if (!wasmReady) return;
 
-    const text =
-      document.getElementById("textInput").value || "https://ifis.uasd.edu.do";
+    // Obtenemos los elementos de la UI
+    const textInput = document.getElementById("textInput");
+    const qrImage = document.getElementById("qrImage");
+    const qrPlaceholder = document.getElementById("qrPlaceholder");
+    const btns = [
+      document.getElementById("downloadBtn"),
+      document.getElementById("copyBtn"),
+    ];
+
+    // Eliminamos el valor por defecto ("|| 'https://...'")
+    const text = textInput.value;
+
+    // Lógica de Estado Vacío
+    if (!text.trim()) {
+      // Si está vacío: ocultar imagen, mostrar placeholder, deshabilitar botones
+      qrImage.classList.add("hidden");
+      qrPlaceholder.classList.remove("hidden");
+      btns.forEach((btn) => btn.setAttribute("disabled", "true"));
+      return;
+    }
+
+    // Si hay texto, procedemos a generar
     const size = parseInt(document.getElementById("sizeSlider").value, 10);
     const fg = document.getElementById("fgColor").value;
     const bg = document.getElementById("bgColor").value;
@@ -78,10 +98,14 @@
       }
     }
 
-    // generateQR es expuesto por Go (main.go)
+    // Generar QR
     const dataURL = generateQR(text, size, fg, bg, logoBase64, level);
-    const img = document.getElementById("qrImage");
-    img.src = dataURL;
+
+    // Actualizar UI: mostrar imagen, ocultar placeholder, habilitar botones
+    qrImage.src = dataURL;
+    qrImage.classList.remove("hidden");
+    qrPlaceholder.classList.add("hidden");
+    btns.forEach((btn) => btn.removeAttribute("disabled"));
   }
 
   const debouncedUpdate = debounce(updateQR, 300);
