@@ -385,6 +385,21 @@ func buildSite(lang string, outputDir string) error {
 		return err
 	}
 
+	// 11. Generar Página de Apps / QR (NUEVO)
+	appsDir := outputDir + "/apps/qr"
+	if err := os.MkdirAll(appsDir, 0755); err != nil {
+		return err
+	}
+	fQR, err := os.Create(appsDir + "/index.html")
+	if err != nil {
+		return err
+	}
+	defer fQR.Close()
+
+	if err := pages.QRGenerator(lang, dict).Render(context.Background(), fQR); err != nil {
+		return err
+	}
+
 	return nil
 }
 

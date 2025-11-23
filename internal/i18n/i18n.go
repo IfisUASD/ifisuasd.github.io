@@ -31,6 +31,7 @@ var es = Dictionary{
 	"UASD":            "UASD",
 	"Search":            "Buscar",
 	"SearchPlaceholder": "Escribe para buscar...",
+	"Apps": "Herramientas",
 }
 
 var en = Dictionary{
@@ -59,6 +60,7 @@ var en = Dictionary{
 	"RecentPapers":    "Recent Publications",
 	"InstituteOfPhysics": "Institute of Physics",
 	"UASD":            "UASD",
+	"Apps": "Apps",
 }
 
 // GetDictionary returns the dictionary for the requested language.

@@ -5,6 +5,8 @@ BINARY_NAME=site_gen
 OUTPUT_DIR=./output
 CSS_INPUT=./assets/css/input.css
 CSS_OUTPUT=$(OUTPUT_DIR)/assets/css/styles.css
+WASM_SRC=./cmd/apps/qr
+WASM_OUTPUT=$(OUTPUT_DIR)/assets/wasm
 
 # Comandos principales
 all: clean build
@@ -20,6 +22,12 @@ templ:
 	@echo "🔥 Generando templates..."
 	@templ generate
 
+# 2.1 Compilar Aplicación WebAssembly (WASM)
+wasm:
+	@echo "⚙️  Compilando Aplicaciones WASM..."
+	@mkdir -p $(WASM_OUTPUT)
+	@GOOS=js GOARCH=wasm go build -o $(WASM_OUTPUT)/qr.wasm $(WASM_SRC)/main.go $(WASM_SRC)/qr_logic.go
+
 # 3. Generar CSS con Tailwind
 css:
 	@echo "🎨 Compilando CSS..."
@@ -28,7 +36,7 @@ css:
 	@npx @tailwindcss/cli -i $(CSS_INPUT) -o $(CSS_OUTPUT) --minify
 
 # 4. Compilar y Ejecutar el Generador (Go)
-build: templ copy-assets
+build: templ copy-assets wasm
 	@echo "🚀 Construyendo sitio..."
 	@go build -o $(BINARY_NAME) cmd/builder/main.go
 	@# Ejecutamos el binario para crear los HTMLs

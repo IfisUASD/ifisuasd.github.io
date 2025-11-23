@@ -13,6 +13,7 @@ templ Navbar(lang string, dict map[string]string) {
 					<li><a href={ templ.SafeURL(prefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
 					<li><a href={ templ.SafeURL(prefixPath("/news", lang)) }>{ dict["News"] }</a></li>
 					<li><a href={ templ.SafeURL(prefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
+					<li><a href={ templ.SafeURL(prefixPath("/apps/qr", lang)) }>{ dict["Apps"] }</a></li>
 				</ul>
 			</div>
 			<a class="btn btn-ghost text-xl" href={ templ.SafeURL(prefixPath("/", lang)) }>
@@ -26,6 +27,7 @@ templ Navbar(lang string, dict map[string]string) {
 				<li><a href={ templ.SafeURL(prefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
 				<li><a href={ templ.SafeURL(prefixPath("/news", lang)) }>{ dict["News"] }</a></li>
 				<li><a href={ templ.SafeURL(prefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
+				<li><a href={ templ.SafeURL(prefixPath("/apps/qr", lang)) }>{ dict["Apps"] }</a></li>
 			</ul>
 		</div>
 		<div class="navbar-end gap-2">
