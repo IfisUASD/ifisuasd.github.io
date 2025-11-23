@@ -21,7 +21,7 @@ npm-debug.log
 
 # Go
 
-go.sum
+
 vendor/
 
 # Editor / IDE
