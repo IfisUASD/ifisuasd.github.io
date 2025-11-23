@@ -1,0 +1,74 @@
+<!doctype html><html lang="es" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog | Instituto de Física UASD</title><!-- SEO Metadata --><meta name="description" content="Blog del Instituto de Física de la UASD"><meta name="keywords" content="Blog, UASD, Investigación"><!-- Open Graph --><meta property="og:title" content="Blog"><!-- Styles --><link rel="stylesheet" href="/assets/css/styles.css?v=1763865290"><!-- Dark Mode Script (Inline to prevent FOUC) --><script>
+				(function() {
+					try {
+						var localTheme = localStorage.getItem('theme');
+						var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+						if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+							document.documentElement.setAttribute('data-theme', 'dark');
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.setAttribute('data-theme', 'light');
+							document.documentElement.classList.remove('dark');
+						}
+					} catch (e) {}
+				})();
+			</script></head><body class="min-h-screen bg-base-100 text-base-content flex flex-col"><!-- Navbar --><div class="navbar bg-base-100 shadow-sm sticky top-0 z-50"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-ghost lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div><ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"><li><a href="/">Inicio</a></li><li><a href="/people">Gente</a></li><li><a href="/projects">Proyectos</a></li><li><a href="/news">Noticias</a></li><li><a href="/blog">Blog</a></li></ul></div><a class="btn btn-ghost text-xl" href="/"><span class="text-primary font-bold">IFIS</span> UASD</a></div><div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal px-1"><li><a href="/">Inicio</a></li><li><a href="/people">Gente</a></li><li><a href="/projects">Proyectos</a></li><li><a href="/news">Noticias</a></li><li><a href="/blog">Blog</a></li></ul></div><div class="navbar-end gap-2"><!-- Search Icon --><a href="/search" class="btn btn-ghost btn-circle btn-sm"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a><!-- Language Selector --><a href="/en/" class="btn btn-ghost btn-sm">EN</a><!-- Theme Controller --><label class="swap swap-rotate btn btn-ghost btn-circle btn-sm"><!-- this hidden checkbox controls the state --><input type="checkbox" class="theme-controller" value="dark" onchange="toggleTheme(this)"><!-- sun icon --><svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,4.93l.71.71A1,1,0,0,0,5.64,7.05Zm12,1.41a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,16.93,4.93l.71.71A1,1,0,0,0,17.64,8.46Zm1.06,10.9a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71a1,1,0,0,0-1.41-1.41l-.71.71A1,1,0,0,0,18.7,19.36ZM12,18a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V19A1,1,0,0,0,12,18Zm7-6a1,1,0,0,0-1-1H17a1,1,0,0,0,0,2h1A1,1,0,0,0,19,12ZM12,7a5,5,0,1,0,5,5A5,5,0,0,0,12,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"></path></svg><!-- moon icon --><svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"></path></svg></label></div></div><script>
+		function toggleTheme(checkbox) {
+			const html = document.querySelector('html');
+			const next = checkbox.checked ? 'dark' : 'light';
+			html.setAttribute('data-theme', next);
+			localStorage.setItem('theme', next);
+			if (next === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		}
+		// Sync checkbox state on load
+		document.addEventListener('DOMContentLoaded', () => {
+			const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			const checkbox = document.querySelector('.theme-controller');
+			if (checkbox) {
+				checkbox.checked = theme === 'dark';
+			}
+		});
+	</script><main class="flex-grow container mx-auto px-4 py-8"><h2 class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-2">Blog</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full"><div class="card-body"><h2 class="card-title"><a href="/blog/post2" class="hover:text-primary">Supernovas: los fuegos de la muerte estelar</a></h2><p class="text-sm">by Ana Sánchez – 2025-03-15</p><p class="line-clamp-3">&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;Las supernovas son explosiones cataclísmicas de estrellas masivas que expulsan enormes cantidades de energía y materia al espacio. En el Instituto de Física de la UASD, hemos llevado a cabo una exhaustiva campaña de observación que ha revelado nuevos detalles sobre la evolución y el impacto de estos eventos cósmicos.&lt;/p&gt;
+&lt;h2&gt;Observaciones&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Supernova 2025A&lt;/strong&gt;: Detectada en la región del Cielo Andino el 10 de marzo. Se observó un incremento abrupto de luminosidad seguida de una caída gradual.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Supernova 2025B&lt;/strong&gt;: Localizada en la cúmulo estelar NGC 1234, mostró una señal de emisión de neutrinos correlacionada con el evento de colapso.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Supernova 2025C&lt;/strong&gt;: Se detectó en el radio y se estudió la interacción con el medio intersticial.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Metodología&lt;/h2&gt;
+&lt;p&gt;Utilizamos telescopios de gran apertura situados en la cordillera de los Andes, con tecnología de detección de alta resolución y algoritmos de reducción de datos. La colaboración con observatorios internacionales permitió confirmar la naturaleza de las supernovas y obtener espectros detallados.&lt;/p&gt;
+&lt;h2&gt;Impacto&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Publicamos 3 artículos en revistas de alto impacto sobre la espectroscopía de supernovas y la producción de elementos pesados.&lt;/li&gt;
+&lt;li&gt;Desarrollamos un pipeline de procesamiento de datos de código abierto, accesible para la comunidad científica.&lt;/li&gt;
+&lt;li&gt;Fortalecemos la infraestructura científica local y formamos estudiantes de pregrado y posgrado en técnicas de observación y análisis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusión&lt;/h2&gt;
+&lt;p&gt;Las supernovas siguen siendo uno de los fenómenos más fascinantes del universo. Nuestro trabajo contribuye a comprender cómo se forman los elementos que componen todo lo que conocemos, desde el agua hasta los huesos humanos. A medida que ampliamos nuestras capacidades de observación y análisis, descubriremos más sobre el ciclo de vida de las estrellas y el cosmos que habitamos.&lt;/p&gt;
+</p><div class="card-actions justify-end mt-4"><a href="/blog/post2" class="btn btn-primary btn-sm">Leer más</a></div></div></div><div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full"><div class="card-body"><h2 class="card-title"><a href="/blog/post1" class="hover:text-primary">La ciencia detrás de los neutrinos: un vistazo profundo</a></h2><p class="text-sm">by Vladimir Pérez – 2025-03-01</p><p class="line-clamp-3">&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;En la última década, la detección de neutrinos ha avanzado de forma significativa, gracias a la implementación de detectores como IceCube y el nuevo telescopio de neutrinos inaugurado en la UASD. En este post, profundizaremos en el papel fundamental que juegan los neutrinos en la física de partículas y en la cosmología, así como las técnicas que utilizamos en el Instituto de Física para estudiar estos diminutos pero poderosos portadores de información.&lt;/p&gt;
+&lt;h2&gt;¿Qué son los neutrinos?&lt;/h2&gt;
+&lt;p&gt;Los neutrinos son partículas elementales extremadamente ligeras y neutras que interactúan solo mediante la fuerza débil y la gravedad. Debido a su bajo momento de interacción, pueden atravesar materia casi sin interacción, lo que los convierte en una herramienta única para observar eventos que de otro modo serían invisibles.&lt;/p&gt;
+&lt;h2&gt;Metodología de simulación&lt;/h2&gt;
+&lt;p&gt;Nuestro enfoque combina:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Modelos de Monte Carlo&lt;/strong&gt; para generar eventos de interacción neutrónica con precisión.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Codificación en GPU&lt;/strong&gt; para acelerar la simulación en tiempo real.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validación con datos experimentales&lt;/strong&gt; de IceCube, ANTARES y el telescopio local.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Resultados esperados&lt;/h2&gt;
+&lt;p&gt;Se prevé que la nueva generación de simulaciones permita:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Precisión del 10 % en la determinación de la energía de los neutrinos.&lt;/li&gt;
+&lt;li&gt;Descubrimiento de patrones de anisotropía que ayuden a identificar fuentes cósmicas.&lt;/li&gt;
+&lt;li&gt;Contribuciones clave a la comunidad de investigación en física de partículas y astropartícula.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusión&lt;/h2&gt;
+&lt;p&gt;Los neutrinos siguen siendo una frontera apasionante de la física. Con las herramientas de simulación y detección avanzadas que poseemos en la UASD, estamos preparados para descifrar los misterios que estos portadores de energía silenciosa traen al universo.&lt;/p&gt;
+&lt;p&gt;¡Manténganse al tanto de nuestros próximos posts para más avances en esta fascinante área de estudio!&lt;/p&gt;
+</p><div class="card-actions justify-end mt-4"><a href="/blog/post1" class="btn btn-primary btn-sm">Leer más</a></div></div></div></div></main><!-- Footer --><footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-auto"><div class="grid grid-flow-col gap-4"><a href="/" class="link link-hover">Home</a> <a href="/people" class="link link-hover">People</a> <a href="/projects" class="link link-hover">Projects</a> <a href="/news" class="link link-hover">News</a> <a href="/blog" class="link link-hover">Blog</a></div><div><div class="grid grid-flow-col gap-4"><!-- Twitter / X --><a href="https://twitter.com/UASD" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a><!-- YouTube --><a href="https://youtube.com/UASD" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a></div></div><div><p>Copyright © 2025 - Universidad Autónoma de Santo Domingo</p></div></footer></body></html>
