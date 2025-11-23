@@ -1,0 +1,106 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type PersonData struct {
+	Meta   layouts.MetaTags
+	Person *types.Person
+}
+
+templ Person(data PersonData, lang string, dict map[string]string) {
+	@layouts.Base(data.Person.Name, lang, data.Meta, dict) {
+		<div class="container mx-auto px-4 py-8">
+			@components.Breadcrumbs([]components.BreadcrumbItem{
+				{Label: dict["Home"], URL: prefixPath("/", lang)},
+				{Label: dict["People"], URL: prefixPath("/people", lang)},
+				{Label: data.Person.Name, Active: true},
+			})
+
+			<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+				<!-- Sidebar: Info Personal -->
+				<div class="lg:col-span-1">
+					<div class="card bg-base-100 shadow-xl">
+						<figure class="px-10 pt-10">
+							if data.Person.Avatar != "" {
+								<img src={ data.Person.Avatar } alt={ data.Person.Name } class="rounded-full w-32 h-32 object-cover" loading="lazy" />
+							} else {
+								<div class="avatar placeholder">
+									<div class="bg-neutral text-neutral-content rounded-full w-32">
+										<span class="text-3xl">{ string(data.Person.Name[0]) }</span>
+									</div>
+								</div>
+							}
+						</figure>
+						<div class="card-body items-center text-center">
+							<h2 class="card-title">{ data.Person.Name }</h2>
+							<p class="text-sm uppercase tracking-wide opacity-70">{ data.Person.Role }</p>
+							
+							if data.Person.Email != "" {
+								<a href={ templ.SafeURL("mailto:" + data.Person.Email) } class="btn btn-ghost btn-sm mt-2">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+										<path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+										<path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+									</svg>
+									Email
+								</a>
+							}
+
+							<div class="flex gap-2 mt-4">
+								for network, url := range data.Person.Social {
+									<a href={ templ.SafeURL(url) } target="_blank" class="btn btn-circle btn-sm btn-outline">
+										if network == "twitter" || network == "x" {
+											<svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+										} else if network == "scholar" {
+											<svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"></path></svg>
+										} else {
+											<span class="text-xs">{ network }</span>
+										}
+									</a>
+								}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Main Content: Bio & Projects -->
+				<div class="lg:col-span-3 space-y-8">
+					<!-- Bio -->
+					<div class="card bg-base-100 shadow-xl">
+						<div class="card-body">
+							@components.SectionTitle(dict["Biography"])
+							<div class="prose max-w-none">
+								@templ.Raw(string(data.Person.BioHTML))
+							</div>
+						</div>
+					</div>
+
+					<!-- Projects -->
+					if len(data.Person.Projects) > 0 {
+						<section>
+							@components.SectionTitle(dict["Projects"])
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+								for _, project := range data.Person.Projects {
+									@components.ProjectCard(project, lang, dict)
+								}
+							</div>
+						</section>
+					}
+
+					<!-- Publications -->
+					if len(data.Person.Publications) > 0 {
+						<section>
+							@components.SectionTitle(dict["Publications"])
+							<div class="space-y-4">
+								for _, pub := range data.Person.Publications {
+									@components.PublicationRow(pub)
+								}
+							</div>
+						</section>
+					}
+				</div>
+			</div>
+		</div>
+	}
+}

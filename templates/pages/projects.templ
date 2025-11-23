@@ -1,0 +1,22 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type ProjectsData struct {
+	Meta     layouts.MetaTags
+	Projects []*types.Project
+}
+
+templ Projects(data ProjectsData, lang string, dict map[string]string) {
+	@layouts.Base("Proyectos", lang, data.Meta, dict) {
+		@components.SectionTitle(dict["Projects"])
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+			for _, project := range data.Projects {
+				@components.ProjectCard(project, lang, dict)
+			}
+		</div>
+	}
+}

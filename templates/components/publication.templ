@@ -1,0 +1,25 @@
+package components
+
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+import "strconv"
+
+templ PublicationRow(paper *types.Paper) {
+	<div class="card bg-base-100 shadow-sm mb-4 border border-base-200 hover:border-primary transition-colors">
+		<div class="card-body p-4">
+			<h3 class="card-title text-lg">
+				<a href={ templ.SafeURL(paper.URL) } target="_blank" class="hover:text-primary hover:underline">
+					{ paper.Title }
+				</a>
+			</h3>
+			<p class="text-sm text-base-content/70">
+				{ paper.Journal } • { strconv.Itoa(paper.Year) } • { paper.Volume }
+			</p>
+			<div class="card-actions justify-end mt-2">
+				if paper.DOI != "" {
+					<a href={ templ.SafeURL("https://doi.org/" + paper.DOI) } target="_blank" class="badge badge-outline hover:bg-primary hover:text-primary-content">DOI</a>
+				}
+				<div class="badge badge-ghost">{ paper.Type }</div>
+			</div>
+		</div>
+	</div>
+}

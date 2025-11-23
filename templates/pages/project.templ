@@ -1,0 +1,107 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type ProjectData struct {
+	Meta    layouts.MetaTags
+	Project *types.Project
+}
+
+templ Project(data ProjectData, lang string, dict map[string]string) {
+	@layouts.Base(data.Project.Title, lang, data.Meta, dict) {
+		<div class="container mx-auto px-4 py-8">
+			@components.Breadcrumbs([]components.BreadcrumbItem{
+				{Label: dict["Home"], URL: prefixPath("/", lang)},
+				{Label: dict["Projects"], URL: prefixPath("/projects", lang)},
+				{Label: data.Project.Title, Active: true},
+			})
+
+			<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+				<div class="badge badge-primary mb-4">{ data.Project.Status }</div>
+				<h1 class="text-4xl font-bold mb-4">{ data.Project.Title }</h1>
+				<div class="flex justify-center gap-4 text-sm opacity-70">
+					if data.Project.Funding != "" {
+						<span>Financiamiento: { data.Project.Funding }</span>
+					}
+					<span>{ data.Project.StartDate.Format("2006") } - { data.Project.EndDate.Format("2006") }</span>
+				</div>
+			</div>
+
+			<div class="divider"></div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+				<!-- Main Content -->
+				<div class="lg:col-span-2 space-y-8">
+					<section>
+						<h2 class="text-2xl font-bold mb-4">Descripción</h2>
+						<div class="prose">
+							@templ.Raw(string(data.Project.DescriptionHTML))
+						</div>
+					</section>
+
+					if len(data.Project.Publications) > 0 {
+						<section>
+							<h2 class="text-2xl font-bold mb-4">Publicaciones Relacionadas</h2>
+							<div class="space-y-4">
+								for _, paper := range data.Project.Publications {
+									@components.PublicationRow(paper)
+								}
+							</div>
+						</section>
+					}
+				</div>
+
+				<!-- Sidebar: Team -->
+				<div class="lg:col-span-1">
+					<div class="card bg-base-200">
+						<div class="card-body">
+							<h3 class="card-title mb-4">Equipo de Investigación</h3>
+							
+							if data.Project.PrincipalInvestigator != nil {
+								<div class="mb-4">
+									<div class="text-xs font-bold uppercase opacity-50 mb-1">Investigador Principal</div>
+									<a href={ templ.SafeURL("/people/" + data.Project.PrincipalInvestigator.Slug) } class="flex items-center gap-3 hover:bg-base-100 p-2 rounded-lg transition-colors">
+										if data.Project.PrincipalInvestigator.Avatar != "" {
+											<img src={ data.Project.PrincipalInvestigator.Avatar } class="w-10 h-10 rounded-full object-cover" />
+										} else {
+											<div class="avatar placeholder">
+												<div class="bg-neutral text-neutral-content rounded-full w-10">
+													<span>{ string(data.Project.PrincipalInvestigator.Name[0]) }</span>
+												</div>
+											</div>
+										}
+										<span class="font-medium">{ data.Project.PrincipalInvestigator.Name }</span>
+									</a>
+								</div>
+							}
+
+							if len(data.Project.Coinvestigators) > 0 {
+								<div class="mb-4">
+									<div class="text-xs font-bold uppercase opacity-50 mb-1">Co-Investigadores</div>
+									for _, person := range data.Project.Coinvestigators {
+										<a href={ templ.SafeURL("/people/" + person.Slug) } class="flex items-center gap-3 hover:bg-base-100 p-2 rounded-lg transition-colors mb-1">
+											<span class="font-medium">{ person.Name }</span>
+										</a>
+									}
+								</div>
+							}
+
+							if len(data.Project.ResearchAssistants) > 0 {
+								<div>
+									<div class="text-xs font-bold uppercase opacity-50 mb-1">Asistentes de Investigación</div>
+									for _, person := range data.Project.ResearchAssistants {
+										<a href={ templ.SafeURL("/people/" + person.Slug) } class="flex items-center gap-3 hover:bg-base-100 p-2 rounded-lg transition-colors mb-1">
+											<span class="font-medium">{ person.Name }</span>
+										</a>
+									}
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+}

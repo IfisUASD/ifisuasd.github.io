@@ -1,0 +1,112 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+
+type BlogPostData struct {
+	Meta layouts.MetaTags
+	Post *types.BlogPost
+	Next *types.BlogPost
+	Prev *types.BlogPost
+}
+
+templ BlogPost(data BlogPostData, lang string, dict map[string]string) {
+	@layouts.Base(data.Post.Title, lang, data.Meta, dict) {
+		<div class="container mx-auto px-4 py-8">
+			@components.Breadcrumbs([]components.BreadcrumbItem{
+				{Label: dict["Home"], URL: prefixPath("/", lang)},
+				{Label: dict["Blog"], URL: prefixPath("/blog", lang)},
+				{Label: data.Post.Title, Active: true},
+			})
+
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+				<!-- Left Sidebar (TOC or Empty) -->
+				<div class="hidden lg:block lg:col-span-3">
+					<div class="sticky top-24">
+						<a href={ templ.SafeURL(prefixPath("/blog", lang)) } class="btn btn-ghost gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+							{ dict["BackToBlog"] }
+						</a>
+					</div>
+				</div>
+
+				<!-- Main Content -->
+				<div class="lg:col-span-6">
+					<article class="prose lg:prose-lg mx-auto bg-base-100 p-8 rounded-box shadow-sm">
+						<!-- Header -->
+						<header class="mb-8 not-prose">
+							if len(data.Post.Tags) > 0 {
+								<div class="flex gap-2 mb-4">
+									for _, tag := range data.Post.Tags {
+										<div class="badge badge-primary badge-outline">{ tag }</div>
+									}
+								</div>
+							}
+							<h1 class="text-4xl font-bold mb-4">{ data.Post.Title }</h1>
+							<div class="flex items-center gap-4 text-base-content/70">
+								<span>{ data.Post.Date.Format("02 Jan 2006") }</span>
+								<span>•</span>
+								if data.Post.Author != nil {
+									<a href={ templ.SafeURL(prefixPath("/people/" + data.Post.Author.Slug, lang)) } class="link link-hover font-medium text-primary">
+										{ data.Post.Author.Name }
+									</a>
+								}
+							</div>
+						</header>
+
+						<!-- Content -->
+						<div class="mb-12">
+							@templ.Raw(string(data.Post.ContentHTML))
+						</div>
+					</article>
+
+					<!-- Navigation Buttons -->
+					<div class="divider my-12"></div>
+					<div class="grid grid-cols-2 gap-4">
+						<div>
+							if data.Prev != nil {
+								<a href={ templ.SafeURL(prefixPath("/blog/" + data.Prev.Slug, lang)) } class="btn btn-outline btn-block h-auto py-4 text-left flex flex-col items-start gap-1">
+									<span class="text-xs opacity-70">← { dict["Previous"] }</span>
+									<span class="text-sm font-bold truncate w-full">{ data.Prev.Title }</span>
+								</a>
+							}
+						</div>
+						<div>
+							if data.Next != nil {
+								<a href={ templ.SafeURL(prefixPath("/blog/" + data.Next.Slug, lang)) } class="btn btn-outline btn-block h-auto py-4 text-right flex flex-col items-end gap-1">
+									<span class="text-xs opacity-70">{ dict["Next"] } →</span>
+									<span class="text-sm font-bold truncate w-full">{ data.Next.Title }</span>
+								</a>
+							}
+						</div>
+					</div>
+				</div>
+
+				<!-- Right Sidebar (Author Info) -->
+				<div class="hidden lg:block lg:col-span-4">
+					if data.Post.Author != nil {
+						<div class="sticky top-24 card bg-base-200 compact">
+							<div class="card-body">
+								<h3 class="card-title text-sm">{ dict["AboutAuthor"] }</h3>
+								<div class="flex items-center gap-3 mb-2">
+									if data.Post.Author.Avatar != "" {
+										<img src={ data.Post.Author.Avatar } class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+									} else {
+										<div class="avatar placeholder">
+											<div class="bg-neutral text-neutral-content rounded-full w-10">
+												<span>{ string(data.Post.Author.Name[0]) }</span>
+											</div>
+										</div>
+									}
+									<div class="text-sm font-bold">{ data.Post.Author.Name }</div>
+								</div>
+								<a href={ templ.SafeURL(prefixPath("/people/" + data.Post.Author.Slug, lang)) } class="link link-primary text-xs">{ dict["ViewProfile"] }</a>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	}
+}

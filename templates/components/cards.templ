@@ -1,0 +1,58 @@
+package components
+
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+templ ProjectCard(project *types.Project, lang string, dict map[string]string) {
+	<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full">
+		<div class="card-body">
+			<h2 class="card-title">
+				<a href={ templ.SafeURL(prefixPath("/projects/" + project.Slug, lang)) } class="hover:text-primary">
+					{ project.Title }
+				</a>
+				if project.Status == "active" {
+					<div class="badge badge-success gap-2">Activo</div>
+				} else {
+					<div class="badge badge-ghost gap-2">Finalizado</div>
+				}
+			</h2>
+			<p class="line-clamp-3 text-sm text-base-content/80">
+				{ project.Funding }
+			</p>
+			<div class="card-actions justify-end mt-4">
+				<a href={ templ.SafeURL(prefixPath("/projects/" + project.Slug, lang)) } class="btn btn-primary btn-sm">{ dict["ReadMore"] }</a>
+			</div>
+		</div>
+	</div>
+}
+
+templ PersonCard(person *types.Person, lang string, dict map[string]string) {
+	<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full">
+		<figure class="px-10 pt-10">
+			@Avatar(person.Avatar, person.Name, "w-24")
+		</figure>
+		<div class="card-body items-center text-center">
+			<h2 class="card-title">
+				<a href={ templ.SafeURL(prefixPath("/people/" + person.Slug, lang)) } class="hover:text-primary">
+					{ person.Name }
+				</a>
+			</h2>
+			<p class="text-sm uppercase tracking-wide text-base-content/60">{ person.Role }</p>
+			<div class="card-actions mt-2">
+				<a href={ templ.SafeURL(prefixPath("/people/" + person.Slug, lang)) } class="btn btn-ghost btn-sm">{ dict["ViewProfile"] }</a>
+			</div>
+		</div>
+	</div>
+}
+
+templ NewsCard(news *types.NewsItem, lang string, dict map[string]string) {
+	<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full image-full">
+		<figure><img src={ news.Image } alt={ news.Title } loading="lazy" /></figure>
+		<div class="card-body">
+			<h2 class="card-title">{ news.Title }</h2>
+			<p>{ news.Summary }</p>
+			<div class="card-actions justify-end">
+				<a href={ templ.SafeURL(prefixPath("/news/" + news.Slug, lang)) } class="btn btn-primary">{ dict["ReadMore"] }</a>
+			</div>
+		</div>
+	</div>
+}

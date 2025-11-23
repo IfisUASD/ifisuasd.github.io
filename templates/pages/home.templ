@@ -1,0 +1,49 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type HomeData struct {
+	Meta        layouts.MetaTags
+	LatestNews  []*types.NewsItem
+	RecentPapers []*types.Paper
+}
+
+templ Home(data HomeData, lang string, dict map[string]string) {
+	@layouts.Base("Inicio", lang, data.Meta, dict) {
+		<!-- Hero Section -->
+		<div class="hero min-h-[50vh] bg-base-200 rounded-box mb-12">
+			<div class="hero-content text-center">
+				<div class="max-w-md">
+					<h1 class="text-5xl font-bold">Instituto de Física</h1>
+					<p class="py-6">Investigación y Ciencia al servicio de la nación.</p>
+					<a href="/projects" class="btn btn-primary">Ver Proyectos</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Latest News -->
+		if len(data.LatestNews) > 0 {
+			@components.SectionTitle(dict["LatestNews"])
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+				for _, news := range data.LatestNews {
+					@components.NewsCard(news, lang, dict)
+				}
+			</div>
+		}
+
+		<!-- Recent Publications -->
+		if len(data.RecentPapers) > 0 {
+			<!-- Recent Papers -->
+			<section class="mb-12">
+				@components.SectionTitle(dict["RecentPapers"])
+				<div class="space-y-4">
+					for _, paper := range data.RecentPapers {
+						@components.PublicationRow(paper)
+					}
+				</div>
+			</section>
+		}
+	}
+}

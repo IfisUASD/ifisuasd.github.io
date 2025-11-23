@@ -1,0 +1,22 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type PeopleData struct {
+	Meta   layouts.MetaTags
+	People []*types.Person
+}
+
+templ People(data PeopleData, lang string, dict map[string]string) {
+	@layouts.Base("Gente", lang, data.Meta, dict) {
+		@components.SectionTitle(dict["Team"])
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+			for _, person := range data.People {
+				@components.PersonCard(person, lang, dict)
+			}
+		</div>
+	}
+}

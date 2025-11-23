@@ -1,1 +1,36 @@
-public/
+# Binarios
+
+site_gen
+main
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Carpetas de Salida (Generadas)
+
+/output
+/dist
+/tmp
+
+# Node / NPM
+
+node_modules/
+npm-debug.log
+
+# Go
+
+go.sum
+vendor/
+
+# Editor / IDE
+
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Tailwind (si se generara caché)
+.d/
+tailwindcss

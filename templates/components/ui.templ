@@ -1,0 +1,21 @@
+package components
+
+templ Avatar(src string, alt string, size string) {
+	<div class={ "avatar " + size }>
+		<div class="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+			<img src={ src } alt={ alt } loading="lazy" />
+		</div>
+	</div>
+}
+
+templ Badge(text string, color string) {
+	<div class={ "badge " + color + " gap-2" }>
+		{ text }
+	</div>
+}
+
+templ SectionTitle(title string) {
+	<h2 class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-2">
+		{ title }
+	</h2>
+}

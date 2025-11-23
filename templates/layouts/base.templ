@@ -1,0 +1,78 @@
+package layouts
+
+import (
+	"fmt"
+	"time"
+	"github.com/IfisUASD/ifisuasd.github.io/templates/components"
+)
+
+type MetaTags struct {
+	Description string
+	Keywords    string
+	Author      string
+	OGTitle     string
+	OGDesc      string
+	OGImage     string
+}
+
+templ Base(title string, lang string, meta MetaTags, dict map[string]string) {
+	<!DOCTYPE html>
+	<html lang={ lang } data-theme="light">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title } | { dict["InstituteOfPhysics"] } { dict["UASD"] }</title>
+			
+			<!-- SEO Metadata -->
+			if meta.Description != "" {
+				<meta name="description" content={ meta.Description }/>
+			}
+			if meta.Keywords != "" {
+				<meta name="keywords" content={ meta.Keywords }/>
+			}
+			if meta.Author != "" {
+				<meta name="author" content={ meta.Author }/>
+			}
+			
+			<!-- Open Graph -->
+			<meta property="og:title" content={ title } />
+			if meta.OGDesc != "" {
+				<meta property="og:description" content={ meta.OGDesc }/>
+			}
+			if meta.OGImage != "" {
+				<meta property="og:image" content={ meta.OGImage }/>
+			}
+
+			<!-- Styles -->
+			<link rel="stylesheet" href={ fmt.Sprintf("/assets/css/styles.css?v=%d", time.Now().Unix()) }/>
+			
+			<!-- Dark Mode Script (Inline to prevent FOUC) -->
+			<script>
+				(function() {
+					try {
+						var localTheme = localStorage.getItem('theme');
+						var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+						if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+							document.documentElement.setAttribute('data-theme', 'dark');
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.setAttribute('data-theme', 'light');
+							document.documentElement.classList.remove('dark');
+						}
+					} catch (e) {}
+				})();
+			</script>
+		</head>
+		<body class="min-h-screen bg-base-100 text-base-content flex flex-col">
+			<!-- Navbar -->
+			@components.Navbar(lang, dict)
+
+			<main class="flex-grow container mx-auto px-4 py-8">
+				{ children... }
+			</main>
+
+			<!-- Footer -->
+			@components.Footer()
+		</body>
+	</html>
+}

@@ -1,0 +1,36 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type BlogData struct {
+	Meta layouts.MetaTags
+	Posts []*types.BlogPost
+}
+
+templ Blog(data BlogData, lang string, dict map[string]string) {
+	@layouts.Base("Blog", lang, data.Meta, dict) {
+		@components.SectionTitle(dict["Blog"])
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			for _, post := range data.Posts {
+				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full">
+					<div class="card-body">
+						<h2 class="card-title">
+							<a href={ templ.SafeURL(prefixPath("/blog/" + post.Slug, lang)) } class="hover:text-primary">
+								{ post.Title }
+							</a>
+						</h2>
+						<p class="text-sm">
+							by { post.Author.Name } – { post.Date.Format("2006-01-02") }
+						</p>
+						<p class="line-clamp-3">{ post.ContentHTML }</p>
+						<div class="card-actions justify-end mt-4">
+							<a href={ templ.SafeURL(prefixPath("/blog/" + post.Slug, lang)) } class="btn btn-primary btn-sm">{ dict["ReadMore"] }</a>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	}
+}
