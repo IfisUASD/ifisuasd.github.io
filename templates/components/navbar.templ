@@ -4,27 +4,27 @@ templ Navbar(lang string, dict map[string]string) {
 	<div class="navbar bg-base-100 shadow-sm sticky top-0 z-50">
 		<div class="navbar-start">
 			<div class="dropdown">
-				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Abrir menú">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
 				</div>
 				<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 					<li><a href={ templ.SafeURL(prefixPath("/", lang)) }>{ dict["Home"] }</a></li>
-					<li><a href={ templ.SafeURL(prefixPath("/people", lang)) }>{ dict["People"] }</a></li>
 					<li><a href={ templ.SafeURL(prefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+					<li><a href={ templ.SafeURL(prefixPath("/people", lang)) }>{ dict["People"] }</a></li>
 					<li><a href={ templ.SafeURL(prefixPath("/news", lang)) }>{ dict["News"] }</a></li>
 					<li><a href={ templ.SafeURL(prefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
 					<li><a href={ templ.SafeURL(prefixPath("/apps", lang)) }>{ dict["Apps"] }</a></li>
 				</ul>
 			</div>
 			<a class="btn btn-ghost text-xl" href={ templ.SafeURL(prefixPath("/", lang)) }>
-				<span class="text-primary font-bold">IFIS</span> UASD
+				<span class="text-primary font-bold">{ dict["InstituteOfPhysics"] }</span> { dict["UASD"] }
 			</a>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
 				<li><a href={ templ.SafeURL(prefixPath("/", lang)) }>{ dict["Home"] }</a></li>
-				<li><a href={ templ.SafeURL(prefixPath("/people", lang)) }>{ dict["People"] }</a></li>
 				<li><a href={ templ.SafeURL(prefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+				<li><a href={ templ.SafeURL(prefixPath("/people", lang)) }>{ dict["People"] }</a></li>
 				<li><a href={ templ.SafeURL(prefixPath("/news", lang)) }>{ dict["News"] }</a></li>
 				<li><a href={ templ.SafeURL(prefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
 				<li><a href={ templ.SafeURL(prefixPath("/apps", lang)) }>{ dict["Apps"] }</a></li>
@@ -38,13 +38,13 @@ templ Navbar(lang string, dict map[string]string) {
 
 			<!-- Language Selector -->
 			if lang == "es" {
-				<button onclick="switchLanguage('en')" class="btn btn-ghost btn-sm">EN</button>
+				<button onclick="switchLanguage('en')" class="btn btn-ghost btn-sm hover:text-primary">EN</button>
 			} else {
-				<button onclick="switchLanguage('es')" class="btn btn-ghost btn-sm">ES</button>
+				<button onclick="switchLanguage('es')" class="btn btn-ghost btn-sm hover:text-primary">ES</button>
 			}
 
 			<!-- Theme Controller -->
-			<label class="swap swap-rotate btn btn-ghost btn-circle btn-sm">
+			<label class="swap swap-rotate btn btn-ghost btn-circle btn-sm hover:text-primary">
 				<!-- this hidden checkbox controls the state -->
 				<input type="checkbox" class="theme-controller" value="dark" onchange="toggleTheme(this)"/>
 				

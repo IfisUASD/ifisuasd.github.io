@@ -9,17 +9,17 @@
 @layer components {
   /* Encabezados con estilo distintivo */
   .prose h1 {
-    @apply text-4xl font-bold text-primary mt-8 mb-6 pb-3;
+    @apply text-4xl font-bold text-base-content mt-8 mb-6 pb-3;
     border-bottom: 3px solid hsl(var(--p));
   }
 
   .prose h2 {
-    @apply text-3xl font-bold text-primary mt-7 mb-5 pb-2;
+    @apply text-3xl font-bold text-base-content mt-7 mb-5 pb-2;
     border-bottom: 2px solid hsl(var(--p) / 0.3);
   }
 
   .prose h3 {
-    @apply text-2xl font-bold text-primary mt-6 mb-4 pl-4 relative;
+    @apply text-2xl font-bold text-base-content mt-6 mb-4 pl-4 relative;
   }
 
   .prose h3::before {

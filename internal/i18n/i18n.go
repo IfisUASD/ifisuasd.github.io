@@ -5,9 +5,9 @@ type Dictionary map[string]string
 
 var es = Dictionary{
 	"Home":            "Inicio",
-	"People":          "Personal",
+	"People":          "Equipo",
 	"Projects":        "Proyectos",
-	"News":            "Noticias",
+	"News":            "Actualidad",
 	"Blog":            "Blog",
 	"ReadMore":        "Leer más",
 	"AboutAuthor":     "Sobre el Autor",
