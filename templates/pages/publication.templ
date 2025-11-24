@@ -1,0 +1,160 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+import "strconv"
+import "strings"
+
+type PublicationData struct {
+	Meta        layouts.MetaTags
+	Publication *types.Publication
+}
+
+templ Publication(data PublicationData, lang string, dict map[string]string) {
+	@layouts.Base(data.Publication.Title, lang, data.Meta, dict) {
+		<div class="container mx-auto px-4 py-8">
+			@components.Breadcrumbs([]components.BreadcrumbItem{
+				{Label: dict["Home"], URL: prefixPath("/", lang)},
+				{Label: dict["Publications"], URL: prefixPath("/publications", lang)},
+				{Label: data.Publication.Title, Active: true},
+			})
+
+			<article class="max-w-4xl mx-auto">
+				<!-- Header -->
+				<div class="mb-8">
+					<div class="flex flex-wrap gap-2 mb-4">
+						<div class="badge badge-primary capitalize">{ data.Publication.Type }</div>
+						<div class="badge badge-ghost">{ strconv.Itoa(data.Publication.Year) }</div>
+					</div>
+					
+					<h1 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+						{ data.Publication.Title }
+					</h1>
+
+					<div class="text-lg text-base-content/80 mb-2">
+						{ strings.Join(data.Publication.Authors, ", ") }
+					</div>
+
+					<div class="text-sm text-base-content/60 italic mb-4">
+						if data.Publication.Journal != "" {
+							<span class="font-medium">{ data.Publication.Journal }</span>
+							if data.Publication.Volume != "" {
+								<span> • Vol. { data.Publication.Volume }</span>
+							}
+							if data.Publication.Number != "" {
+								<span>({ data.Publication.Number })</span>
+							}
+							if data.Publication.Pages != "" {
+								<span> • pp. { data.Publication.Pages }</span>
+							}
+						} else if data.Publication.School != "" {
+							<span class="font-medium">{ data.Publication.School }</span>
+						} else if data.Publication.Booktitle != "" {
+							<span class="font-medium">{ data.Publication.Booktitle }</span>
+						}
+						if data.Publication.Publisher != "" {
+							<span> • { data.Publication.Publisher }</span>
+						}
+					</div>
+
+					<!-- Enlaces externos -->
+					<div class="flex gap-3">
+						if data.Publication.DOI != "" {
+							<a href={ templ.SafeURL("https://doi.org/" + data.Publication.DOI) } target="_blank" class="btn btn-sm btn-primary">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+								</svg>
+								DOI
+							</a>
+						}
+						if data.Publication.URL != "" {
+							<a href={ templ.SafeURL(data.Publication.URL) } target="_blank" class="btn btn-sm btn-outline">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+								</svg>
+								{ dict["FullText"] }
+							</a>
+						}
+					</div>
+				</div>
+
+				<div class="divider"></div>
+
+				<!-- Abstract -->
+				if data.Publication.Abstract != "" {
+					<section class="mb-8">
+						<h2 class="text-2xl font-bold mb-4">{ dict["Abstract"] }</h2>
+						<div class="prose max-w-none">
+							<p class="text-justify leading-relaxed">{ data.Publication.Abstract }</p>
+						</div>
+					</section>
+				}
+
+				<!-- Autores locales -->
+				if len(data.Publication.LinkedAuthors) > 0 {
+					<section class="mb-8">
+						<h2 class="text-2xl font-bold mb-4">{ dict["LocalAuthors"] }</h2>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							for _, author := range data.Publication.LinkedAuthors {
+								<a href={ templ.SafeURL(prefixPath("/people/" + author.Slug, lang)) } class="card bg-base-200 hover:bg-base-300 transition-colors">
+									<div class="card-body p-4 flex-row items-center gap-4">
+										if author.Avatar != "" {
+											<img src={ author.Avatar } alt={ author.Name } class="w-12 h-12 rounded-full object-cover"/>
+										} else {
+											<div class="avatar placeholder">
+												<div class="bg-neutral text-neutral-content rounded-full w-12">
+													<span>{ string(author.Name[0]) }</span>
+												</div>
+											</div>
+										}
+										<div>
+											<div class="font-semibold">{ author.Name }</div>
+											<div class="text-sm opacity-70">{ author.Role }</div>
+										</div>
+									</div>
+								</a>
+							}
+						</div>
+					</section>
+				}
+
+				<!-- Asesores (para tesis) -->
+				if len(data.Publication.LinkedAdvisors) > 0 {
+					<section class="mb-8">
+						<h2 class="text-2xl font-bold mb-4">{ dict["Advisors"] }</h2>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							for _, advisor := range data.Publication.LinkedAdvisors {
+								<a href={ templ.SafeURL(prefixPath("/people/" + advisor.Slug, lang)) } class="card bg-base-200 hover:bg-base-300 transition-colors">
+									<div class="card-body p-4 flex-row items-center gap-4">
+										if advisor.Avatar != "" {
+											<img src={ advisor.Avatar } alt={ advisor.Name } class="w-12 h-12 rounded-full object-cover"/>
+										} else {
+											<div class="avatar placeholder">
+												<div class="bg-neutral text-neutral-content rounded-full w-12">
+													<span>{ string(advisor.Name[0]) }</span>
+												</div>
+											</div>
+										}
+										<div>
+											<div class="font-semibold">{ advisor.Name }</div>
+											<div class="text-sm opacity-70">{ advisor.Role }</div>
+										</div>
+									</div>
+								</a>
+							}
+						</div>
+					</section>
+				}
+
+				<!-- Proyecto asociado -->
+				if data.Publication.Project != nil {
+					<section class="mb-8">
+						<h2 class="text-2xl font-bold mb-4">{ dict["AssociatedProject"] }</h2>
+						@components.ProjectCard(data.Publication.Project, lang, dict)
+					</section>
+				}
+			</article>
+		</div>
+	}
+}

@@ -89,12 +89,24 @@ templ Person(data PersonData, lang string, dict map[string]string) {
 					}
 
 					<!-- Publications -->
+					// 1. PUBLICACIONES (Autoría)
 					if len(data.Person.Publications) > 0 {
 						<section>
 							@components.SectionTitle(dict["Publications"])
 							<div class="space-y-4">
 								for _, pub := range data.Person.Publications {
-									@components.PublicationRow(pub)
+									@components.PublicationRow(pub, lang)
+								}
+							</div>
+						</section>
+					}
+
+					// 2. TESIS DIRIGIDAS (Asesoría) - NUEVA SECCIÓN
+					if len(data.Person.Mentored) > 0 {
+						<section>
+							@components.SectionTitle("Tesis y Trabajos Dirigidos") <div class="space-y-4">
+								for _, thesis := range data.Person.Mentored {
+									@components.PublicationRow(thesis, lang)
 								}
 							</div>
 						</section>

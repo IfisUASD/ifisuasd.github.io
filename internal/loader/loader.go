@@ -140,11 +140,11 @@ func LoadContent(rootPath string, lang string) (*types.Database, error) {
 
 		case strings.Contains(relPath, "references/") && strings.HasSuffix(path, ".bib"):
 			// BibTeX no suele tener variantes por idioma, pero si las tuviera, funcionaría igual
-			papers, err := parsers.ParseBibTeX(path, content)
+			publications, err := parsers.ParseBibTeX(path, content)
 			if err != nil {
 				return nil, fmt.Errorf("error parsing bibtex %s: %w", path, err)
 			}
-			db.Papers = append(db.Papers, papers...)
+			db.Publications = append(db.Publications, publications...)
 
 		case strings.Contains(relPath, "news/") && strings.HasSuffix(path, ".md"):
 			news, err := parsers.ParseNewsItem(path, content)

@@ -52,7 +52,7 @@ func TestLinkData_Projects(t *testing.T) {
 	}
 }
 
-func TestLinkData_Papers(t *testing.T) {
+func TestLinkData_Publications(t *testing.T) {
 	db := types.NewDatabase()
 
 	// 1. Setup
@@ -61,35 +61,35 @@ func TestLinkData_Papers(t *testing.T) {
 	db.People[authorID] = author
 
 	projID := "PROJ-PAPER"
-	proj := &types.Project{ID: projID, Title: "Project Paper"}
+	proj := &types.Project{ID: projID, Title: "Project Publication"}
 	db.Projects[projID] = proj
 
-	paper := &types.Paper{
+	paper := &types.Publication{
 		ID:           "DOI-1",
-		Title:        "My Paper",
+		Title:        "My Publication",
 		AuthorOrcids: []string{authorID},
 		ProjectID:    projID,
 	}
-	db.Papers = append(db.Papers, paper)
+	db.Publications = append(db.Publications, paper)
 
 	// 2. Ejecución
 	LinkData(db)
 
 	// 3. Aserciones
 	
-	// Verificar enlace Paper -> Persona
+	// Verificar enlace Publication -> Persona
 	if len(author.Publications) != 1 {
 		t.Errorf("El Linker no añadió el paper al autor. Tiene %d", len(author.Publications))
 	}
-	if author.Publications[0].Title != "My Paper" {
-		t.Error("Paper incorrecto en autor")
+	if author.Publications[0].Title != "My Publication" {
+		t.Error("Publication incorrecto en autor")
 	}
 
-	// Verificar enlace Paper -> Proyecto
+	// Verificar enlace Publication -> Proyecto
 	if len(proj.Publications) != 1 {
 		t.Errorf("El Linker no añadió el paper al proyecto. Tiene %d", len(proj.Publications))
 	}
-	if proj.Publications[0].Title != "My Paper" {
-		t.Error("Paper incorrecto en proyecto")
+	if proj.Publications[0].Title != "My Publication" {
+		t.Error("Publication incorrecto en proyecto")
 	}
 }

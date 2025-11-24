@@ -27,6 +27,7 @@ var es = Dictionary{
 	"Team":            "Equipo de Investigación",
 	"LatestNews":      "Últimas Noticias",
 	"RecentPapers":    "Publicaciones Recientes",
+	"RecentPublications": "Publicaciones Recientes",
 	"InstituteOfPhysics": "Instituto de Física",
 	"UASD":            "UASD",
 	"Search":            "Buscar",
@@ -34,6 +35,18 @@ var es = Dictionary{
 	"Apps": "Herramientas",
 	"MarkdownEditor": "Editor de Contenido",
 	"RenderIdentical": "Renderizado idéntico al sitio web",
+	"Abstract": "Resumen",
+	"DownloadThesis": "Descargar Tesis",
+	"ViewPublication": "Ver Publicación",
+	"MentoredTheses": "Tesis Dirigidas",
+	"FullText": "Texto Completo",
+	"LocalAuthors": "Autores Locales",
+	"Advisors": "Asesores",
+	"AssociatedProject": "Proyecto Asociado",
+	"PublicationsDescription": "Listado completo de publicaciones científicas del Instituto de Física",
+	"TotalPublications": "Total de Publicaciones",
+	"NoPublications": "No hay publicaciones disponibles en este momento",
+
 }
 
 var en = Dictionary{
@@ -60,11 +73,23 @@ var en = Dictionary{
 	"Team":            "Research Team",
 	"LatestNews":      "Latest News",
 	"RecentPapers":    "Recent Publications",
+	"RecentPublications": "Recent Publications",
 	"InstituteOfPhysics": "Institute of Physics",
 	"UASD":            "UASD",
 	"Apps": "Apps",
 	"MarkdownEditor": "Content Editor",
 	"RenderIdentical": "Identical rendering to website",
+	"Abstract": "Abstract",
+	"DownloadThesis": "Download Thesis",
+	"ViewPublication": "View Publication",
+	"MentoredTheses": "Mentored Theses",
+	"FullText": "Full Text",
+	"LocalAuthors": "Local Authors",
+	"Advisors": "Advisors",
+	"AssociatedProject": "Associated Project",
+	"PublicationsDescription": "Complete list of scientific publications from the Institute of Physics",
+	"TotalPublications": "Total Publications",
+	"NoPublications": "No publications available at this time",
 }
 
 // GetDictionary returns the dictionary for the requested language.

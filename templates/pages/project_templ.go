@@ -155,7 +155,7 @@ func Project(data ProjectData, lang string, dict map[string]string) templ.Compon
 					return templ_7745c5c3_Err
 				}
 				for _, paper := range data.Project.Publications {
-					templ_7745c5c3_Err = components.PublicationRow(paper).Render(ctx, templ_7745c5c3_Buffer)
+					templ_7745c5c3_Err = components.PublicationRow(paper, lang).Render(ctx, templ_7745c5c3_Buffer)
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}

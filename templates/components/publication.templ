@@ -2,24 +2,38 @@ package components
 
 import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
 import "strconv"
+import "strings"
 
-templ PublicationRow(paper *types.Paper) {
-	<div class="card bg-base-100 shadow-sm mb-4 border border-base-200 hover:border-primary transition-colors">
-		<div class="card-body p-4">
-			<h3 class="card-title text-lg">
-				<a href={ templ.SafeURL(paper.URL) } target="_blank" class="hover:text-primary hover:underline">
-					{ paper.Title }
-				</a>
+templ PublicationRow(pub *types.Publication, lang string) {
+	<a href={ templ.SafeURL(prefixPath("/publications/" + pub.Slug, lang)) } class="block hover:bg-base-200/50 transition-colors p-4 rounded-lg border border-transparent hover:border-primary/30">
+		<div class="flex flex-wrap items-baseline gap-2 mb-2">
+			<h3 class="text-lg font-semibold hover:text-primary flex-grow">
+				{ pub.Title }
 			</h3>
-			<p class="text-sm text-base-content/70">
-				{ paper.Journal } • { strconv.Itoa(paper.Year) } • { paper.Volume }
-			</p>
-			<div class="card-actions justify-end mt-2">
-				if paper.DOI != "" {
-					<a href={ templ.SafeURL("https://doi.org/" + paper.DOI) } target="_blank" class="badge badge-outline hover:bg-primary hover:text-primary-content">DOI</a>
-				}
-				<div class="badge badge-ghost">{ paper.Type }</div>
+			<div class="flex items-center gap-2 flex-shrink-0">
+				<div class="badge badge-sm badge-ghost capitalize">{ pub.Type }</div>
+				<span class="text-sm text-base-content/60">{ strconv.Itoa(pub.Year) }</span>
 			</div>
 		</div>
-	</div>
+		
+		<p class="text-sm text-base-content/70 mb-1">
+			{ strings.Join(pub.Authors, ", ") }
+		</p>
+
+		<div class="flex flex-wrap items-center gap-x-2 text-xs text-base-content/60">
+			if pub.Journal != "" {
+				<span class="italic">{ pub.Journal }</span>
+				if pub.Volume != "" {
+					<span>• Vol. { pub.Volume }</span>
+				}
+			} else if pub.School != "" {
+				<span class="italic">{ pub.School }</span>
+			} else if pub.Booktitle != "" {
+				<span class="italic">{ pub.Booktitle }</span>
+			}
+			if pub.DOI != "" {
+				<span>• <span class="link link-hover">DOI ↗</span></span>
+			}
+		</div>
+	</a>
 }

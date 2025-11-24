@@ -58,8 +58,8 @@ Blog content`)
 		t.Errorf("Esperaba 1 proyecto, obtuvo %d", len(db.Projects))
 	}
 
-	if len(db.Papers) != 1 {
-		t.Errorf("Esperaba 1 paper, obtuvo %d", len(db.Papers))
+	if len(db.Publications) != 1 {
+		t.Errorf("Esperaba 1 paper, obtuvo %d", len(db.Publications))
 	}
 
 	if len(db.News) != 1 {

@@ -53,7 +53,7 @@ templ Project(data ProjectData, lang string, dict map[string]string) {
 							<h2 class="text-2xl font-bold mb-4">Publicaciones Relacionadas</h2>
 							<div class="space-y-4">
 								for _, paper := range data.Project.Publications {
-									@components.PublicationRow(paper)
+									@components.PublicationRow(paper, lang)
 								}
 							</div>
 						</section>

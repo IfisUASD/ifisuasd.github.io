@@ -9,54 +9,77 @@ import (
 	"github.com/IfisUASD/ifisuasd.github.io/internal/types"
 	"github.com/nickng/bibtex"
 )
-
-// ParseBibTeX procesa el contenido de un archivo .bib y devuelve una lista de Papers.
-func ParseBibTeX(filename string, content []byte) ([]*types.Paper, error) {
+func ParseBibTeX(filename string, content []byte) ([]*types.Publication, error) {
 	bib, err := bibtex.Parse(bytes.NewReader(content))
 	if err != nil {
 		return nil, fmt.Errorf("error parsing bibtex: %w", err)
 	}
 
-	var papers []*types.Paper
+	var pubs []*types.Publication
 
 	for _, entry := range bib.Entries {
-		p := &types.Paper{
-			ID:    entry.CiteName,
-			Type:  entry.Type,
-			Title: getField(entry, "title"),
-			DOI:   getField(entry, "doi"),
-			URL:   getField(entry, "url"),
+		p := &types.Publication{
+			ID:        entry.CiteName,
+			Slug:      entry.CiteName,
+			Type:      entry.Type,
+			Title:     getField(entry, "title"),
+			DOI:       getField(entry, "doi"),
+			URL:       getField(entry, "url"),
+			Journal:   getField(entry, "journal"),
+			Volume:    getField(entry, "volume"),
+			Number:    getField(entry, "number"),
+			Pages:     getField(entry, "pages"),
+			Publisher: getField(entry, "publisher"),
+			School:    getField(entry, "school"),
+			Booktitle: getField(entry, "booktitle"),
+			Abstract:  getField(entry, "abstract"),
 		}
 
-		// Parse Year
 		if yearStr := getField(entry, "year"); yearStr != "" {
 			if y, err := strconv.Atoi(yearStr); err == nil {
 				p.Year = y
 			}
 		}
 
-		// Parse Authors
 		if authors := getField(entry, "author"); authors != "" {
-			p.Authors = []string{authors} 
+			// Limpieza básica de " and " que usa BibTeX
+			p.Authors = strings.Split(authors, " and ")
 		}
 
-		// Parse Custom Fields
-		if orcids := getField(entry, "x-orcids"); orcids != "" {
-			orcids = strings.Trim(orcids, "{}")
-			parts := strings.Split(orcids, ",")
-			for _, part := range parts {
-				p.AuthorOrcids = append(p.AuthorOrcids, strings.TrimSpace(part))
-			}
+		// --- CAMPOS PERSONALIZADOS ---
+
+		// 1. Autores (x-orcids)
+		if val := getField(entry, "x-orcids"); val != "" {
+			p.AuthorOrcids = parseList(val)
 		}
 
-		if project := getField(entry, "x-project"); project != "" {
-			p.ProjectID = strings.Trim(strings.Trim(project, "{}"), " ")
+		// 2. Asesores (x-advisors) - NUEVO
+		if val := getField(entry, "x-advisors"); val != "" {
+			p.AdvisorOrcids = parseList(val)
 		}
 
-		papers = append(papers, p)
+		// 3. Proyecto (x-project)
+		if val := getField(entry, "x-project"); val != "" {
+			p.ProjectID = strings.Trim(strings.Trim(val, "{}"), " ")
+		}
+
+		pubs = append(pubs, p)
 	}
 
-	return papers, nil
+	return pubs, nil
+}
+
+func parseList(raw string) []string {
+	raw = strings.Trim(raw, "{}")
+	parts := strings.Split(raw, ",")
+	var result []string
+	for _, part := range parts {
+		trimmed := strings.TrimSpace(part)
+		if trimmed != "" {
+			result = append(result, trimmed)
+		}
+	}
+	return result
 }
 
 func getField(entry *bibtex.BibEntry, key string) string {

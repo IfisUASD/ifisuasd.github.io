@@ -7,7 +7,7 @@ import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
 type HomeData struct {
 	Meta        layouts.MetaTags
 	LatestNews  []*types.NewsItem
-	RecentPapers []*types.Paper
+	RecentPublications []*types.Publication
 }
 
 templ Home(data HomeData, lang string, dict map[string]string) {
@@ -34,13 +34,13 @@ templ Home(data HomeData, lang string, dict map[string]string) {
 		}
 
 		<!-- Recent Publications -->
-		if len(data.RecentPapers) > 0 {
-			<!-- Recent Papers -->
+		if len(data.RecentPublications) > 0 {
+			<!-- Recent Publications -->
 			<section class="mb-12">
-				@components.SectionTitle(dict["RecentPapers"])
+				@components.SectionTitle(dict["RecentPublications"])
 				<div class="space-y-4">
-					for _, paper := range data.RecentPapers {
-						@components.PublicationRow(paper)
+					for _, paper := range data.RecentPublications {
+						@components.PublicationRow(paper, lang)
 					}
 				</div>
 			</section>

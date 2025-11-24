@@ -44,7 +44,7 @@ func buildSite(lang string, outputDir string) error {
 	if err != nil {
 		return err
 	}
-	log.Printf("✅ Contenido cargado: %d Personas, %d Proyectos, %d Papers", len(db.People), len(db.Projects), len(db.Papers))
+	log.Printf("✅ Contenido cargado: %d Personas, %d Proyectos, %d publications", len(db.People), len(db.Projects), len(db.Publications))
 
 	// 2. Vincular Datos
 	linker.LinkData(db)
@@ -66,12 +66,12 @@ func buildSite(lang string, outputDir string) error {
 		latestNews = latestNews[:3]
 	}
 
-	recentPapers := db.Papers
-	sort.Slice(recentPapers, func(i, j int) bool {
-		return recentPapers[i].Year > recentPapers[j].Year
+	recentpublications := db.Publications
+	sort.Slice(recentpublications, func(i, j int) bool {
+		return recentpublications[i].Year > recentpublications[j].Year
 	})
-	if len(recentPapers) > 5 {
-		recentPapers = recentPapers[:5]
+	if len(recentpublications) > 5 {
+		recentpublications = recentpublications[:5]
 	}
 
 	homeData := pages.HomeData{
@@ -80,7 +80,7 @@ func buildSite(lang string, outputDir string) error {
 			Keywords:    "Física, UASD, Investigación, Ciencia",
 		},
 		LatestNews:   latestNews,
-		RecentPapers: recentPapers,
+		RecentPublications: recentpublications,
 	}
 
 	f, err := os.Create(outputDir + "/index.html")
@@ -360,6 +360,78 @@ func buildSite(lang string, outputDir string) error {
 
 		if err := pages.BlogPost(bData, lang, dict).Render(context.Background(), f); err != nil {
 			log.Printf("❌ Error renderizando post %s: %v", p.Slug, err)
+		}
+		f.Close()
+	}
+
+	// 8.2 Generar Página de Índice de Publicaciones
+	publicationsDir := outputDir + "/publications"
+	if err := os.MkdirAll(publicationsDir, 0755); err != nil {
+		return err
+	}
+
+	// Ordenar publicaciones por año (más recientes primero)
+	sortedPublications := make([]*types.Publication, len(db.Publications))
+	copy(sortedPublications, db.Publications)
+	sort.Slice(sortedPublications, func(i, j int) bool {
+		return sortedPublications[i].Year > sortedPublications[j].Year
+	})
+
+	publicationsData := pages.PublicationsData{
+		Meta: layouts.MetaTags{
+			Description: dict["PublicationsDescription"],
+			Keywords:    "Publicaciones, Papers, Investigación, Física, UASD",
+		},
+		Publications: sortedPublications,
+	}
+
+	fPublications, err := os.Create(publicationsDir + "/index.html")
+	if err != nil {
+		return err
+	}
+	defer fPublications.Close()
+
+	if err := pages.Publications(publicationsData, lang, dict).Render(context.Background(), fPublications); err != nil {
+		return err
+	}
+
+	// 8.3 Generar Páginas Individuales de Publicaciones
+	// El directorio ya fue creado en la sección anterior
+
+	for _, pub := range db.Publications {
+		pDir := outputDir + "/publications/" + pub.Slug
+		if err := os.MkdirAll(pDir, 0755); err != nil {
+			continue
+		}
+
+		f, err := os.Create(pDir + "/index.html")
+		if err != nil {
+			continue
+		}
+
+		// Usar el abstract como descripción si está disponible
+		description := pub.Title
+		if pub.Abstract != "" {
+			// Limitar el abstract a 200 caracteres para meta description
+			if len(pub.Abstract) > 200 {
+				description = pub.Abstract[:197] + "..."
+			} else {
+				description = pub.Abstract
+			}
+		}
+
+		pData := pages.PublicationData{
+			Meta: layouts.MetaTags{
+				Description: description,
+				Keywords:    strings.Join(pub.Authors, ", ") + ", " + pub.Journal,
+				OGTitle:     pub.Title,
+				OGDesc:      description,
+			},
+			Publication: pub,
+		}
+
+		if err := pages.Publication(pData, lang, dict).Render(context.Background(), f); err != nil {
+			log.Printf("❌ Error renderizando publicación %s: %v", pub.Slug, err)
 		}
 		f.Close()
 	}

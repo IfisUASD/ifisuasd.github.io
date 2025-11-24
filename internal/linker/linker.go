@@ -10,8 +10,8 @@ import (
 // Modifica el objeto db directamente.
 func LinkData(db *types.Database) {
 	linkProjectsToPeople(db)
-	linkPapersToPeople(db)
-	linkPapersToProjects(db)
+	linkPublicationsToPeople(db)
+	linkPublicationsToProjects(db)
 }
 
 // linkProjectsToPeople conecta Proyectos con PI, CoInvestigadores y Asistentes.
@@ -55,29 +55,33 @@ func linkProjectsToPeople(db *types.Database) {
 	}
 }
 
-// linkPapersToPeople conecta Papers con sus Autores (usando x-orcids).
-func linkPapersToPeople(db *types.Database) {
-	for _, paper := range db.Papers {
-		for _, orcid := range paper.AuthorOrcids {
+func linkPublicationsToPeople(db *types.Database) {
+	for _, pub := range db.Publications {
+		// A. Rol de AUTOR
+		for _, orcid := range pub.AuthorOrcids {
 			if person, exists := db.People[orcid]; exists {
-				// Enlace Persona -> Paper
-				person.Publications = append(person.Publications, paper)
-			} else {
-				log.Printf("⚠️  Warning: Paper %s referencia a Autor inexistente %s", paper.ID, orcid)
+				pub.LinkedAuthors = append(pub.LinkedAuthors, person)
+				person.Publications = append(person.Publications, pub)
+			}
+		}
+
+		// B. Rol de ASESOR (x-advisors)
+		for _, orcid := range pub.AdvisorOrcids {
+			if person, exists := db.People[orcid]; exists {
+				pub.LinkedAdvisors = append(pub.LinkedAdvisors, person)
+				// Aquí separamos: Va a 'Mentored', NO a 'Publications'
+				person.Mentored = append(person.Mentored, pub)
 			}
 		}
 	}
 }
 
-// linkPapersToProjects conecta Papers con Proyectos (usando x-project).
-func linkPapersToProjects(db *types.Database) {
-	for _, paper := range db.Papers {
-		if paper.ProjectID != "" {
-			if project, exists := db.Projects[paper.ProjectID]; exists {
-				// Enlace Proyecto -> Paper
-				project.Publications = append(project.Publications, paper)
-			} else {
-				log.Printf("⚠️  Warning: Paper %s referencia a Proyecto inexistente %s", paper.ID, paper.ProjectID)
+func linkPublicationsToProjects(db *types.Database) {
+	for _, pub := range db.Publications {
+		if pub.ProjectID != "" {
+			if project, exists := db.Projects[pub.ProjectID]; exists {
+				pub.Project = project
+				project.Publications = append(project.Publications, pub)
 			}
 		}
 	}

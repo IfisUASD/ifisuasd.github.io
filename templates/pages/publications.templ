@@ -1,0 +1,60 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type PublicationsData struct {
+	Meta         layouts.MetaTags
+	Publications []*types.Publication
+}
+
+templ Publications(data PublicationsData, lang string, dict map[string]string) {
+	@layouts.Base(dict["Publications"], lang, data.Meta, dict) {
+		<div class="container mx-auto px-4 py-8">
+			<!-- Grid Layout: 3-6-3 (solo usar columna del medio) -->
+			<div class="grid grid-cols-12 gap-6">
+				<!-- Columna izquierda vacía (3 columnas) -->
+				<div class="hidden lg:block lg:col-span-3"></div>
+				
+				<!-- Columna central (6 columnas) -->
+				<div class="col-span-12 lg:col-span-6">
+					<!-- Header -->
+					<div class="text-center mb-8">
+						<h1 class="text-4xl font-bold mb-4">{ dict["Publications"] }</h1>
+						<p class="text-base-content/70">
+							{ dict["PublicationsDescription"] }
+						</p>
+					</div>
+
+					<!-- Filtros/Stats (opcional) -->
+					<div class="stats shadow w-full mb-8">
+						<div class="stat place-items-center">
+							<div class="stat-title">{ dict["TotalPublications"] }</div>
+							<div class="stat-value text-primary">{ len(data.Publications) }</div>
+						</div>
+					</div>
+
+					<!-- Lista de Publicaciones -->
+					<div class="space-y-4">
+						if len(data.Publications) > 0 {
+							for _, pub := range data.Publications {
+								@components.PublicationRow(pub, lang)
+							}
+						} else {
+							<div class="alert">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+								<span>{ dict["NoPublications"] }</span>
+							</div>
+						}
+					</div>
+				</div>
+
+				<!-- Columna derecha vacía (3 columnas) -->
+				<div class="hidden lg:block lg:col-span-3"></div>
+			</div>
+		</div>
+	}
+}

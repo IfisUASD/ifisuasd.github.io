@@ -13,9 +13,9 @@ import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
 import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
 
 type HomeData struct {
-	Meta         layouts.MetaTags
-	LatestNews   []*types.NewsItem
-	RecentPapers []*types.Paper
+	Meta               layouts.MetaTags
+	LatestNews         []*types.NewsItem
+	RecentPublications []*types.Publication
 }
 
 func Home(data HomeData, lang string, dict map[string]string) templ.Component {
@@ -79,12 +79,12 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			if len(data.RecentPapers) > 0 {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<!-- Recent Papers --> <section class=\"mb-12\">")
+			if len(data.RecentPublications) > 0 {
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<!-- Recent Publications --> <section class=\"mb-12\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = components.SectionTitle(dict["RecentPapers"]).Render(ctx, templ_7745c5c3_Buffer)
+				templ_7745c5c3_Err = components.SectionTitle(dict["RecentPublications"]).Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -92,8 +92,8 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				for _, paper := range data.RecentPapers {
-					templ_7745c5c3_Err = components.PublicationRow(paper).Render(ctx, templ_7745c5c3_Buffer)
+				for _, paper := range data.RecentPublications {
+					templ_7745c5c3_Err = components.PublicationRow(paper, lang).Render(ctx, templ_7745c5c3_Buffer)
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
