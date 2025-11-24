@@ -22,17 +22,17 @@ func ParseBibTeX(filename string, content []byte) ([]*types.Publication, error) 
 			ID:        entry.CiteName,
 			Slug:      entry.CiteName,
 			Type:      entry.Type,
-			Title:     getField(entry, "title"),
+			Title:     DecodeLaTeX(getField(entry, "title")),
 			DOI:       getField(entry, "doi"),
 			URL:       getField(entry, "url"),
-			Journal:   getField(entry, "journal"),
+			Journal:   DecodeLaTeX(getField(entry, "journal")),
 			Volume:    getField(entry, "volume"),
 			Number:    getField(entry, "number"),
 			Pages:     getField(entry, "pages"),
-			Publisher: getField(entry, "publisher"),
-			School:    getField(entry, "school"),
-			Booktitle: getField(entry, "booktitle"),
-			Abstract:  getField(entry, "abstract"),
+			Publisher: DecodeLaTeX(getField(entry, "publisher")),
+			School:    DecodeLaTeX(getField(entry, "school")),
+			Booktitle: DecodeLaTeX(getField(entry, "booktitle")),
+			Abstract:  DecodeLaTeX(getField(entry, "abstract")),
 		}
 
 		if yearStr := getField(entry, "year"); yearStr != "" {
@@ -43,7 +43,10 @@ func ParseBibTeX(filename string, content []byte) ([]*types.Publication, error) 
 
 		if authors := getField(entry, "author"); authors != "" {
 			// Limpieza básica de " and " que usa BibTeX
-			p.Authors = strings.Split(authors, " and ")
+			rawAuthors := strings.Split(authors, " and ")
+			for _, auth := range rawAuthors {
+				p.Authors = append(p.Authors, DecodeLaTeX(auth))
+			}
 		}
 
 		// --- CAMPOS PERSONALIZADOS ---

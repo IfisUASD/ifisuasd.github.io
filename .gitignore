@@ -34,3 +34,6 @@ vendor/
 # Tailwind (si se generara caché)
 .d/
 tailwindcss
+
+# Documentos sobre el Agente de IA
+.ai_agent/
