@@ -5,7 +5,9 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/IfisUASD/ifisuasd.github.io/internal/i18n"
 	"github.com/IfisUASD/ifisuasd.github.io/internal/linker"
@@ -17,6 +19,9 @@ import (
 
 func main() {
 	log.Println("🏗️  Iniciando generador del sitio...")
+
+	// Verificar traducciones faltantes
+	checkMissingTranslations("./content")
 
 	// Generar sitio en Español (Default)
 	if err := buildSite("es", "./output"); err != nil {
@@ -359,6 +364,8 @@ func buildSite(lang string, outputDir string) error {
 		f.Close()
 	}
 
+	
+
 	// 9. Generar Índice de Búsqueda
 	if err := generateSearchIndex(db, outputDir, lang); err != nil {
 		log.Printf("⚠️ Error generando índice de búsqueda: %v", err)
@@ -385,6 +392,34 @@ func buildSite(lang string, outputDir string) error {
 		return err
 	}
 
+	appsIndexDir := outputDir + "/apps"
+    if err := os.MkdirAll(appsIndexDir, 0755); err != nil {
+        return err
+    }
+    
+    // Ordenar apps (opcional)
+    sort.Slice(db.Tools, func(i, j int) bool {
+        return db.Tools[i].Title < db.Tools[j].Title
+    })
+
+    appsData := pages.AppsData{
+        Meta: layouts.MetaTags{
+            Description: "Herramientas y Aplicaciones del Instituto de Física",
+            Keywords:    "Apps, Herramientas, Física, QR, Markdown",
+        },
+        Tools: db.Tools,
+    }
+
+    fApps, err := os.Create(appsIndexDir + "/index.html")
+    if err != nil {
+        return err
+    }
+    defer fApps.Close()
+
+    if err := pages.AppsIndex(appsData, lang, dict).Render(context.Background(), fApps); err != nil {
+        return err
+    }
+
 	// 11. Generar Página de Apps / QR (NUEVO)
 	appsDir := outputDir + "/apps/qr"
 	if err := os.MkdirAll(appsDir, 0755); err != nil {
@@ -397,6 +432,21 @@ func buildSite(lang string, outputDir string) error {
 	defer fQR.Close()
 
 	if err := pages.QRGenerator(lang, dict).Render(context.Background(), fQR); err != nil {
+		return err
+	}
+
+	// 12. Generar Página de Markdown (App #2)
+	mdDir := outputDir + "/apps/markdown"
+	if err := os.MkdirAll(mdDir, 0755); err != nil {
+		return err
+	}
+	fMD, err := os.Create(mdDir + "/index.html")
+	if err != nil {
+		return err
+	}
+	defer fMD.Close()
+
+	if err := pages.MarkdownEditor(lang, dict).Render(context.Background(), fMD); err != nil {
 		return err
 	}
 
@@ -470,4 +520,50 @@ func prefixPath(path, lang string) string {
 		return "/en" + path
 	}
 	return path
+}
+
+func checkMissingTranslations(contentDir string) {
+	log.Println("🔍 Verificando traducciones faltantes...")
+	
+	err := filepath.Walk(contentDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			// Ignorar directorio de referencias
+			if info.Name() == "references" {
+				return filepath.SkipDir
+			}
+			return nil
+		}
+
+		// Solo procesar archivos .md
+		if !strings.HasSuffix(path, ".md") {
+			return nil
+		}
+
+		dir := filepath.Dir(path)
+		filename := info.Name()
+
+		// Verificar paridad ES <-> EN
+		if strings.HasSuffix(filename, ".es.md") {
+			baseName := strings.TrimSuffix(filename, ".es.md")
+			enFile := filepath.Join(dir, baseName+".en.md")
+			if _, err := os.Stat(enFile); os.IsNotExist(err) {
+				log.Printf("⚠️  Falta traducción al INGLÉS: %s", path)
+			}
+		} else if strings.HasSuffix(filename, ".en.md") {
+			baseName := strings.TrimSuffix(filename, ".en.md")
+			esFile := filepath.Join(dir, baseName+".es.md")
+			if _, err := os.Stat(esFile); os.IsNotExist(err) {
+				log.Printf("⚠️  Falta traducción al ESPAÑOL: %s", path)
+			}
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		log.Printf("Error verificando traducciones: %v", err)
+	}
 }

@@ -159,6 +159,13 @@ func LoadContent(rootPath string, lang string) (*types.Database, error) {
 				return nil, fmt.Errorf("error parsing blog post %s: %w", path, err)
 			}
 			db.BlogPosts = append(db.BlogPosts, post)
+
+		case strings.Contains(relPath, "apps/") && strings.HasSuffix(path, ".md"):
+			tool, err := parsers.ParseTool(path, content)
+			if err != nil {
+				return nil, fmt.Errorf("error parsing tool %s: %w", path, err)
+			}
+			db.Tools = append(db.Tools, tool)
 		}
 	}
 

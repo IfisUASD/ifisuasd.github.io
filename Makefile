@@ -27,6 +27,7 @@ wasm:
 	@echo "⚙️  Compilando Aplicaciones WASM..."
 	@mkdir -p $(WASM_OUTPUT)
 	@GOOS=js GOARCH=wasm go build -o $(WASM_OUTPUT)/qr.wasm $(WASM_SRC)/main.go $(WASM_SRC)/qr_logic.go
+	@GOOS=js GOARCH=wasm go build -o $(WASM_OUTPUT)/markdown.wasm cmd/apps/markdown/main.go
 
 # 3. Generar CSS con Tailwind
 css:

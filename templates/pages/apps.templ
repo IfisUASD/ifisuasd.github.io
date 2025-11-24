@@ -1,0 +1,35 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+import "github.com/IfisUASD/ifisuasd.github.io/templates/components"
+import "github.com/IfisUASD/ifisuasd.github.io/internal/types"
+
+type AppsData struct {
+	Meta  layouts.MetaTags
+	Tools []*types.Tool
+}
+
+templ AppsIndex(data AppsData, lang string, dict map[string]string) {
+	@layouts.Base(dict["Apps"], lang, data.Meta, dict) {
+		<div class="container mx-auto px-4">
+			<div class="text-center max-w-2xl mx-auto mb-12">
+				@components.SectionTitle(dict["Apps"])
+				<p class="text-lg text-base-content/70 mt-4">
+					Herramientas digitales desarrolladas por el Instituto de Física para facilitar la investigación y la docencia. Acceso libre y seguro.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				for _, tool := range data.Tools {
+					@components.ToolCard(tool, lang)
+				}
+			</div>
+
+			<div class="mt-16 p-8 bg-base-200 rounded-2xl text-center">
+				<h3 class="text-xl font-bold mb-2">¿Necesitas una herramienta específica?</h3>
+				<p class="opacity-70 mb-4">Estamos desarrollando nuevas aplicaciones constantemente.</p>
+				<a href="mailto:contacto@ifis.uasd.edu.do" class="btn btn-outline">Sugerir una App</a>
+			</div>
+		</div>
+	}
+}

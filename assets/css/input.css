@@ -1,2 +1,198 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* =================================================================
+   Estilos personalizados para contenido Markdown
+   Aplicables a elementos con clase .prose
+   ================================================================= */
+
+@layer components {
+  /* Encabezados con estilo distintivo */
+  .prose h1 {
+    @apply text-4xl font-bold text-primary mt-8 mb-6 pb-3;
+    border-bottom: 3px solid hsl(var(--p));
+  }
+
+  .prose h2 {
+    @apply text-3xl font-bold text-primary mt-7 mb-5 pb-2;
+    border-bottom: 2px solid hsl(var(--p) / 0.3);
+  }
+
+  .prose h3 {
+    @apply text-2xl font-bold text-primary mt-6 mb-4 pl-4 relative;
+  }
+
+  .prose h3::before {
+    content: "";
+    @apply absolute left-0 top-1 bottom-1 w-1 bg-primary rounded-sm;
+  }
+
+  .prose h4 {
+    @apply text-xl font-semibold text-base-content mt-5 mb-3;
+  }
+
+  .prose h5 {
+    @apply text-lg font-semibold text-base-content mt-4 mb-2;
+  }
+
+  .prose h6 {
+    @apply text-base font-semibold text-base-content mt-3 mb-2;
+  }
+
+  /* Párrafos con espaciado óptimo */
+  .prose p {
+    @apply my-4 leading-relaxed text-base-content;
+  }
+
+  /* Listas con sangría y marcadores apropiados */
+  .prose ul {
+    @apply list-disc pl-8 my-4 space-y-2;
+  }
+
+  .prose ul ul {
+    @apply mt-2;
+    list-style-type: circle;
+  }
+
+  .prose ul ul ul {
+    list-style-type: square;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-8 my-4 space-y-2;
+  }
+
+  .prose li {
+    @apply pl-2;
+  }
+
+  .prose li > p {
+    @apply my-1;
+  }
+
+  /* Checkboxes en listas de tareas */
+  .prose input[type="checkbox"] {
+    @apply mr-2;
+  }
+
+  /* Bloques de código con fondo adaptativo */
+  .prose pre {
+    @apply my-6 p-4 rounded-lg overflow-x-auto;
+    background-color: hsl(var(--b2)) !important;
+    border: 1px solid hsl(var(--bc) / 0.1);
+  }
+
+  .prose pre code {
+    @apply text-sm;
+    background-color: transparent !important;
+    color: hsl(var(--bc)) !important;
+  }
+
+  /* Código inline */
+  .prose code {
+    @apply px-1.5 py-0.5 rounded text-sm font-mono;
+    background-color: hsl(var(--b2));
+    color: hsl(var(--s));
+  }
+
+  .prose pre code {
+    @apply p-0;
+  }
+
+  /* Citas con estilo elegante */
+  .prose blockquote {
+    @apply my-6 pl-6 pr-4 py-4 italic rounded-r-lg;
+    border-left: 4px solid hsl(var(--p));
+    background-color: hsl(var(--b2));
+  }
+
+  .prose blockquote p:first-child {
+    @apply mt-0;
+  }
+
+  .prose blockquote p:last-child {
+    @apply mb-0;
+  }
+
+  /* Tablas elegantes y responsivas */
+  .prose table {
+    @apply w-full my-6 border-collapse;
+    border: 1px solid hsl(var(--bc) / 0.2);
+  }
+
+  .prose thead {
+    background-color: hsl(var(--p) / 0.1);
+  }
+
+  .prose th {
+    @apply px-4 py-3 text-left font-semibold;
+    border-bottom: 2px solid hsl(var(--p));
+  }
+
+  .prose td {
+    @apply px-4 py-3;
+    border-bottom: 1px solid hsl(var(--bc) / 0.1);
+  }
+
+  .prose tr:hover {
+    background-color: hsl(var(--b2));
+  }
+
+  /* Enlaces con estilo del tema */
+  .prose a {
+    @apply text-primary font-medium no-underline transition-all;
+  }
+
+  .prose a:hover {
+    @apply underline;
+    color: hsl(var(--pf));
+  }
+
+  /* Imágenes responsivas con sombra */
+  .prose img {
+    @apply max-w-full h-auto rounded-lg shadow-lg my-6;
+  }
+
+  /* Separadores horizontales */
+  .prose hr {
+    @apply my-8 border-0 border-t-2;
+    border-color: hsl(var(--bc) / 0.2);
+  }
+
+  /* Texto en negrita y cursiva */
+  .prose strong {
+    @apply font-bold text-base-content;
+  }
+
+  .prose em {
+    @apply italic;
+  }
+
+  /* Mejoras para dispositivos móviles */
+  @media (max-width: 640px) {
+    .prose h1 {
+      @apply text-3xl;
+    }
+
+    .prose h2 {
+      @apply text-2xl;
+    }
+
+    .prose h3 {
+      @apply text-xl;
+    }
+
+    .prose pre {
+      @apply text-xs;
+    }
+
+    .prose table {
+      @apply text-sm;
+    }
+
+    .prose th,
+    .prose td {
+      @apply px-2 py-2;
+    }
+  }
+}

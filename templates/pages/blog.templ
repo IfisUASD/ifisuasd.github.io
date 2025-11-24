@@ -14,17 +14,28 @@ templ Blog(data BlogData, lang string, dict map[string]string) {
 		@components.SectionTitle(dict["Blog"])
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			for _, post := range data.Posts {
-				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full">
+				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full border border-base-300">
 					<div class="card-body">
-						<h2 class="card-title">
-							<a href={ templ.SafeURL(prefixPath("/blog/" + post.Slug, lang)) } class="hover:text-primary">
+						<div class="text-xs text-base-content/60 mb-2">
+							{ post.Date.Format("02 Jan 2006") }
+						</div>
+						<h2 class="card-title text-lg font-bold text-base-content hover:text-primary transition-colors">
+							<a href={ templ.SafeURL(prefixPath("/blog/" + post.Slug, lang)) }>
 								{ post.Title }
 							</a>
 						</h2>
-						<p class="text-sm">
-							by { post.Author.Name } – { post.Date.Format("2006-01-02") }
-						</p>
-						<p class="line-clamp-3">{ post.ContentHTML }</p>
+						if post.Author != nil {
+							<p class="text-sm text-base-content/70">
+								by <span class="font-medium">{ post.Author.Name }</span>
+							</p>
+						}
+						if len(post.Tags) > 0 {
+							<div class="flex flex-wrap gap-2 mt-2">
+								for _, tag := range post.Tags {
+									<div class="badge badge-outline badge-sm">{ tag }</div>
+								}
+							</div>
+						}
 						<div class="card-actions justify-end mt-4">
 							<a href={ templ.SafeURL(prefixPath("/blog/" + post.Slug, lang)) } class="btn btn-primary btn-sm">{ dict["ReadMore"] }</a>
 						</div>

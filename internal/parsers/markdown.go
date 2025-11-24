@@ -10,7 +10,9 @@ import (
 
 	"github.com/IfisUASD/ifisuasd.github.io/internal/types"
 	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 	"go.abhg.dev/goldmark/frontmatter"
 )
 
@@ -187,7 +189,17 @@ func parseMarkdownAndYAML(content []byte, target interface{}) (template.HTML, er
 	}
 	
 	md := goldmark.New(
-		goldmark.WithExtensions(fm),
+		goldmark.WithExtensions(
+			extension.GFM,
+			LatexMath,
+			fm,
+		),
+		goldmark.WithParserOptions(
+			parser.WithAutoHeadingID(),
+		),
+		goldmark.WithRendererOptions(
+			html.WithUnsafe(),
+		),
 	)
 	
 	// Contexto para extraer el frontmatter
@@ -215,4 +227,21 @@ func cleanSlug(filename string) string {
 	base = strings.TrimSuffix(base, ".es")
 	base = strings.TrimSuffix(base, ".en")
 	return base
+}
+
+
+// ParseTool procesa la definición de una herramienta.
+func ParseTool(filename string, content []byte) (*types.Tool, error) {
+	var t types.Tool
+	// Reutilizamos la lógica de frontmatter, ignorando el contenido HTML por ahora
+	// ya que la 'landing' de apps suele ser solo tarjetas.
+	_, err := parseMarkdownAndYAML(content, &t)
+	if err != nil {
+		return nil, fmt.Errorf("error parsing tool markdown: %w", err)
+	}
+	
+	if t.ID == "" {
+		t.ID = cleanSlug(filename)
+	}
+	return &t, nil
 }

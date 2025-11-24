@@ -32,6 +32,8 @@ var es = Dictionary{
 	"Search":            "Buscar",
 	"SearchPlaceholder": "Escribe para buscar...",
 	"Apps": "Herramientas",
+	"MarkdownEditor": "Editor de Contenido",
+	"RenderIdentical": "Renderizado idéntico al sitio web",
 }
 
 var en = Dictionary{
@@ -61,6 +63,8 @@ var en = Dictionary{
 	"InstituteOfPhysics": "Institute of Physics",
 	"UASD":            "UASD",
 	"Apps": "Apps",
+	"MarkdownEditor": "Content Editor",
+	"RenderIdentical": "Identical rendering to website",
 }
 
 // GetDictionary returns the dictionary for the requested language.

@@ -4,6 +4,7 @@ go 1.25.3
 
 require (
 	github.com/a-h/templ v0.3.960
+	github.com/litao91/goldmark-mathjax v0.0.0-20210217064022-a43cf739a50f
 	github.com/nickng/bibtex v1.4.1
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/tuotoo/qrcode v0.0.0-20220425170535-52ccc2bebf5d

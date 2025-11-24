@@ -20,93 +20,156 @@ templ BlogPost(data BlogPostData, lang string, dict map[string]string) {
 				{Label: data.Post.Title, Active: true},
 			})
 
-			<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-				<!-- Left Sidebar (TOC or Empty) -->
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+				<!-- Left Sidebar: Author Info -->
 				<div class="hidden lg:block lg:col-span-3">
-					<div class="sticky top-24">
-						<a href={ templ.SafeURL(prefixPath("/blog", lang)) } class="btn btn-ghost gap-2">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+					<div class="sticky top-24 space-y-6">
+						<a href={ templ.SafeURL(prefixPath("/blog", lang)) } class="btn btn-ghost btn-sm gap-2 -ml-2 mb-4">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
 							{ dict["BackToBlog"] }
 						</a>
+						
+						if data.Post.Author != nil {
+							<div class="card bg-base-100 border border-base-300 shadow-sm compact">
+								<div class="card-body">
+									<h3 class="text-xs font-bold uppercase opacity-50 mb-3">{ dict["AboutAuthor"] }</h3>
+									<div class="flex flex-col items-center text-center gap-3">
+										if data.Post.Author.Avatar != "" {
+											<img src={ data.Post.Author.Avatar } class="w-20 h-20 rounded-full object-cover border-2 border-primary/10" loading="lazy" />
+										} else {
+											<div class="avatar placeholder">
+												<div class="bg-neutral text-neutral-content rounded-full w-20">
+													<span class="text-2xl">{ string(data.Post.Author.Name[0]) }</span>
+												</div>
+											</div>
+										}
+										<div>
+											<div class="font-bold text-lg">{ data.Post.Author.Name }</div>
+											<div class="text-xs opacity-70 mt-1">{ data.Post.Author.Role }</div>
+										</div>
+										<a href={ templ.SafeURL(prefixPath("/people/" + data.Post.Author.Slug, lang)) } class="btn btn-outline btn-sm btn-block mt-2">{ dict["ViewProfile"] }</a>
+									</div>
+								</div>
+							</div>
+						}
 					</div>
 				</div>
 
 				<!-- Main Content -->
-				<div class="lg:col-span-6">
-					<article class="prose lg:prose-lg mx-auto bg-base-100 p-8 rounded-box shadow-sm">
+				<div class="lg:col-span-7">
+					<article class="prose prose-lg max-w-none bg-base-100 p-6 md:p-10 rounded-xl border border-base-200 shadow-sm">
 						<!-- Header -->
-						<header class="mb-8 not-prose">
+						<header class="mb-10 not-prose border-b border-base-200 pb-8">
 							if len(data.Post.Tags) > 0 {
-								<div class="flex gap-2 mb-4">
+								<div class="flex flex-wrap gap-2 mb-6">
 									for _, tag := range data.Post.Tags {
 										<div class="badge badge-primary badge-outline">{ tag }</div>
 									}
 								</div>
 							}
-							<h1 class="text-4xl font-bold mb-4">{ data.Post.Title }</h1>
-							<div class="flex items-center gap-4 text-base-content/70">
-								<span>{ data.Post.Date.Format("02 Jan 2006") }</span>
-								<span>•</span>
+							<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-base-content">{ data.Post.Title }</h1>
+							<div class="flex items-center gap-4 text-sm text-base-content/70">
+								<span class="flex items-center gap-1">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+									{ data.Post.Date.Format("02 Jan 2006") }
+								</span>
 								if data.Post.Author != nil {
-									<a href={ templ.SafeURL(prefixPath("/people/" + data.Post.Author.Slug, lang)) } class="link link-hover font-medium text-primary">
-										{ data.Post.Author.Name }
+									<span class="hidden md:inline">•</span>
+									<a href={ templ.SafeURL(prefixPath("/people/" + data.Post.Author.Slug, lang)) } class="flex items-center gap-2 hover:text-primary transition-colors">
+										<span class="font-medium">by { data.Post.Author.Name }</span>
 									</a>
 								}
 							</div>
 						</header>
 
 						<!-- Content -->
-						<div class="mb-12">
+						<div id="article-content" class="mb-12">
 							@templ.Raw(string(data.Post.ContentHTML))
 						</div>
 					</article>
 
 					<!-- Navigation Buttons -->
-					<div class="divider my-12"></div>
-					<div class="grid grid-cols-2 gap-4">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
 						<div>
 							if data.Prev != nil {
-								<a href={ templ.SafeURL(prefixPath("/blog/" + data.Prev.Slug, lang)) } class="btn btn-outline btn-block h-auto py-4 text-left flex flex-col items-start gap-1">
-									<span class="text-xs opacity-70">← { dict["Previous"] }</span>
-									<span class="text-sm font-bold truncate w-full">{ data.Prev.Title }</span>
+								<a href={ templ.SafeURL(prefixPath("/blog/" + data.Prev.Slug, lang)) } class="card bg-base-100 border border-base-200 hover:border-primary transition-colors p-4 h-full flex flex-col justify-center group">
+									<span class="text-xs opacity-60 mb-1 group-hover:text-primary">← { dict["Previous"] }</span>
+									<span class="font-bold line-clamp-2">{ data.Prev.Title }</span>
 								</a>
 							}
 						</div>
 						<div>
 							if data.Next != nil {
-								<a href={ templ.SafeURL(prefixPath("/blog/" + data.Next.Slug, lang)) } class="btn btn-outline btn-block h-auto py-4 text-right flex flex-col items-end gap-1">
-									<span class="text-xs opacity-70">{ dict["Next"] } →</span>
-									<span class="text-sm font-bold truncate w-full">{ data.Next.Title }</span>
+								<a href={ templ.SafeURL(prefixPath("/blog/" + data.Next.Slug, lang)) } class="card bg-base-100 border border-base-200 hover:border-primary transition-colors p-4 h-full flex flex-col justify-center text-right group">
+									<span class="text-xs opacity-60 mb-1 group-hover:text-primary">{ dict["Next"] } →</span>
+									<span class="font-bold line-clamp-2">{ data.Next.Title }</span>
 								</a>
 							}
 						</div>
 					</div>
 				</div>
 
-				<!-- Right Sidebar (Author Info) -->
-				<div class="hidden lg:block lg:col-span-4">
-					if data.Post.Author != nil {
-						<div class="sticky top-24 card bg-base-200 compact">
-							<div class="card-body">
-								<h3 class="card-title text-sm">{ dict["AboutAuthor"] }</h3>
-								<div class="flex items-center gap-3 mb-2">
-									if data.Post.Author.Avatar != "" {
-										<img src={ data.Post.Author.Avatar } class="w-10 h-10 rounded-full object-cover" loading="lazy" />
-									} else {
-										<div class="avatar placeholder">
-											<div class="bg-neutral text-neutral-content rounded-full w-10">
-												<span>{ string(data.Post.Author.Name[0]) }</span>
-											</div>
-										</div>
-									}
-									<div class="text-sm font-bold">{ data.Post.Author.Name }</div>
-								</div>
-								<a href={ templ.SafeURL(prefixPath("/people/" + data.Post.Author.Slug, lang)) } class="link link-primary text-xs">{ dict["ViewProfile"] }</a>
-							</div>
-						</div>
-					}
+				<!-- Right Sidebar: TOC -->
+				<div class="hidden lg:block lg:col-span-2">
+					<div class="sticky top-24">
+						<h3 class="text-xs font-bold uppercase opacity-50 mb-4 pl-2">Contenido</h3>
+						<nav id="toc" class="text-sm border-l border-base-300"></nav>
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const content = document.getElementById('article-content');
+				const toc = document.getElementById('toc');
+				if (!content || !toc) return;
+
+				const headings = content.querySelectorAll('h2, h3');
+				if (headings.length === 0) return;
+
+				headings.forEach((heading, index) => {
+					const id = heading.id || `heading-${index}`;
+					heading.id = id;
+
+					const link = document.createElement('a');
+					link.href = `#${id}`;
+					link.textContent = heading.textContent;
+					link.className = 'block py-1 pl-4 border-l-2 border-transparent hover:border-primary hover:text-primary transition-colors text-base-content/70';
+					
+					if (heading.tagName === 'H3') {
+						link.classList.add('pl-8', 'text-xs');
+					}
+
+					link.addEventListener('click', (e) => {
+						e.preventDefault();
+						heading.scrollIntoView({ behavior: 'smooth' });
+					});
+
+					toc.appendChild(link);
+				});
+
+				// Highlight active section on scroll
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							const id = entry.target.id;
+							const links = toc.querySelectorAll('a');
+							links.forEach(link => {
+								if (link.getAttribute('href') === `#${id}`) {
+									link.classList.add('border-primary', 'text-primary', 'font-medium');
+									link.classList.remove('border-transparent', 'text-base-content/70');
+								} else {
+									link.classList.remove('border-primary', 'text-primary', 'font-medium');
+									link.classList.add('border-transparent', 'text-base-content/70');
+								}
+							});
+						}
+					});
+				}, { rootMargin: '-100px 0px -66%' });
+
+				headings.forEach(heading => observer.observe(heading));
+			});
+		</script>
 	}
 }

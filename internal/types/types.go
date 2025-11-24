@@ -61,8 +61,9 @@ type Project struct {
 // Paper representa una publicación académica (desde BibTeX).
 type Paper struct {
 	// Identificadores
-	ID  string // DOI o Citation Key
-	DOI string
+	ID   string // DOI o Citation Key
+	Slug string // Para la URL
+	DOI  string
 
 	// BibTeX Standard Fields
 	Type    string // article, phdthesis, inproceedings
@@ -72,6 +73,7 @@ type Paper struct {
 	Year    int
 	Volume  string
 	URL     string
+	Abstract string // Resumen del paper
 
 	// Custom Fields (x-fields para vinculación)
 	AuthorOrcids []string // x-orcids
@@ -112,6 +114,7 @@ type Database struct {
 	Papers    []*Paper
 	News      []*NewsItem
 	BlogPosts []*BlogPost
+	Tools     []*Tool
 }
 
 // NewDatabase inicializa los mapas para evitar nil pointer panics.
@@ -122,5 +125,16 @@ func NewDatabase() *Database {
 		Papers:    make([]*Paper, 0),
 		News:      make([]*NewsItem, 0),
 		BlogPosts: make([]*BlogPost, 0),
+		Tools:     make([]*Tool, 0),
 	}
+}
+
+// Tool representa una aplicación o herramienta web.
+type Tool struct {
+	ID          string `yaml:"id"`
+	Title       string `yaml:"title"`
+	Summary     string `yaml:"summary"`
+	Link        string `yaml:"link"`        // URL relativa, ej: "/apps/qr"
+	Icon        string `yaml:"icon"`        // Nombre de icono (para usar en SVG) o ruta de img
+	ButtonText  string `yaml:"button_text"` // Ej: "Abrir Generador"
 }

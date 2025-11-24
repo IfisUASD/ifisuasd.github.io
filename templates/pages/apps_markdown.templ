@@ -1,0 +1,334 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+
+templ MarkdownEditor(lang string, dict map[string]string) {
+	@layouts.Base("Editor Markdown", lang, layouts.MetaTags{
+		Description: "Previsualizador de contenido para el Instituto de Física.",
+	}, dict) {
+		<!-- Highlight.js para resaltado de sintaxis - Temas controlados por JS -->
+		<link id="hljs-light" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" disabled/>
+		<link id="hljs-dark" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" disabled/>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+		
+		<script>
+			// Script para sincronizar el tema de Highlight.js con el tema del sitio
+			(function() {
+				function updateHljsTheme() {
+					const theme = document.documentElement.getAttribute('data-theme');
+					const light = document.getElementById('hljs-light');
+					const dark = document.getElementById('hljs-dark');
+					
+					if (theme === 'dark') {
+						light.disabled = true;
+						dark.disabled = false;
+					} else {
+						light.disabled = false;
+						dark.disabled = true;
+					}
+				}
+
+				// Ejecutar al inicio
+				document.addEventListener('DOMContentLoaded', updateHljsTheme);
+
+				// Observar cambios
+				const observer = new MutationObserver(updateHljsTheme);
+				observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			})();
+		</script>
+		
+		<!-- CodeMirror para resaltado en el editor -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/github.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/github-dark.min.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/overlay.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/gfm/gfm.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/shell/shell.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/stex/stex.min.js"></script>
+		
+		<!-- Mermaid para diagramas -->
+		<script type="module">
+			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+			mermaid.initialize({ 
+				startOnLoad: true,
+				theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+			});
+			window.mermaid = mermaid;
+		</script>
+		
+		<!-- Estilos personalizados para el markdown -->
+		<style>
+			/* Estilos adaptativos para bloques de código */
+			#mdOutput pre {
+				background-color: hsl(var(--b2)) !important;
+				border: 1px solid hsl(var(--bc) / 0.1);
+				border-radius: 0.5rem;
+				padding: 1rem;
+			}
+			
+			#mdOutput pre code {
+				background-color: transparent !important;
+				color: hsl(var(--bc)) !important;
+			}
+			
+			/* Mejorar encabezados */
+			#mdOutput h1 {
+				border-bottom: 3px solid hsl(var(--p));
+				padding-bottom: 0.5rem;
+				margin-top: 2rem;
+				margin-bottom: 1.5rem;
+			}
+			
+			#mdOutput h2 {
+				border-bottom: 2px solid hsl(var(--p) / 0.3);
+				padding-bottom: 0.4rem;
+				margin-top: 1.75rem;
+				margin-bottom: 1.25rem;
+			}
+			
+			#mdOutput h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 1rem;
+				position: relative;
+				padding-left: 1rem;
+			}
+			
+			#mdOutput h3::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0.25rem;
+				bottom: 0.25rem;
+				width: 4px;
+				background-color: hsl(var(--p));
+				border-radius: 2px;
+			}
+			
+			/* Mejorar listas */
+			#mdOutput ul, #mdOutput ol {
+				padding-left: 2rem;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+			
+			#mdOutput ul {
+				list-style-type: disc;
+			}
+			
+			#mdOutput ul ul {
+				list-style-type: circle;
+				margin-top: 0.5rem;
+			}
+			
+			#mdOutput ul ul ul {
+				list-style-type: square;
+			}
+			
+			#mdOutput ol {
+				list-style-type: decimal;
+			}
+			
+			#mdOutput li {
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				padding-left: 0.5rem;
+			}
+			
+			#mdOutput li > p {
+				margin-top: 0.25rem;
+				margin-bottom: 0.25rem;
+			}
+			
+			/* Checkboxes en listas de tareas */
+			#mdOutput input[type="checkbox"] {
+				margin-right: 0.5rem;
+			}
+			
+			/* Mejorar párrafos */
+			#mdOutput p {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				line-height: 1.75;
+			}
+			
+			/* Mejorar citas */
+			#mdOutput blockquote {
+				border-left: 4px solid hsl(var(--p));
+				background-color: hsl(var(--b2));
+				padding: 1rem 1.5rem;
+				margin: 1.5rem 0;
+				font-style: italic;
+			}
+			
+			#mdOutput blockquote p:first-child {
+				margin-top: 0;
+			}
+			
+			#mdOutput blockquote p:last-child {
+				margin-bottom: 0;
+			}
+			
+			/* Mejorar tablas */
+			#mdOutput table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 1.5rem 0;
+				border: 1px solid hsl(var(--bc) / 0.2);
+			}
+			
+			#mdOutput th {
+				background-color: hsl(var(--p) / 0.1);
+				font-weight: 600;
+				padding: 0.75rem 1rem;
+				text-align: left;
+				border-bottom: 2px solid hsl(var(--p));
+			}
+			
+			#mdOutput td {
+				padding: 0.75rem 1rem;
+				border-bottom: 1px solid hsl(var(--bc) / 0.1);
+			}
+			
+			#mdOutput tr:hover {
+				background-color: hsl(var(--b2));
+			}
+			
+			/* Código inline */
+			#mdOutput code {
+				background-color: hsl(var(--b2));
+				color: hsl(var(--s));
+				padding: 0.2rem 0.4rem;
+				border-radius: 0.25rem;
+				font-size: 0.9em;
+				font-family: 'Courier New', monospace;
+			}
+			
+			#mdOutput pre code {
+				padding: 0;
+				font-size: 0.875rem;
+			}
+			
+			/* Separadores horizontales */
+			#mdOutput hr {
+				border: none;
+				border-top: 2px solid hsl(var(--bc) / 0.2);
+				margin: 2rem 0;
+			}
+			
+			/* Enlaces */
+			#mdOutput a {
+				color: hsl(var(--p));
+				text-decoration: none;
+				font-weight: 500;
+				transition: all 0.2s;
+			}
+			
+			#mdOutput a:hover {
+				text-decoration: underline;
+				color: hsl(var(--pf));
+			}
+			
+			/* Imágenes */
+			#mdOutput img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 0.5rem;
+				box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+				margin: 1.5rem 0;
+			}
+			
+			/* CodeMirror personalizado */
+			.CodeMirror {
+				height: 100% !important;
+				font-family: 'Courier New', monospace;
+				font-size: 14px;
+				border: none;
+				border-radius: 0.5rem;
+			}
+			
+			.CodeMirror-scroll {
+				min-height: 100%;
+			}
+			
+			/* Tema adaptativo para CodeMirror */
+			[data-theme="dark"] .CodeMirror {
+				background-color: hsl(var(--b1));
+				color: hsl(var(--bc));
+			}
+			
+			[data-theme="light"] .CodeMirror {
+				background-color: hsl(var(--b1));
+				color: hsl(var(--bc));
+			}
+			
+			/* Números de línea (gutters) con mejor contraste en tema oscuro */
+			[data-theme="dark"] .CodeMirror-gutters {
+				background-color: hsl(var(--b2));
+				border-right: 1px solid hsl(var(--bc) / 0.2);
+			}
+			
+			[data-theme="dark"] .CodeMirror-linenumber {
+				color: hsl(var(--bc) / 0.4);
+			}
+			
+			[data-theme="light"] .CodeMirror-gutters {
+				background-color: hsl(var(--b2));
+				border-right: 1px solid hsl(var(--bc) / 0.1);
+			}
+			
+			[data-theme="light"] .CodeMirror-linenumber {
+				color: hsl(var(--bc) / 0.5);
+			}
+			
+			/* Mejorar contraste de los contenedores en tema oscuro */
+			[data-theme="dark"] .border-base-300 {
+				border-color: hsl(var(--bc) / 0.2) !important;
+			}
+			
+			[data-theme="dark"] #mdOutput {
+				background-color: hsl(var(--b1));
+			}
+		</style>
+		
+		<script src={ prefixPath("/assets/js/wasm_exec.js", lang) }></script>
+		<script src={ prefixPath("/assets/js/markdown.js", lang) } defer></script>
+
+		<div class="container mx-auto px-4 h-[calc(100vh-200px)] flex flex-col">
+			<div class="flex justify-between items-center mb-4">
+				<h1 class="text-3xl font-bold text-primary">{ dict["MarkdownEditor"] }</h1>
+				<div class="badge badge-info gap-2">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+					{ dict["RenderIdentical"] }
+				</div>
+			</div>
+
+			<div id="md-loader" class="flex-grow flex items-center justify-center">
+				<span class="loading loading-spinner loading-lg text-primary"></span>
+			</div>
+
+			<div id="md-app" class="hidden flex-grow flex flex-col lg:flex-row gap-6 h-full">
+			<div class="w-full lg:w-1/2 flex flex-col">
+				<label class="label font-semibold">Markdown (Entrada)</label>
+				<div class="border border-base-300 rounded-box bg-base-100 w-full flex-grow overflow-hidden shadow-sm">
+					<div id="editor-container" class="h-full"></div>
+				</div>
+			</div>
+
+			<div class="w-full lg:w-1/2 flex flex-col h-full overflow-hidden">
+				<label class="label font-semibold">Previsualización (Salida)</label>
+				<div class="border border-base-300 rounded-box bg-base-100 w-full flex-grow overflow-y-auto p-8 shadow-sm">
+					<div id="mdOutput" class="prose prose-lg max-w-none"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	}
+}
