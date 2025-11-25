@@ -6,7 +6,7 @@ funding: "FONDOCYT"
 start_date: "2024-03-01"
 end_date: "2026-08-31"
 principal_investigator: "0000-0003-3801-6115"
-coinvestigator: ["000-0002-0029-7292"]
+coinvestigator: ["0000-0002-0029-7292"]
 research_assistant: []
 ---
 

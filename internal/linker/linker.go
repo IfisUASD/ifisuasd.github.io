@@ -1,8 +1,7 @@
 package linker
 
 import (
-	"log"
-
+	"github.com/IfisUASD/ifisuasd.github.io/internal/diagnostics"
 	"github.com/IfisUASD/ifisuasd.github.io/internal/types"
 )
 
@@ -25,7 +24,7 @@ func linkProjectsToPeople(db *types.Database) {
 			pi.Projects = append(pi.Projects, proj)
 		} else {
 			if proj.PrincipalInvestigatorID != "" {
-				log.Printf("⚠️  Warning: Proyecto %s referencia a PI inexistente %s", proj.ID, proj.PrincipalInvestigatorID)
+				diagnostics.LogWarning("⚠️  Warning: Proyecto %s referencia a PI inexistente %s", proj.ID, proj.PrincipalInvestigatorID)
 			}
 		}
 
@@ -37,7 +36,7 @@ func linkProjectsToPeople(db *types.Database) {
 				// Enlace Persona -> Proy (Bidireccional)
 				member.Projects = append(member.Projects, proj)
 			} else {
-				log.Printf("⚠️  Warning: Proyecto %s referencia a CoInvestigador inexistente %s", proj.ID, memberID)
+				diagnostics.LogWarning("⚠️  Warning: Proyecto %s referencia a CoInvestigador inexistente %s", proj.ID, memberID)
 			}
 		}
 
@@ -49,7 +48,7 @@ func linkProjectsToPeople(db *types.Database) {
 				// Enlace Persona -> Proy (Bidireccional)
 				member.Projects = append(member.Projects, proj)
 			} else {
-				log.Printf("⚠️  Warning: Proyecto %s referencia a Asistente inexistente %s", proj.ID, memberID)
+				diagnostics.LogWarning("⚠️  Warning: Proyecto %s referencia a Asistente inexistente %s", proj.ID, memberID)
 			}
 		}
 	}
@@ -62,6 +61,9 @@ func linkPublicationsToPeople(db *types.Database) {
 			if person, exists := db.People[orcid]; exists {
 				pub.LinkedAuthors = append(pub.LinkedAuthors, person)
 				person.Publications = append(person.Publications, pub)
+			} else {
+				// MEJORA: Advertencia de ORCID huérfano en autores
+				diagnostics.LogWarning("⚠️  [Linker] Warning: La publicación '%s' referencia un Autor inexistente (ORCID: %s)", pub.ID, orcid)
 			}
 		}
 
@@ -69,8 +71,10 @@ func linkPublicationsToPeople(db *types.Database) {
 		for _, orcid := range pub.AdvisorOrcids {
 			if person, exists := db.People[orcid]; exists {
 				pub.LinkedAdvisors = append(pub.LinkedAdvisors, person)
-				// Aquí separamos: Va a 'Mentored', NO a 'Publications'
 				person.Mentored = append(person.Mentored, pub)
+			} else {
+				// MEJORA: Advertencia de ORCID huérfano en asesores
+				diagnostics.LogWarning("⚠️  [Linker] Warning: La publicación '%s' referencia un Asesor inexistente (ORCID: %s)", pub.ID, orcid)
 			}
 		}
 	}
@@ -82,6 +86,9 @@ func linkPublicationsToProjects(db *types.Database) {
 			if project, exists := db.Projects[pub.ProjectID]; exists {
 				pub.Project = project
 				project.Publications = append(project.Publications, pub)
+			} else {
+				// MEJORA: Advertencia de Proyecto huérfano
+				diagnostics.LogWarning("⚠️  [Linker] Warning: La publicación '%s' referencia un Proyecto inexistente (ID: %s)", pub.ID, pub.ProjectID)
 			}
 		}
 	}

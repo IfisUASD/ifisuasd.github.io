@@ -3,6 +3,7 @@ package parsers
 import (
 	"bytes"
 	"fmt"
+	"log"
 	"strconv"
 	"strings"
 
@@ -12,63 +13,86 @@ import (
 func ParseBibTeX(filename string, content []byte) ([]*types.Publication, error) {
 	bib, err := bibtex.Parse(bytes.NewReader(content))
 	if err != nil {
-		return nil, fmt.Errorf("error parsing bibtex: %w", err)
+		return nil, fmt.Errorf("❌ ERROR FATAL DE SINTAXIS en archivo '%s': %w (Revisa llaves de cierre o comas faltantes)", filename, err)
 	}
 
 	var pubs []*types.Publication
 
 	for _, entry := range bib.Entries {
-		p := &types.Publication{
-			ID:        entry.CiteName,
-			Slug:      entry.CiteName,
-			Type:      entry.Type,
-			Title:     DecodeLaTeX(getField(entry, "title")),
-			DOI:       getField(entry, "doi"),
-			URL:       getField(entry, "url"),
-			Journal:   DecodeLaTeX(getField(entry, "journal")),
-			Volume:    getField(entry, "volume"),
-			Number:    getField(entry, "number"),
-			Pages:     getField(entry, "pages"),
-			Publisher: DecodeLaTeX(getField(entry, "publisher")),
-			School:    DecodeLaTeX(getField(entry, "school")),
-			Booktitle: DecodeLaTeX(getField(entry, "booktitle")),
-			Abstract:  DecodeLaTeX(getField(entry, "abstract")),
+		// Variable para contexto de error
+		currentField := ""
+		
+		// Función auxiliar para capturar pánicos o errores en campos específicos
+		safeDecode := func(fieldKey string) string {
+			currentField = fieldKey
+			raw := getField(entry, fieldKey)
+			// Aquí podrías validar paréntesis balanceados si fuera necesario antes de DecodeLaTeX
+			return DecodeLaTeX(raw)
 		}
 
-		if yearStr := getField(entry, "year"); yearStr != "" {
-			if y, err := strconv.Atoi(yearStr); err == nil {
-				p.Year = y
+		// Usamos un bloque anónimo para recuperar pánicos si DecodeLaTeX es inestable
+		func() {
+			defer func() {
+				if r := recover(); r != nil {
+					log.Printf("❌ [BibTeX Error] Pánico procesando entrada '%s' en el campo '%s': %v", entry.CiteName, currentField, r)
+				}
+			}()
+
+			p := &types.Publication{
+				ID:        entry.CiteName,
+				Slug:      entry.CiteName,
+				Type:      entry.Type,
+				Title:     safeDecode("title"),
+				DOI:       getField(entry, "doi"),
+				URL:       getField(entry, "url"),
+				Journal:   safeDecode("journal"),
+				Volume:    getField(entry, "volume"),
+				Number:    getField(entry, "number"),
+				Pages:     getField(entry, "pages"),
+				Publisher: safeDecode("publisher"),
+				School:    safeDecode("school"),
+				Booktitle: safeDecode("booktitle"),
+				Abstract:  safeDecode("abstract"),
 			}
-		}
 
-		if authors := getField(entry, "author"); authors != "" {
-			// Limpieza básica de " and " que usa BibTeX
-			rawAuthors := strings.Split(authors, " and ")
-			for _, auth := range rawAuthors {
-				p.Authors = append(p.Authors, DecodeLaTeX(auth))
+			if yearStr := getField(entry, "year"); yearStr != "" {
+				if y, err := strconv.Atoi(yearStr); err == nil {
+					p.Year = y
+				}
 			}
-		}
 
-		// --- CAMPOS PERSONALIZADOS ---
+			if authors := getField(entry, "author"); authors != "" {
+				// Limpieza básica de " and " que usa BibTeX
+				rawAuthors := strings.Split(authors, " and ")
+				for _, auth := range rawAuthors {
+					p.Authors = append(p.Authors, DecodeLaTeX(auth))
+				}
+			}
 
-		// 1. Autores (x-orcids)
-		if val := getField(entry, "x-orcids"); val != "" {
-			p.AuthorOrcids = parseList(val)
-		}
+			// --- CAMPOS PERSONALIZADOS ---
 
-		// 2. Asesores (x-advisors) - NUEVO
-		if val := getField(entry, "x-advisors"); val != "" {
-			p.AdvisorOrcids = parseList(val)
-		}
+			// 1. Autores (x-orcids)
+			if val := getField(entry, "x-orcids"); val != "" {
+				p.AuthorOrcids = parseList(val)
+			}
 
-		// 3. Proyecto (x-project)
-		if val := getField(entry, "x-project"); val != "" {
-			p.ProjectID = strings.Trim(strings.Trim(val, "{}"), " ")
-		}
+			// 2. Asesores (x-advisors) - NUEVO
+			if val := getField(entry, "x-advisors"); val != "" {
+				p.AdvisorOrcids = parseList(val)
+			}
 
-		pubs = append(pubs, p)
+			// 3. Proyecto (x-project)
+			if val := getField(entry, "x-project"); val != "" {
+				p.ProjectID = strings.Trim(strings.Trim(val, "{}"), " ")
+			}
+
+			if p.Title == "" {
+				log.Printf("⚠️  [BibTeX Warning] La entrada '%s' tiene un título vacío o inválido.", entry.CiteName)
+			}
+
+			pubs = append(pubs, p)
+		}()
 	}
-
 	return pubs, nil
 }
 

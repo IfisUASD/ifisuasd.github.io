@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -16,6 +17,10 @@ import (
 	"github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
 	"github.com/IfisUASD/ifisuasd.github.io/templates/pages"
 )
+
+var WarningCount int
+var ErrorList []string
+
 
 func main() {
 	log.Println("🏗️  Iniciando generador del sitio...")
@@ -32,6 +37,17 @@ func main() {
 	if err := buildSite("en", "./output/en"); err != nil {
 		log.Fatalf("❌ Error generando sitio en Inglés: %v", err)
 	}
+
+	log.Println("------------------------------------------------")
+    log.Println("✅ Generación completa.")
+    if WarningCount > 0 {
+        log.Printf("⚠️  Se encontraron %d advertencias que requieren atención:\n", WarningCount)
+        for _, err := range ErrorList {
+            fmt.Println("   - " + err)
+        }
+    } else {
+        log.Println("✨  Compilación limpia: 0 advertencias.")
+    }
 
 	log.Println("✅ Generación completa.")
 }

@@ -278,6 +278,13 @@ templ MarkdownEditor(lang string, dict map[string]string) {
 			[data-theme="dark"] .CodeMirror-linenumber {
 				color: hsl(var(--bc) / 0.4);
 			}
+
+			/* Cursor adaptativo */
+			[data-theme="dark"] .CodeMirror-cursor,
+			.cm-s-github-dark .CodeMirror-cursor {
+				border-left: 2px solid #ffffff !important;
+				border-right: 0 !important;
+			}
 			
 			[data-theme="light"] .CodeMirror-gutters {
 				background-color: hsl(var(--b2));
