@@ -3,7 +3,7 @@ id: "reconocimiento-ceicyt-2025"
 title: "IFIS Celebra la Excelencia Investigativa: Enrique Casanova Galardonado en el X CEICYT"
 date: "2025-11-25"
 summary: "Nuestro Auxiliar de Investigación, Enrique Casanova, fue galardonado hoy por el MESCyT gracias a su investigación en física teórica sobre la ecuación de Klein-Gordon. Este premio reafirma la excelencia científica de nuestro Instituto."
-image: "/assets/images/news/premio-enrique.jpg"
+image: "/assets/images/premio-enrique.jpg"
 ---
 **Santo Domingo, D.N.** — El Instituto de Física de la Universidad Autónoma de Santo Domingo (IFIS) se complace en anunciar que nuestro Auxiliar de Investigación, y estudiante de término de la Escula de Física, **Enrique Ernesto Casanova Benítez**, ha sido galardonado con el **Segundo Lugar** en el área de Educación Científica y Matemática durante la décima edición del Congreso Estudiantil de Investigación Científica y Tecnológica (X CEICYT), organizado por el MESCyT.
 
