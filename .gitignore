@@ -23,6 +23,7 @@ npm-debug.log
 
 
 vendor/
+!assets/vendor/
 
 # Editor / IDE
 
