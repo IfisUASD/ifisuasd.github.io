@@ -225,20 +225,7 @@ func Base(title string, lang string, meta MetaTags, dict map[string]string) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 19, "\"><!-- KaTeX Global --><link rel=\"stylesheet\" href=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var13 templ.SafeURL
-		templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinURLErrs(fmt.Sprintf("/assets/css/styles.css?v=%d", time.Now().Unix()))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/layouts/base.templ`, Line: 50, Col: 94}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 20, "\"><link rel=\"stylesheet\" href=\"/assets/vendor/katex/katex.min.css\"><script defer src=\"/assets/vendor/katex/katex.min.js\"></script><script defer src=\"/assets/vendor/katex/auto-render.min.js\"></script><script>\n\t\t\t\tdocument.addEventListener(\"DOMContentLoaded\", function() {\n\t\t\t\t\trenderMathInElement(document.body, {\n\t\t\t\t\t\tdelimiters: [\n\t\t\t\t\t\t\t{left: '$$', right: '$$', display: true},\n\t\t\t\t\t\t\t{left: '$', right: '$', display: false},\n\t\t\t\t\t\t\t{left: '\\\\(', right: '\\\\)', display: false},\n\t\t\t\t\t\t\t{left: '\\\\[', right: '\\\\]', display: true}\n\t\t\t\t\t\t],\n\t\t\t\t\t\tthrowOnError : false\n\t\t\t\t\t});\n\t\t\t\t});\n\t\t\t</script><!-- Dark Mode Script (Inline to prevent FOUC) --><script>\n\t\t\t\t(function() {\n\t\t\t\t\ttry {\n\t\t\t\t\t\tvar localTheme = localStorage.getItem('theme');\n\t\t\t\t\t\tvar supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;\n\t\t\t\t\t\tif (localTheme === 'dark' || (!localTheme && supportDarkMode)) {\n\t\t\t\t\t\t\tdocument.documentElement.setAttribute('data-theme', 'dark');\n\t\t\t\t\t\t\tdocument.documentElement.classList.add('dark');\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tdocument.documentElement.setAttribute('data-theme', 'light');\n\t\t\t\t\t\t\tdocument.documentElement.classList.remove('dark');\n\t\t\t\t\t\t}\n\t\t\t\t\t} catch (e) {}\n\t\t\t\t})();\n\t\t\t</script></head><!-- Google tag (gtag.js) --><script async src=\"https://www.googletagmanager.com/gtag/js?id=G-S71TGJY11G\"></script><script>\n\t\t\twindow.dataLayer = window.dataLayer || [];\n\t\t\tfunction gtag(){dataLayer.push(arguments);}\n\t\t\tgtag('js', new Date());\n\n\t\t\tgtag('config', 'G-S71TGJY11G');\n\t\t</script><body class=\"min-h-screen bg-base-100 text-base-content flex flex-col\"><!-- Navbar -->")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 19, "\"><!-- KaTeX Global --><link rel=\"stylesheet\" href=\"/assets/vendor/katex/katex.min.css\"><script defer src=\"/assets/vendor/katex/katex.min.js\"></script><script defer src=\"/assets/vendor/katex/auto-render.min.js\"></script><script>\n\t\t\t\tdocument.addEventListener(\"DOMContentLoaded\", function() {\n\t\t\t\t\trenderMathInElement(document.body, {\n\t\t\t\t\t\tdelimiters: [\n\t\t\t\t\t\t\t{left: '$$', right: '$$', display: true},\n\t\t\t\t\t\t\t{left: '$', right: '$', display: false},\n\t\t\t\t\t\t\t{left: '\\\\(', right: '\\\\)', display: false},\n\t\t\t\t\t\t\t{left: '\\\\[', right: '\\\\]', display: true}\n\t\t\t\t\t\t],\n\t\t\t\t\t\tthrowOnError : false\n\t\t\t\t\t});\n\t\t\t\t});\n\t\t\t</script><!-- Dark Mode Script (Inline to prevent FOUC) --><script>\n\t\t\t\t(function() {\n\t\t\t\t\ttry {\n\t\t\t\t\t\tvar localTheme = localStorage.getItem('theme');\n\t\t\t\t\t\tvar supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;\n\t\t\t\t\t\tif (localTheme === 'dark' || (!localTheme && supportDarkMode)) {\n\t\t\t\t\t\t\tdocument.documentElement.setAttribute('data-theme', 'dark');\n\t\t\t\t\t\t\tdocument.documentElement.classList.add('dark');\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tdocument.documentElement.setAttribute('data-theme', 'light');\n\t\t\t\t\t\t\tdocument.documentElement.classList.remove('dark');\n\t\t\t\t\t\t}\n\t\t\t\t\t} catch (e) {}\n\t\t\t\t})();\n\t\t\t</script></head><!-- Google tag (gtag.js) --><script async src=\"https://www.googletagmanager.com/gtag/js?id=G-S71TGJY11G\"></script><script>\n\t\t\twindow.dataLayer = window.dataLayer || [];\n\t\t\tfunction gtag(){dataLayer.push(arguments);}\n\t\t\tgtag('js', new Date());\n\n\t\t\tgtag('config', 'G-S71TGJY11G');\n\t\t</script><body class=\"min-h-screen bg-base-100 text-base-content flex flex-col\"><!-- Navbar -->")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -246,7 +233,7 @@ func Base(title string, lang string, meta MetaTags, dict map[string]string) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 21, "<main class=\"flex-grow container mx-auto px-4 py-8\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 20, "<main class=\"flex-grow container mx-auto px-4 py-8\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -254,7 +241,7 @@ func Base(title string, lang string, meta MetaTags, dict map[string]string) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 22, "</main><!-- Footer -->")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 21, "</main><!-- Footer -->")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -262,7 +249,7 @@ func Base(title string, lang string, meta MetaTags, dict map[string]string) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 23, "</body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 22, "</body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

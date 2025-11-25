@@ -51,6 +51,7 @@ copy-assets:
 	@mkdir -p $(OUTPUT_DIR)/assets
 	@cp -r assets/images $(OUTPUT_DIR)/assets/ 2>/dev/null || :
 	@cp -r assets/js $(OUTPUT_DIR)/assets/ 2>/dev/null || :
+	@cp -r assets/vendor $(OUTPUT_DIR)/assets/ 2>/dev/null || :
 
 # Desarrollo: Escucha cambios (requiere 'air' instalado, opcional)
 dev:
