@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const results = searchIndex.filter(item => {
             return item.title.toLowerCase().includes(lowerQuery) || 
                    item.summary.toLowerCase().includes(lowerQuery) ||
-                   item.type.toLowerCase().includes(lowerQuery);
+                   item.type.toLowerCase().includes(lowerQuery) ||
+                   (item.tags && item.tags.some(tag => tag.toLowerCase().includes(lowerQuery)));
         });
 
         renderResults(results);

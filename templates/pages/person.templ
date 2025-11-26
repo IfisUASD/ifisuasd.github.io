@@ -24,7 +24,11 @@ templ Person(data PersonData, lang string, dict map[string]string) {
 					<div class="card bg-base-100 shadow-xl">
 						<figure class="px-10 pt-10">
 							if data.Person.Avatar != "" {
-								<img src={ data.Person.Avatar } alt={ data.Person.Name } class="rounded-full w-32 h-32 object-cover" loading="lazy" />
+								if data.Person.AvatarAlt != "" {
+									<img src={ data.Person.Avatar } alt={ data.Person.AvatarAlt } class="rounded-full w-32 h-32 object-cover" loading="lazy" />
+								} else {
+									<img src={ data.Person.Avatar } alt={ data.Person.Name } class="rounded-full w-32 h-32 object-cover" loading="lazy" />
+								}
 							} else {
 								<div class="avatar placeholder">
 									<div class="bg-neutral text-neutral-content rounded-full w-32">

@@ -19,6 +19,7 @@ type Person struct {
 	Type   string            `yaml:"type"` // academic, staff, student
 	Email  string            `yaml:"email"`
 	Avatar string            `yaml:"avatar"`
+	AvatarAlt string            `yaml:"avatar_alt"` // Alt text for accessibility
 	Social map[string]string `yaml:"social"` // { "scholar": "...", "twitter": "..." }
 
 	// Contenido
@@ -40,6 +41,7 @@ type Project struct {
 	Title     string    `yaml:"title"`
 	Status    string    `yaml:"status"`     // active, finished
 	Funding   string    `yaml:"funding"`    // FONDOCYT, MESCYT, UASD
+	Tags      []string  `yaml:"tags"`       // Etiquetas adicionales
 	StartDate time.Time `yaml:"start_date"` // YYYY-MM-DD
 	EndDate   time.Time `yaml:"end_date"`
 
@@ -98,6 +100,7 @@ type NewsItem struct {
 	Date    time.Time `yaml:"date"`
 	Summary string    `yaml:"summary"`
 	Image   string    `yaml:"image"`
+	ImageAlt string   `yaml:"image_alt"` // Alt text for accessibility
 	
 	ContentHTML template.HTML
 }

@@ -49,6 +49,7 @@ func ParseProject(filename string, content []byte) (*types.Project, error) {
 		Title                   string   `yaml:"title"`
 		Status                  string   `yaml:"status"`
 		Funding                 string   `yaml:"funding"`
+		Tags                    []string `yaml:"tags"`
 		StartDate               string   `yaml:"start_date"`
 		EndDate                 string   `yaml:"end_date"`
 		PrincipalInvestigatorID string   `yaml:"principal_investigator"`
@@ -68,6 +69,7 @@ func ParseProject(filename string, content []byte) (*types.Project, error) {
 		Title:                   py.Title,
 		Status:                  py.Status,
 		Funding:                 py.Funding,
+		Tags:                    py.Tags,
 		PrincipalInvestigatorID: py.PrincipalInvestigatorID,
 		CoinvestigatorIDs:       py.CoinvestigatorIDs,
 		ResearchAssistantIDs:    py.ResearchAssistantIDs,
@@ -106,6 +108,7 @@ func ParseNewsItem(filename string, content []byte) (*types.NewsItem, error) {
 		Date    string `yaml:"date"`
 		Summary string `yaml:"summary"`
 		Image   string `yaml:"image"`
+		ImageAlt string `yaml:"image_alt"`
 	}
 
 	var ny NewsYAML
@@ -120,6 +123,7 @@ func ParseNewsItem(filename string, content []byte) (*types.NewsItem, error) {
 		Title:       ny.Title,
 		Summary:     ny.Summary,
 		Image:       ny.Image,
+		ImageAlt:    ny.ImageAlt,
 		ContentHTML: html,
 	}
 

@@ -164,6 +164,11 @@ func buildSite(lang string, outputDir string) error {
 			Person: p,
 		}
 
+		if p.Avatar != "" && p.AvatarAlt == "" {
+			WarningCount++
+			ErrorList = append(ErrorList, fmt.Sprintf("Persona %s tiene Avatar pero falta 'avatar_alt'", p.Name))
+		}
+
 		if err := pages.Person(pData, lang, dict).Render(context.Background(), f); err != nil {
 			log.Printf("❌ Error renderizando persona %s: %v", p.Slug, err)
 		}
@@ -296,6 +301,11 @@ func buildSite(lang string, outputDir string) error {
 			News: n,
 			Next: next,
 			Prev: prev,
+		}
+
+		if n.Image != "" && n.ImageAlt == "" {
+			WarningCount++
+			ErrorList = append(ErrorList, fmt.Sprintf("Noticia %s tiene Image pero falta 'image_alt'", n.Title))
 		}
 
 		if err := pages.NewsItem(nData, lang, dict).Render(context.Background(), f); err != nil {
@@ -542,10 +552,11 @@ func buildSite(lang string, outputDir string) error {
 }
 
 type SearchItem struct {
-	Title   string `json:"title"`
-	URL     string `json:"url"`
-	Type    string `json:"type"`
-	Summary string `json:"summary"`
+	Title   string   `json:"title"`
+	URL     string   `json:"url"`
+	Type    string   `json:"type"`
+	Summary string   `json:"summary"`
+	Tags    []string `json:"tags"`
 }
 
 func generateSearchIndex(db *types.Database, outputDir, lang string) error {
@@ -558,6 +569,7 @@ func generateSearchIndex(db *types.Database, outputDir, lang string) error {
 			URL:     prefixPath("/people/"+p.Slug, lang),
 			Type:    "Person",
 			Summary: p.Role,
+			Tags:    []string{p.Role, p.Type},
 		})
 	}
 
@@ -568,6 +580,7 @@ func generateSearchIndex(db *types.Database, outputDir, lang string) error {
 			URL:     prefixPath("/projects/"+p.Slug, lang),
 			Type:    "Project",
 			Summary: p.Status,
+			Tags:    append(p.Tags, p.Funding, p.Status),
 		})
 	}
 
@@ -578,6 +591,7 @@ func generateSearchIndex(db *types.Database, outputDir, lang string) error {
 			URL:     prefixPath("/news/"+n.Slug, lang),
 			Type:    "News",
 			Summary: n.Summary,
+			Tags:    []string{"News", "Noticia"},
 		})
 	}
 
@@ -588,6 +602,7 @@ func generateSearchIndex(db *types.Database, outputDir, lang string) error {
 			URL:     prefixPath("/blog/"+b.Slug, lang),
 			Type:    "Blog",
 			Summary: "Blog Post",
+			Tags:    b.Tags,
 		})
 	}
 

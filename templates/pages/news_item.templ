@@ -44,7 +44,11 @@ templ NewsItem(data NewsItemData, lang string, dict map[string]string) {
 
 					if data.News.Image != "" {
 						<figure class="mb-8">
-							<img src={ data.News.Image } alt={ data.News.Title } class="rounded-xl w-full object-cover shadow-lg" loading="lazy" />
+							if data.News.ImageAlt != "" {
+								<img src={ data.News.Image } alt={ data.News.ImageAlt } class="rounded-xl w-full object-cover shadow-lg" loading="lazy" />
+							} else {
+								<img src={ data.News.Image } alt={ data.News.Title } class="rounded-xl w-full object-cover shadow-lg" loading="lazy" />
+							}
 						</figure>
 					}
 
