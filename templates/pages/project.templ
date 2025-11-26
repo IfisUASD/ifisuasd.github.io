@@ -71,7 +71,11 @@ templ Project(data ProjectData, lang string, dict map[string]string) {
 									<div class="text-xs font-bold uppercase opacity-50 mb-1">Investigador Principal</div>
 									<a href={ templ.SafeURL("/people/" + data.Project.PrincipalInvestigator.Slug) } class="flex items-center gap-3 hover:bg-base-100 p-2 rounded-lg transition-colors">
 										if data.Project.PrincipalInvestigator.Avatar != "" {
-											<img src={ data.Project.PrincipalInvestigator.Avatar } class="w-10 h-10 rounded-full object-cover" />
+											if data.Project.PrincipalInvestigator.AvatarAlt != "" {
+												<img src={ data.Project.PrincipalInvestigator.Avatar } alt={ data.Project.PrincipalInvestigator.AvatarAlt } class="w-10 h-10 rounded-full object-cover" />
+											} else {
+												<img src={ data.Project.PrincipalInvestigator.Avatar } alt={ data.Project.PrincipalInvestigator.Name } class="w-10 h-10 rounded-full object-cover" />
+											}
 										} else {
 											<div class="avatar placeholder">
 												<div class="bg-neutral text-neutral-content rounded-full w-10">

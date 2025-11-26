@@ -34,7 +34,8 @@ css:
 	@echo "🎨 Compilando CSS..."
 	@# Aseguramos que el directorio exista
 	@mkdir -p $(dir $(CSS_OUTPUT))
-	@npx @tailwindcss/cli -i $(CSS_INPUT) -o $(CSS_OUTPUT) --minify
+	@# Filtramos advertencias conocidas de DaisyUI 5 + Tailwind 4 que son falsos positivos (valid CSS @property)
+	@npx @tailwindcss/cli -i $(CSS_INPUT) -o $(CSS_OUTPUT) --minify 2>&1 | grep -F -v -e "Unknown at rule: @property" -e "radialprogress" -e "Found 1 warning" -e "syntax:" -e "inherits:" -e "layer base" -e "│" -e "┆" || true
 
 # 4. Compilar y Ejecutar el Generador (Go)
 build: templ copy-assets wasm

@@ -35,7 +35,11 @@ templ BlogPost(data BlogPostData, lang string, dict map[string]string) {
 									<h3 class="text-xs font-bold uppercase opacity-50 mb-3">{ dict["AboutAuthor"] }</h3>
 									<div class="flex flex-col items-center text-center gap-3">
 										if data.Post.Author.Avatar != "" {
-											<img src={ data.Post.Author.Avatar } class="w-20 h-20 rounded-full object-cover border-2 border-primary/10" loading="lazy" />
+											if data.Post.Author.AvatarAlt != "" {
+												<img src={ data.Post.Author.Avatar } alt={ data.Post.Author.AvatarAlt } class="w-20 h-20 rounded-full object-cover border-2 border-primary/10" loading="lazy" />
+											} else {
+												<img src={ data.Post.Author.Avatar } alt={ data.Post.Author.Name } class="w-20 h-20 rounded-full object-cover border-2 border-primary/10" loading="lazy" />
+											}
 										} else {
 											<div class="avatar placeholder">
 												<div class="bg-neutral text-neutral-content rounded-full w-20">

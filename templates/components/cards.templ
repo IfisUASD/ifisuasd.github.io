@@ -19,7 +19,7 @@ templ ProjectCard(project *types.Project, lang string, dict map[string]string) {
 				{ project.Funding }
 			</p>
 			<div class="card-actions justify-end mt-4">
-				<a href={ templ.SafeURL(prefixPath("/projects/" + project.Slug, lang)) } class="btn btn-primary btn-sm">{ dict["ReadMore"] }</a>
+				<a href={ templ.SafeURL(prefixPath("/projects/" + project.Slug, lang)) } class="btn btn-primary btn-sm" aria-label={ dict["ReadMore"] + " - " + project.Title }>{ dict["ReadMore"] }</a>
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,7 @@ templ PersonCard(person *types.Person, lang string, dict map[string]string) {
 			</h2>
 			<p class="text-sm uppercase tracking-wide text-base-content/60">{ person.Role }</p>
 			<div class="card-actions mt-2">
-				<a href={ templ.SafeURL(prefixPath("/people/" + person.Slug, lang)) } class="btn btn-ghost btn-sm">{ dict["ViewProfile"] }</a>
+				<a href={ templ.SafeURL(prefixPath("/people/" + person.Slug, lang)) } class="btn btn-ghost btn-sm" aria-label={ dict["ViewProfile"] + " - " + person.Name }>{ dict["ViewProfile"] }</a>
 			</div>
 		</div>
 	</div>
@@ -62,7 +62,7 @@ templ NewsCard(news *types.NewsItem, lang string, dict map[string]string) {
 			</h2>
 			<p class="text-sm text-base-content/80 line-clamp-3">{ news.Summary }</p>
 			<div class="card-actions justify-end mt-4">
-				<a href={ templ.SafeURL(prefixPath("/news/" + news.Slug, lang)) } class="btn btn-primary btn-sm">{ dict["ReadMore"] }</a>
+				<a href={ templ.SafeURL(prefixPath("/news/" + news.Slug, lang)) } class="btn btn-primary btn-sm" aria-label={ dict["ReadMore"] + " - " + news.Title }>{ dict["ReadMore"] }</a>
 			</div>
 		</div>
 	</div>
@@ -85,7 +85,7 @@ templ ToolCard(tool *types.Tool, lang string) {
 			</div>
 			<p class="text-base-content/70 mb-4 min-h-[3rem]">{ tool.Summary }</p>
 			<div class="card-actions justify-end">
-				<a href={ templ.SafeURL(prefixPath(tool.Link, lang)) } class="btn btn-primary w-full sm:w-auto group">
+				<a href={ templ.SafeURL(prefixPath(tool.Link, lang)) } class="btn btn-primary w-full sm:w-auto group" aria-label={ tool.ButtonText + " - " + tool.Title }>
 					{ tool.ButtonText }
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
 				</a>

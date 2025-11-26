@@ -4,7 +4,7 @@ templ Navbar(lang string, dict map[string]string) {
 	<div class="navbar bg-base-100 shadow-sm sticky top-0 z-50">
 		<div class="navbar-start">
 			<div class="dropdown">
-				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Abrir menú">
+				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label={ dict["OpenMenu"] }>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
 				</div>
 				<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -32,19 +32,20 @@ templ Navbar(lang string, dict map[string]string) {
 		</div>
 		<div class="navbar-end gap-2">
 			<!-- Search Icon -->
-			<a href={ templ.SafeURL(prefixPath("/search", lang)) } class="btn btn-ghost btn-circle btn-sm">
+			<!-- Search Icon -->
+			<a href={ templ.SafeURL(prefixPath("/search", lang)) } class="btn btn-ghost btn-circle btn-sm" aria-label={ dict["Search"] }>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
 			</a>
 
 			<!-- Language Selector -->
 			if lang == "es" {
-				<button onclick="switchLanguage('en')" class="btn btn-ghost btn-sm hover:text-primary">EN</button>
+				<button onclick="switchLanguage('en')" class="btn btn-ghost btn-sm hover:text-primary" aria-label={ dict["SwitchToEnglish"] }>EN</button>
 			} else {
-				<button onclick="switchLanguage('es')" class="btn btn-ghost btn-sm hover:text-primary">ES</button>
+				<button onclick="switchLanguage('es')" class="btn btn-ghost btn-sm hover:text-primary" aria-label={ dict["SwitchToSpanish"] }>ES</button>
 			}
 
 			<!-- Theme Controller -->
-			<label class="swap swap-rotate btn btn-ghost btn-circle btn-sm hover:text-primary">
+			<label class="swap swap-rotate btn btn-ghost btn-circle btn-sm hover:text-primary" aria-label={ dict["ToggleTheme"] }>
 				<!-- this hidden checkbox controls the state -->
 				<input type="checkbox" class="theme-controller" value="dark" onchange="toggleTheme(this)"/>
 				

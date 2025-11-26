@@ -46,7 +46,12 @@ var es = Dictionary{
 	"PublicationsDescription": "Listado completo de publicaciones científicas del Instituto de Física",
 	"TotalPublications": "Total de Publicaciones",
 	"NoPublications": "No hay publicaciones disponibles en este momento",
-
+	"OpenMenu": "Abrir menú",
+	"SwitchToEnglish": "Cambiar a Inglés",
+	"SwitchToSpanish": "Cambiar a Español",
+	"ToggleTheme": "Alternar tema oscuro/claro",
+	"VisitProfile": "Visitar perfil en",
+	"CopyClipboard": "Copiar al portapapeles",
 }
 
 var en = Dictionary{
@@ -76,6 +81,7 @@ var en = Dictionary{
 	"RecentPublications": "Recent Publications",
 	"InstituteOfPhysics": "Institute of Physics",
 	"UASD":            "UASD",
+	"Search":          "Search",
 	"Apps": "Apps",
 	"MarkdownEditor": "Content Editor",
 	"RenderIdentical": "Identical rendering to website",
@@ -90,6 +96,12 @@ var en = Dictionary{
 	"PublicationsDescription": "Complete list of scientific publications from the Institute of Physics",
 	"TotalPublications": "Total Publications",
 	"NoPublications": "No publications available at this time",
+	"OpenMenu": "Open menu",
+	"SwitchToEnglish": "Switch to English",
+	"SwitchToSpanish": "Switch to Spanish",
+	"ToggleTheme": "Toggle dark/light theme",
+	"VisitProfile": "Visit profile on",
+	"CopyClipboard": "Copy to clipboard",
 }
 
 // GetDictionary returns the dictionary for the requested language.

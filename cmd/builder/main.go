@@ -16,6 +16,7 @@ import (
 	"github.com/IfisUASD/ifisuasd.github.io/internal/types"
 	"github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
 	"github.com/IfisUASD/ifisuasd.github.io/templates/pages"
+	"golang.org/x/net/html"
 )
 
 var WarningCount int
@@ -37,6 +38,9 @@ func main() {
 	if err := buildSite("en", "./output/en"); err != nil {
 		log.Fatalf("❌ Error generando sitio en Inglés: %v", err)
 	}
+
+	// Verificar Accesibilidad
+	checkAccessibility("./output")
 
 	log.Println("------------------------------------------------")
     log.Println("✅ Generación completa.")
@@ -668,5 +672,87 @@ func checkMissingTranslations(contentDir string) {
 
 	if err != nil {
 		log.Printf("Error verificando traducciones: %v", err)
+	}
+}
+
+func checkAccessibility(outputDir string) {
+	log.Println("♿ Verificando accesibilidad...")
+	
+	err := filepath.Walk(outputDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() || !strings.HasSuffix(path, ".html") {
+			return nil
+		}
+
+		f, err := os.Open(path)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+
+		doc, err := html.Parse(f)
+		if err != nil {
+			return err
+		}
+
+		var fNode func(*html.Node)
+		fNode = func(n *html.Node) {
+			if n.Type == html.ElementNode && n.Data == "a" {
+				hasAriaLabel := false
+				for _, a := range n.Attr {
+					if a.Key == "aria-label" {
+						hasAriaLabel = true
+						break
+					}
+				}
+				
+				// Check if it has text content
+				hasText := false
+				var checkText func(*html.Node)
+				checkText = func(c *html.Node) {
+					if c.Type == html.TextNode && strings.TrimSpace(c.Data) != "" {
+						hasText = true
+					}
+					for child := c.FirstChild; child != nil; child = child.NextSibling {
+						checkText(child)
+					}
+				}
+				checkText(n)
+
+				if !hasAriaLabel && !hasText {
+					 relPath, _ := filepath.Rel(outputDir, path)
+					 WarningCount++
+					 ErrorList = append(ErrorList, fmt.Sprintf("Accesibilidad: Link vacío sin aria-label en %s", relPath))
+				}
+			}
+			// Check images
+			if n.Type == html.ElementNode && n.Data == "img" {
+				hasAlt := false
+				for _, a := range n.Attr {
+					if a.Key == "alt" {
+						hasAlt = true
+						break
+					}
+				}
+				if !hasAlt {
+					 relPath, _ := filepath.Rel(outputDir, path)
+					 WarningCount++
+					 ErrorList = append(ErrorList, fmt.Sprintf("Accesibilidad: Imagen sin alt en %s", relPath))
+				}
+			}
+
+			for c := n.FirstChild; c != nil; c = c.NextSibling {
+				fNode(c)
+			}
+		}
+		fNode(doc)
+
+		return nil
+	})
+
+	if err != nil {
+		log.Printf("Error verificando accesibilidad: %v", err)
 	}
 }
