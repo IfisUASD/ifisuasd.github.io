@@ -20,7 +20,7 @@ clean:
 # 2. Generar código Go desde Templ
 templ:
 	@echo "🔥 Generando templates..."
-	@templ generate
+	@go tool templ generate
 
 # 2.1 Compilar Aplicación WebAssembly (WASM)
 wasm:
