@@ -5,6 +5,7 @@ role: "Director"
 type: "academic"
 email: "dperez42@uasd.edu.do"
 avatar: "/assets/images/vladimir-perez.jpg"
+avatar_alt: "Retrato profesional en primer plano del Dr. Vladimir Pérez, Director del Instituto de Física. Es un hombre de cabello corto, oscuro y rizado, mirando directamente a la cámara con una expresión neutra. Viste una camisa de botones azul claro con rayas finas verticales sobre un fondo liso blanquecino."
 social:
   scholar: "https://scholar.google.com/citations?user=bw9A6Q8AAAAJ&hl=es"
   twitter: "https://x.com/vladimirck"

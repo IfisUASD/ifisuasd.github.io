@@ -5,6 +5,7 @@ role: "Coordinadora/Investigadora"
 type: "academic"
 email: "emontero74@uasd.edu.do"
 avatar: "/assets/images/erika-montero.jpeg"
+avatar_alt: "Retrato profesional de la investigadora Erika Montero. Ella mira de frente a la cámara con una sonrisa suave, tiene el cabello corto y oscuro, y viste un saco marrón oscuro sobre una blusa blanca con rayas negras, sobre un fondo blanco."
 social:
   scholar: "https://scholar.google.com.do/citations?hl=es&user=0kwv064AAAAJ"
 ---

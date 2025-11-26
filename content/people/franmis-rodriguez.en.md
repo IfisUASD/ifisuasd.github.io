@@ -5,6 +5,7 @@ role: "Researcher"
 type: "academic"
 email: "frodriguez49@uasd.edu.do"
 avatar: "/assets/images/franmis-rodriguez.jpeg"
+avatar_alt: "Portrait of Dr. Franmis Rodriguez, a middle-aged man with short gray hair and glasses, sitting at a desk and smiling at the camera. He wears a navy blue blazer over a blue and green plaid shirt. Behind him is a red wall with two framed certificates."
 social:
   scholar: "https://scholar.google.com/citations?user=bw9A6Q8AAAAJ&hl=es"
 ---

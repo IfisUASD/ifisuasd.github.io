@@ -5,6 +5,7 @@ role: "Coordinator/Researcher"
 type: "academic"
 email: "emontero74@uasd.edu.do"
 avatar: "/assets/images/erika-montero.jpeg"
+avatar_alt: "Professional headshot of researcher Erika Montero. She is looking directly at the camera with a gentle smile, has short dark hair, and wears a dark brown blazer over a white, black-striped blouse against a white background."
 social:
   scholar: "https://scholar.google.com.do/citations?hl=es&user=XvxwAp8AAAAJ"
 ---

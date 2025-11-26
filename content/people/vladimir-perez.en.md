@@ -5,6 +5,7 @@ role: "Director"
 type: "academic"
 email: "dperez42@uasd.edu.do"
 avatar: "/assets/images/vladimir-perez.jpg"
+avatar_alt: "Professional headshot of Dr. Vladimir Pérez, Director of the Institute of Physics. He is a man with short, dark curly hair, looking directly at the camera with a neutral expression. He is wearing a light blue button-down shirt with fine vertical stripes against a plain off-white background."
 social:
   scholar: "https://scholar.google.com/citations?user=bw9A6Q8AAAAJ&hl=es"
   twitter: "https://x.com/vladimirck"

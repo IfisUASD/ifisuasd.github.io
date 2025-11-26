@@ -5,6 +5,7 @@ role: "Investigador"
 type: "academic"
 email: "frodriguez49@uasd.edu.do"
 avatar: "/assets/images/franmis-rodriguez.jpeg"
+avatar_alt: "Retrato del Dr. Franmis Rodríguez, un hombre de mediana edad con cabello corto y canoso y gafas, sentado en un escritorio y sonriendo a la cámara. Viste una chaqueta azul marino sobre una camisa de cuadros azules y verdes. Detrás de él hay una pared roja con dos diplomas enmarcados."
 social:
   scholar: "https://scholar.google.com/citations?user=bw9A6Q8AAAAJ&hl=es"
 ---

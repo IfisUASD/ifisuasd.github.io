@@ -4,6 +4,7 @@ title: "IFIS Celebrates Research Excellence: Enrique Casanova Awarded at X CEICY
 date: "2025-11-25"
 summary: "Our Research Assistant, Enrique Casanova, was awarded today by MESCyT for his research in theoretical physics on the Klein-Gordon equation. This award reaffirms the scientific excellence of our Institute."
 image: "/assets/images/premio-enrique.jpg"
+image_alt: "Enrique Casanova Benítez (left) poses holding his Second Place certificate from the X CEICYT, accompanied by Dr. Vladimir Pérez (right), Director of the Institute of Physics. Enrique wears a black jacket and glasses, while Dr. Pérez wears a light blue guayabera-style shirt. Both stand in front of a backdrop featuring logos of the Universidad Domínico Americano (UNICDA)."
 ---
 **Santo Domingo, D.N.** — The Institute of Physics of the Autonomous University of Santo Domingo (IFIS) is pleased to announce that our Research Assistant and final-year student at the School of Physics, **Enrique Ernesto Casanova Benítez**, has been awarded **Second Place** in the area of Scientific and Mathematics Education during the tenth edition of the Student Congress on Scientific and Technological Research (X CEICYT), organized by the Ministry of Higher Education, Science and Technology (MESCyT).
 
