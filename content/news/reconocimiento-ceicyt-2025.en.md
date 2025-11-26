@@ -14,5 +14,5 @@ Casanova Benítez was distinguished for his outstanding research titled:
 
 > "Symmetries as a differential basis for compatible operators of the Klein-Gordon equation"
 
-This work represents a significant contribution to the study of fundamental mathematical structures in theoretical physics. This achievement not only highlights the individual talent of our students but also reaffirms the unwavering commitment of the Institute, the Faculty of Sciences, and the [UASD](www.uasd.edu.do) to academic excellence and cutting-edge research in the Dominican Republic.
+This work represents a significant contribution to the study of fundamental mathematical structures in theoretical physics. This achievement not only highlights the individual talent of our students but also reaffirms the unwavering commitment of the Institute, the Faculty of Sciences, and the [UASD](https://uasd.edu.do/) to academic excellence and cutting-edge research in the Dominican Republic.
 

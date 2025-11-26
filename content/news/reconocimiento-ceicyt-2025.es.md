@@ -14,5 +14,5 @@ Casanova Benítez fue distinguido por su destacada investigación titulada:
 
 > «Simetrías como base diferencial de operadores compatibles de la ecuación de Klein-Gordon»
 
-Este trabajo representa un aporte significativo al estudio de las estructuras matemáticas fundamentales en la física teórica. Este logro no solo destaca el talento individual de nuestros estudiantes, sino que reafirma el compromiso inquebrantable del Instituto, de la Facultad de Ciencias y de la [UASD](www.uasd.edu.do) con la excelencia académica y la investigación de vanguardia en la República Dominicana.
+Este trabajo representa un aporte significativo al estudio de las estructuras matemáticas fundamentales en la física teórica. Este logro no solo destaca el talento individual de nuestros estudiantes, sino que reafirma el compromiso inquebrantable del Instituto, de la Facultad de Ciencias y de la [UASD](https://uasd.edu.do/) con la excelencia académica y la investigación de vanguardia en la República Dominicana.
 
