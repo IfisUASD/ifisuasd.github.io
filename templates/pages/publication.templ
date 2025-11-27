@@ -86,7 +86,7 @@ templ Publication(data PublicationData, lang string, dict map[string]string) {
 					<section class="mb-8">
 						<h2 class="text-2xl font-bold mb-4">{ dict["Abstract"] }</h2>
 						<div class="prose max-w-none">
-							<p class="text-justify leading-relaxed">{ data.Publication.Abstract }</p>
+							<p class="text-justify leading-relaxed whitespace-pre-line">{ data.Publication.Abstract }</p>
 						</div>
 					</section>
 				}
