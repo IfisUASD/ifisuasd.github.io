@@ -7,7 +7,7 @@ templ Navbar(lang string, dict map[string]string) {
 				<div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label={ dict["OpenMenu"] }>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
 				</div>
-				<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+				<ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80">
 					<li><a href={ templ.SafeURL(PrefixPath("/", lang)) }>{ dict["Home"] }</a></li>
 					<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
 					<li><a href={ templ.SafeURL(PrefixPath("/people", lang)) }>{ dict["People"] }</a></li>
