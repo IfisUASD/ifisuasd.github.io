@@ -90,6 +90,30 @@ func ParseBibTeX(filename string, content []byte) ([]*types.Publication, error) 
 				log.Printf("⚠️  [BibTeX Warning] La entrada '%s' tiene un título vacío o inválido.", entry.CiteName)
 			}
 
+			// Validar campos desconocidos para evitar errores de tipeo (ej: x-orcid vs x-orcids)
+			allowedFields := map[string]bool{
+				// Standard BibTeX
+				"title": true, "author": true, "year": true, "journal": true,
+				"volume": true, "number": true, "pages": true, "publisher": true,
+				"school": true, "booktitle": true, "abstract": true, "doi": true,
+				"url": true, "month": true, "editor": true, "series": true,
+				"address": true, "edition": true, "howpublished": true,
+				"institution": true, "note": true, "key": true, "crossref": true,
+				"type": true, "isbn": true, "issn": true, "copyright": true,
+				"language": true, "location": true, "keywords": true,
+				
+				// Custom Fields
+				"x-orcids": true, "x-advisors": true, "x-project": true,
+				"x-fetchedfrom": true, // Metadata tool
+			}
+
+			for key := range entry.Fields {
+				keyLower := strings.ToLower(key)
+				if !allowedFields[keyLower] {
+					log.Printf("⚠️  [BibTeX Warning] Campo desconocido '%s' en entrada '%s'. ¿Es un error de tipeo?", key, entry.CiteName)
+				}
+			}
+
 			pubs = append(pubs, p)
 		}()
 	}
