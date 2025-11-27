@@ -9,7 +9,15 @@ templ Navbar(lang string, dict map[string]string) {
 				</div>
 				<ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80">
 					<li><a href={ templ.SafeURL(PrefixPath("/", lang)) }>{ dict["Home"] }</a></li>
-					<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+					<li>
+						<details>
+							<summary>{ dict["Research"] }</summary>
+							<ul>
+								<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+								<li><a href={ templ.SafeURL(PrefixPath("/publications", lang)) }>{ dict["Publications"] }</a></li>
+							</ul>
+						</details>
+					</li>
 					<li><a href={ templ.SafeURL(PrefixPath("/people", lang)) }>{ dict["People"] }</a></li>
 					<li><a href={ templ.SafeURL(PrefixPath("/news", lang)) }>{ dict["News"] }</a></li>
 					<li><a href={ templ.SafeURL(PrefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
@@ -27,7 +35,15 @@ templ Navbar(lang string, dict map[string]string) {
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
 				<li><a href={ templ.SafeURL(PrefixPath("/", lang)) }>{ dict["Home"] }</a></li>
-				<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+				<li>
+					<details>
+						<summary>{ dict["Research"] }</summary>
+						<ul class="p-2 bg-base-100 rounded-t-none z-[1]">
+							<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+							<li><a href={ templ.SafeURL(PrefixPath("/publications", lang)) }>{ dict["Publications"] }</a></li>
+						</ul>
+					</details>
+				</li>
 				<li><a href={ templ.SafeURL(PrefixPath("/people", lang)) }>{ dict["People"] }</a></li>
 				<li><a href={ templ.SafeURL(PrefixPath("/news", lang)) }>{ dict["News"] }</a></li>
 				<li><a href={ templ.SafeURL(PrefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>

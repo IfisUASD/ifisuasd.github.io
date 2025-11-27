@@ -21,7 +21,7 @@ templ Home(data HomeData, lang string, dict map[string]string) {
 			
 			<!-- Content -->
 			<div class="hero-content text-center z-10 relative">
-				<div class="text-center lg:text-left">
+				<div class="text-center">
 					<div class="text-sm uppercase tracking-widest mb-2 font-semibold opacity-80 text-base-content/70">
 						{ dict["FacultyOfSciences"] }
 					</div>
@@ -31,9 +31,6 @@ templ Home(data HomeData, lang string, dict map[string]string) {
 					<p class="py-6 text-2xl font-medium text-base-content/90">
 						{ dict["HeroSubtitle"] }
 					</p>
-					<a href={ templ.SafeURL(components.PrefixPath("/projects", lang)) } class="btn btn-primary btn-lg shadow-lg hover:shadow-xl transition-all duration-300 border-none bg-primary/90 hover:bg-primary text-primary-content">
-						{ dict["ViewProjects"] }
-					</a>
 				</div>
 			</div>
 		</div>
