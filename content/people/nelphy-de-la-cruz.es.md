@@ -1,7 +1,7 @@
 ---
 orcid: "0000-0002-9994-0152"
 name: "Nelphy De la Cruz Félix, Ph.D."
-role: "Investigadora"
+role: "Coordinadora/Investigadora"
 type: "academic"
 email: "ndelacruz72@uasd.edu.do"
 avatar: "/assets/images/nelphy-de-la-cruz.jpeg"
