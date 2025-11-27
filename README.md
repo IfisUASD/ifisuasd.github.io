@@ -7,7 +7,7 @@ Este repositorio contiene el código fuente del sitio web oficial del Instituto 
 El sitio está construido utilizando una arquitectura estática moderna y eficiente:
 
 *   **Go (Golang) v1.25+**: Lenguaje principal para la generación del sitio.
-*   **Templ**: Motor de plantillas type-safe para Go.
+*   **Templ**: Motor de plantillas type-safe para Go (usado como `go tool`).
 *   **TailwindCSS v4**: Framework de utilidades CSS para el diseño.
 *   **DaisyUI**: Librería de componentes para Tailwind.
 *   **Playwright**: Pruebas End-to-End (E2E).
