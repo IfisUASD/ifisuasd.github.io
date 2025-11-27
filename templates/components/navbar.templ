@@ -8,32 +8,36 @@ templ Navbar(lang string, dict map[string]string) {
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
 				</div>
 				<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-					<li><a href={ templ.SafeURL(prefixPath("/", lang)) }>{ dict["Home"] }</a></li>
-					<li><a href={ templ.SafeURL(prefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
-					<li><a href={ templ.SafeURL(prefixPath("/people", lang)) }>{ dict["People"] }</a></li>
-					<li><a href={ templ.SafeURL(prefixPath("/news", lang)) }>{ dict["News"] }</a></li>
-					<li><a href={ templ.SafeURL(prefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
-					<li><a href={ templ.SafeURL(prefixPath("/apps", lang)) }>{ dict["Apps"] }</a></li>
+					<li><a href={ templ.SafeURL(PrefixPath("/", lang)) }>{ dict["Home"] }</a></li>
+					<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+					<li><a href={ templ.SafeURL(PrefixPath("/people", lang)) }>{ dict["People"] }</a></li>
+					<li><a href={ templ.SafeURL(PrefixPath("/news", lang)) }>{ dict["News"] }</a></li>
+					<li><a href={ templ.SafeURL(PrefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
+					<li><a href={ templ.SafeURL(PrefixPath("/apps", lang)) }>{ dict["Apps"] }</a></li>
 				</ul>
 			</div>
-			<a class="btn btn-ghost text-xl" href={ templ.SafeURL(prefixPath("/", lang)) }>
-				<span class="text-primary font-bold">{ dict["InstituteOfPhysics"] }</span> { dict["UASD"] }
+			<a class="btn btn-ghost text-xl h-auto py-2" href={ templ.SafeURL(PrefixPath("/", lang)) }>
+				<img src="/assets/images/logos/ifis-logo-azul.png" alt="Logo IFIS" class="h-10 w-auto mr-2" />
+				<div class="flex flex-col items-start leading-tight">
+					<span class="text-primary font-bold text-sm">{ dict["InstituteOfPhysics"] }</span>
+					<span class="text-xs">{ dict["UASD"] }</span>
+				</div>
 			</a>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
-				<li><a href={ templ.SafeURL(prefixPath("/", lang)) }>{ dict["Home"] }</a></li>
-				<li><a href={ templ.SafeURL(prefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
-				<li><a href={ templ.SafeURL(prefixPath("/people", lang)) }>{ dict["People"] }</a></li>
-				<li><a href={ templ.SafeURL(prefixPath("/news", lang)) }>{ dict["News"] }</a></li>
-				<li><a href={ templ.SafeURL(prefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
-				<li><a href={ templ.SafeURL(prefixPath("/apps", lang)) }>{ dict["Apps"] }</a></li>
+				<li><a href={ templ.SafeURL(PrefixPath("/", lang)) }>{ dict["Home"] }</a></li>
+				<li><a href={ templ.SafeURL(PrefixPath("/projects", lang)) }>{ dict["Projects"] }</a></li>
+				<li><a href={ templ.SafeURL(PrefixPath("/people", lang)) }>{ dict["People"] }</a></li>
+				<li><a href={ templ.SafeURL(PrefixPath("/news", lang)) }>{ dict["News"] }</a></li>
+				<li><a href={ templ.SafeURL(PrefixPath("/blog", lang)) }>{ dict["Blog"] }</a></li>
+				<li><a href={ templ.SafeURL(PrefixPath("/apps", lang)) }>{ dict["Apps"] }</a></li>
 			</ul>
 		</div>
 		<div class="navbar-end gap-2">
 			<!-- Search Icon -->
 			<!-- Search Icon -->
-			<a href={ templ.SafeURL(prefixPath("/search", lang)) } class="btn btn-ghost btn-circle btn-sm" aria-label={ dict["Search"] }>
+			<a href={ templ.SafeURL(PrefixPath("/search", lang)) } class="btn btn-ghost btn-circle btn-sm" aria-label={ dict["Search"] }>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
 			</a>
 

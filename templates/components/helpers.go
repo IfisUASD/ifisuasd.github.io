@@ -2,7 +2,7 @@ package components
 
 import "strings"
 
-func prefixPath(path, lang string) string {
+func PrefixPath(path, lang string) string {
 	if strings.HasPrefix(path, "/assets") {
 		return path
 	}

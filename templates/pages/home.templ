@@ -13,15 +13,208 @@ type HomeData struct {
 templ Home(data HomeData, lang string, dict map[string]string) {
 	@layouts.Base("Inicio", lang, data.Meta, dict) {
 		<!-- Hero Section -->
-		<div class="hero min-h-[50vh] bg-base-200 rounded-box mb-12">
-			<div class="hero-content text-center">
-				<div class="max-w-md">
-					<h1 class="text-5xl font-bold">Instituto de Física</h1>
-					<p class="py-6">Investigación y Ciencia al servicio de la nación.</p>
-					<a href="/projects" class="btn btn-primary">Ver Proyectos</a>
+		<!-- Hero Section -->
+		<!-- Hero Section -->
+		<div class="hero min-h-[60vh] rounded-box mb-12 relative overflow-hidden bg-base-300">
+			<!-- Canvas Background -->
+			<canvas id="hero-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+			
+			<!-- Content -->
+			<div class="hero-content text-center z-10 relative">
+				<div class="text-center lg:text-left">
+					<div class="text-sm uppercase tracking-widest mb-2 font-semibold opacity-80 text-base-content/70">
+						{ dict["FacultyOfSciences"] }
+					</div>
+					<h1 class="text-5xl lg:text-7xl font-extrabold text-base-content mb-4 tracking-tight">
+						{ dict["HeroTitle"] }
+					</h1>
+					<p class="py-6 text-2xl font-medium text-base-content/90">
+						{ dict["HeroSubtitle"] }
+					</p>
+					<a href={ templ.SafeURL(components.PrefixPath("/projects", lang)) } class="btn btn-primary btn-lg shadow-lg hover:shadow-xl transition-all duration-300 border-none bg-primary/90 hover:bg-primary text-primary-content">
+						{ dict["ViewProjects"] }
+					</a>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			(function() {
+				const canvas = document.getElementById('hero-canvas');
+				const ctx = canvas.getContext('2d');
+				let width, height;
+				let particles = [];
+				let mouse = { x: null, y: null };
+
+				// Configuration
+				const particleCount = 60;
+				const connectionDistance = 100;
+				const mouseDistance = 200; // Increased interaction range
+
+				function resize() {
+					width = canvas.width = canvas.offsetWidth;
+					height = canvas.height = canvas.offsetHeight;
+				}
+
+				function isDarkMode() {
+					return document.documentElement.classList.contains('dark') || 
+						   document.documentElement.getAttribute('data-theme') === 'dark';
+				}
+
+				class Particle {
+					constructor() {
+						this.x = Math.random() * width;
+						this.y = Math.random() * height;
+						this.vx = (Math.random() - 0.5) * 0.5;
+						this.vy = (Math.random() - 0.5) * 0.5;
+						this.size = Math.random() * 2 + 1;
+						this.setColors();
+					}
+
+					setColors() {
+						if (isDarkMode()) {
+							// Dark mode: Light Blue, Cyan, White
+							const colors = ['100, 200, 255', '0, 255, 255', '200, 200, 255'];
+							this.color = colors[Math.floor(Math.random() * colors.length)];
+							this.alpha = Math.random() * 0.5 + 0.2;
+						} else {
+							// Light mode: Dark Blue, Navy, Royal Blue
+							const colors = ['0, 50, 150', '0, 100, 200', '50, 50, 180'];
+							this.color = colors[Math.floor(Math.random() * colors.length)];
+							this.alpha = Math.random() * 0.4 + 0.1;
+						}
+					}
+
+					update() {
+						this.x += this.vx;
+						this.y += this.vy;
+
+						// Mouse interaction
+						if (mouse.x != null) {
+							let dx = mouse.x - this.x;
+							let dy = mouse.y - this.y;
+							let distance = Math.sqrt(dx * dx + dy * dy);
+
+							if (distance < mouseDistance) {
+								const forceDirectionX = dx / distance;
+								const forceDirectionY = dy / distance;
+								const force = (mouseDistance - distance) / mouseDistance;
+								// Repel force
+								const directionX = forceDirectionX * force * this.size * 1.5; 
+								const directionY = forceDirectionY * force * this.size * 1.5;
+
+								this.vx -= directionX * 0.05;
+								this.vy -= directionY * 0.05;
+							}
+						}
+
+						// Wrap around screen
+						if (this.x < 0) this.x = width;
+						if (this.x > width) this.x = 0;
+						if (this.y < 0) this.y = height;
+						if (this.y > height) this.y = 0;
+						
+						// Damping
+						if (Math.abs(this.vx) > 2) this.vx *= 0.9;
+						if (Math.abs(this.vy) > 2) this.vy *= 0.9;
+					}
+
+					draw() {
+						ctx.beginPath();
+						ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+						ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+						ctx.fill();
+						
+						// Glow effect only in dark mode
+						if (isDarkMode()) {
+							ctx.shadowBlur = 10;
+							ctx.shadowColor = `rgba(${this.color}, 0.5)`;
+						} else {
+							ctx.shadowBlur = 0;
+						}
+					}
+				}
+
+				function init() {
+					resize();
+					particles = [];
+					for (let i = 0; i < particleCount; i++) {
+						particles.push(new Particle());
+					}
+				}
+
+				// Re-initialize particles on theme change to update colors
+				const observer = new MutationObserver((mutations) => {
+					mutations.forEach((mutation) => {
+						if (mutation.type === 'attributes' && (mutation.attributeName === 'class' || mutation.attributeName === 'data-theme')) {
+							particles.forEach(p => p.setColors());
+						}
+					});
+				});
+				
+				observer.observe(document.documentElement, {
+					attributes: true
+				});
+
+				function animate() {
+					requestAnimationFrame(animate);
+					
+					const time = Date.now() * 0.0005;
+					let gradient;
+
+					if (isDarkMode()) {
+						// Dark Mode: Deep Blue Gradient
+						// Varying between dark blue/navy tones
+						const r = Math.floor(Math.sin(time) * 10 + 10); 
+						const g = Math.floor(Math.sin(time + 2) * 10 + 20);
+						const b = Math.floor(Math.sin(time + 4) * 20 + 60); // Higher blue component
+						
+						gradient = ctx.createLinearGradient(0, 0, width, height);
+						gradient.addColorStop(0, `rgb(${r}, ${g}, ${b})`);
+						gradient.addColorStop(1, `rgb(${r}, ${g+10}, ${b+20})`);
+					} else {
+						// Light Mode: Very Light Blue/White Gradient
+						// Varying between white and very pale blue
+						const bOffset = Math.floor(Math.sin(time) * 10);
+						
+						gradient = ctx.createLinearGradient(0, 0, width, height);
+						gradient.addColorStop(0, `rgb(245, 247, 255)`); // Almost white
+						gradient.addColorStop(1, `rgb(225, 235, 255)`); // Pale blue
+					}
+					
+					ctx.fillStyle = gradient;
+					ctx.fillRect(0, 0, width, height);
+
+					particles.forEach(particle => {
+						particle.update();
+						particle.draw();
+						ctx.shadowBlur = 0; 
+					});
+				}
+
+				window.addEventListener('resize', resize);
+				canvas.addEventListener('mousemove', e => {
+					const rect = canvas.getBoundingClientRect();
+					mouse.x = e.clientX - rect.left;
+					mouse.y = e.clientY - rect.top;
+				});
+				canvas.addEventListener('mouseleave', () => {
+					mouse.x = null;
+					mouse.y = null;
+				});
+				
+				// Touch support
+				canvas.addEventListener('touchmove', e => {
+					// e.preventDefault(); // Allow scrolling
+					const rect = canvas.getBoundingClientRect();
+					mouse.x = e.touches[0].clientX - rect.left;
+					mouse.y = e.touches[0].clientY - rect.top;
+				}, { passive: true });
+
+				init();
+				animate();
+			})();
+		</script>
 
 		<!-- Latest News -->
 		if len(data.LatestNews) > 0 {

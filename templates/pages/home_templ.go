@@ -51,7 +51,72 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!-- Hero Section --> <div class=\"hero min-h-[50vh] bg-base-200 rounded-box mb-12\"><div class=\"hero-content text-center\"><div class=\"max-w-md\"><h1 class=\"text-5xl font-bold\">Instituto de Física</h1><p class=\"py-6\">Investigación y Ciencia al servicio de la nación.</p><a href=\"/projects\" class=\"btn btn-primary\">Ver Proyectos</a></div></div></div><!-- Latest News --> ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!-- Hero Section --> <!-- Hero Section --> <!-- Hero Section --> <div class=\"hero min-h-[60vh] rounded-box mb-12 relative overflow-hidden bg-base-300\"><!-- Canvas Background --><canvas id=\"hero-canvas\" class=\"absolute inset-0 w-full h-full z-0\"></canvas><!-- Content --><div class=\"hero-content text-center z-10 relative\"><div class=\"text-center lg:text-left\"><div class=\"text-sm uppercase tracking-widest mb-2 font-semibold opacity-80 text-base-content/70\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var3 string
+			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(dict["FacultyOfSciences"])
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 26, Col: 33}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</div><h1 class=\"text-5xl lg:text-7xl font-extrabold text-base-content mb-4 tracking-tight\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var4 string
+			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(dict["HeroTitle"])
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 29, Col: 25}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</h1><p class=\"py-6 text-2xl font-medium text-base-content/90\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var5 string
+			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(dict["HeroSubtitle"])
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 32, Col: 28}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "</p><a href=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var6 templ.SafeURL
+			templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(components.PrefixPath("/projects", lang)))
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 34, Col: 70}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "\" class=\"btn btn-primary btn-lg shadow-lg hover:shadow-xl transition-all duration-300 border-none bg-primary/90 hover:bg-primary text-primary-content\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var7 string
+			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(dict["ViewProjects"])
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 35, Col: 28}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</a></div></div></div><script>\n\t\t\t(function() {\n\t\t\t\tconst canvas = document.getElementById('hero-canvas');\n\t\t\t\tconst ctx = canvas.getContext('2d');\n\t\t\t\tlet width, height;\n\t\t\t\tlet particles = [];\n\t\t\t\tlet mouse = { x: null, y: null };\n\n\t\t\t\t// Configuration\n\t\t\t\tconst particleCount = 60;\n\t\t\t\tconst connectionDistance = 100;\n\t\t\t\tconst mouseDistance = 200; // Increased interaction range\n\n\t\t\t\tfunction resize() {\n\t\t\t\t\twidth = canvas.width = canvas.offsetWidth;\n\t\t\t\t\theight = canvas.height = canvas.offsetHeight;\n\t\t\t\t}\n\n\t\t\t\tfunction isDarkMode() {\n\t\t\t\t\treturn document.documentElement.classList.contains('dark') || \n\t\t\t\t\t\t   document.documentElement.getAttribute('data-theme') === 'dark';\n\t\t\t\t}\n\n\t\t\t\tclass Particle {\n\t\t\t\t\tconstructor() {\n\t\t\t\t\t\tthis.x = Math.random() * width;\n\t\t\t\t\t\tthis.y = Math.random() * height;\n\t\t\t\t\t\tthis.vx = (Math.random() - 0.5) * 0.5;\n\t\t\t\t\t\tthis.vy = (Math.random() - 0.5) * 0.5;\n\t\t\t\t\t\tthis.size = Math.random() * 2 + 1;\n\t\t\t\t\t\tthis.setColors();\n\t\t\t\t\t}\n\n\t\t\t\t\tsetColors() {\n\t\t\t\t\t\tif (isDarkMode()) {\n\t\t\t\t\t\t\t// Dark mode: Light Blue, Cyan, White\n\t\t\t\t\t\t\tconst colors = ['100, 200, 255', '0, 255, 255', '200, 200, 255'];\n\t\t\t\t\t\t\tthis.color = colors[Math.floor(Math.random() * colors.length)];\n\t\t\t\t\t\t\tthis.alpha = Math.random() * 0.5 + 0.2;\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t// Light mode: Dark Blue, Navy, Royal Blue\n\t\t\t\t\t\t\tconst colors = ['0, 50, 150', '0, 100, 200', '50, 50, 180'];\n\t\t\t\t\t\t\tthis.color = colors[Math.floor(Math.random() * colors.length)];\n\t\t\t\t\t\t\tthis.alpha = Math.random() * 0.4 + 0.1;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\tupdate() {\n\t\t\t\t\t\tthis.x += this.vx;\n\t\t\t\t\t\tthis.y += this.vy;\n\n\t\t\t\t\t\t// Mouse interaction\n\t\t\t\t\t\tif (mouse.x != null) {\n\t\t\t\t\t\t\tlet dx = mouse.x - this.x;\n\t\t\t\t\t\t\tlet dy = mouse.y - this.y;\n\t\t\t\t\t\t\tlet distance = Math.sqrt(dx * dx + dy * dy);\n\n\t\t\t\t\t\t\tif (distance < mouseDistance) {\n\t\t\t\t\t\t\t\tconst forceDirectionX = dx / distance;\n\t\t\t\t\t\t\t\tconst forceDirectionY = dy / distance;\n\t\t\t\t\t\t\t\tconst force = (mouseDistance - distance) / mouseDistance;\n\t\t\t\t\t\t\t\t// Repel force\n\t\t\t\t\t\t\t\tconst directionX = forceDirectionX * force * this.size * 1.5; \n\t\t\t\t\t\t\t\tconst directionY = forceDirectionY * force * this.size * 1.5;\n\n\t\t\t\t\t\t\t\tthis.vx -= directionX * 0.05;\n\t\t\t\t\t\t\t\tthis.vy -= directionY * 0.05;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\t// Wrap around screen\n\t\t\t\t\t\tif (this.x < 0) this.x = width;\n\t\t\t\t\t\tif (this.x > width) this.x = 0;\n\t\t\t\t\t\tif (this.y < 0) this.y = height;\n\t\t\t\t\t\tif (this.y > height) this.y = 0;\n\t\t\t\t\t\t\n\t\t\t\t\t\t// Damping\n\t\t\t\t\t\tif (Math.abs(this.vx) > 2) this.vx *= 0.9;\n\t\t\t\t\t\tif (Math.abs(this.vy) > 2) this.vy *= 0.9;\n\t\t\t\t\t}\n\n\t\t\t\t\tdraw() {\n\t\t\t\t\t\tctx.beginPath();\n\t\t\t\t\t\tctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);\n\t\t\t\t\t\tctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;\n\t\t\t\t\t\tctx.fill();\n\t\t\t\t\t\t\n\t\t\t\t\t\t// Glow effect only in dark mode\n\t\t\t\t\t\tif (isDarkMode()) {\n\t\t\t\t\t\t\tctx.shadowBlur = 10;\n\t\t\t\t\t\t\tctx.shadowColor = `rgba(${this.color}, 0.5)`;\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tctx.shadowBlur = 0;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\tfunction init() {\n\t\t\t\t\tresize();\n\t\t\t\t\tparticles = [];\n\t\t\t\t\tfor (let i = 0; i < particleCount; i++) {\n\t\t\t\t\t\tparticles.push(new Particle());\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\t// Re-initialize particles on theme change to update colors\n\t\t\t\tconst observer = new MutationObserver((mutations) => {\n\t\t\t\t\tmutations.forEach((mutation) => {\n\t\t\t\t\t\tif (mutation.type === 'attributes' && (mutation.attributeName === 'class' || mutation.attributeName === 'data-theme')) {\n\t\t\t\t\t\t\tparticles.forEach(p => p.setColors());\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t});\n\t\t\t\t\n\t\t\t\tobserver.observe(document.documentElement, {\n\t\t\t\t\tattributes: true\n\t\t\t\t});\n\n\t\t\t\tfunction animate() {\n\t\t\t\t\trequestAnimationFrame(animate);\n\t\t\t\t\t\n\t\t\t\t\tconst time = Date.now() * 0.0005;\n\t\t\t\t\tlet gradient;\n\n\t\t\t\t\tif (isDarkMode()) {\n\t\t\t\t\t\t// Dark Mode: Deep Blue Gradient\n\t\t\t\t\t\t// Varying between dark blue/navy tones\n\t\t\t\t\t\tconst r = Math.floor(Math.sin(time) * 10 + 10); \n\t\t\t\t\t\tconst g = Math.floor(Math.sin(time + 2) * 10 + 20);\n\t\t\t\t\t\tconst b = Math.floor(Math.sin(time + 4) * 20 + 60); // Higher blue component\n\t\t\t\t\t\t\n\t\t\t\t\t\tgradient = ctx.createLinearGradient(0, 0, width, height);\n\t\t\t\t\t\tgradient.addColorStop(0, `rgb(${r}, ${g}, ${b})`);\n\t\t\t\t\t\tgradient.addColorStop(1, `rgb(${r}, ${g+10}, ${b+20})`);\n\t\t\t\t\t} else {\n\t\t\t\t\t\t// Light Mode: Very Light Blue/White Gradient\n\t\t\t\t\t\t// Varying between white and very pale blue\n\t\t\t\t\t\tconst bOffset = Math.floor(Math.sin(time) * 10);\n\t\t\t\t\t\t\n\t\t\t\t\t\tgradient = ctx.createLinearGradient(0, 0, width, height);\n\t\t\t\t\t\tgradient.addColorStop(0, `rgb(245, 247, 255)`); // Almost white\n\t\t\t\t\t\tgradient.addColorStop(1, `rgb(225, 235, 255)`); // Pale blue\n\t\t\t\t\t}\n\t\t\t\t\t\n\t\t\t\t\tctx.fillStyle = gradient;\n\t\t\t\t\tctx.fillRect(0, 0, width, height);\n\n\t\t\t\t\tparticles.forEach(particle => {\n\t\t\t\t\t\tparticle.update();\n\t\t\t\t\t\tparticle.draw();\n\t\t\t\t\t\tctx.shadowBlur = 0; \n\t\t\t\t\t});\n\t\t\t\t}\n\n\t\t\t\twindow.addEventListener('resize', resize);\n\t\t\t\tcanvas.addEventListener('mousemove', e => {\n\t\t\t\t\tconst rect = canvas.getBoundingClientRect();\n\t\t\t\t\tmouse.x = e.clientX - rect.left;\n\t\t\t\t\tmouse.y = e.clientY - rect.top;\n\t\t\t\t});\n\t\t\t\tcanvas.addEventListener('mouseleave', () => {\n\t\t\t\t\tmouse.x = null;\n\t\t\t\t\tmouse.y = null;\n\t\t\t\t});\n\t\t\t\t\n\t\t\t\t// Touch support\n\t\t\t\tcanvas.addEventListener('touchmove', e => {\n\t\t\t\t\t// e.preventDefault(); // Allow scrolling\n\t\t\t\t\tconst rect = canvas.getBoundingClientRect();\n\t\t\t\t\tmouse.x = e.touches[0].clientX - rect.left;\n\t\t\t\t\tmouse.y = e.touches[0].clientY - rect.top;\n\t\t\t\t}, { passive: true });\n\n\t\t\t\tinit();\n\t\t\t\tanimate();\n\t\t\t})();\n\t\t</script> <!-- Latest News --> ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -60,7 +125,7 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, " <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, " <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -70,17 +135,17 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 						return templ_7745c5c3_Err
 					}
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</div>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, " <!-- Recent Publications --> ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, " <!-- Recent Publications --> ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			if len(data.RecentPublications) > 0 {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<!-- Recent Publications --> <section class=\"mb-12\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "<!-- Recent Publications --> <section class=\"mb-12\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -88,7 +153,7 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "<div class=\"space-y-4\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 11, "<div class=\"space-y-4\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -98,7 +163,7 @@ func Home(data HomeData, lang string, dict map[string]string) templ.Component {
 						return templ_7745c5c3_Err
 					}
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</div></section>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 12, "</div></section>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}

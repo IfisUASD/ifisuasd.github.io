@@ -29,6 +29,10 @@ var es = Dictionary{
 	"RecentPapers":    "Publicaciones Recientes",
 	"RecentPublications": "Publicaciones Recientes",
 	"InstituteOfPhysics": "Instituto de Física",
+	"FacultyOfSciences": "Facultad de Ciencias",
+	"HeroTitle":       "Instituto de Física",
+	"HeroSubtitle":    "Investigación y Ciencia al servicio de la nación.",
+	"ViewProjects":    "Ver Proyectos",
 	"UASD":            "UASD",
 	"Search":            "Buscar",
 	"SearchPlaceholder": "Escribe para buscar...",
@@ -52,6 +56,7 @@ var es = Dictionary{
 	"ToggleTheme": "Alternar tema oscuro/claro",
 	"VisitProfile": "Visitar perfil en",
 	"CopyClipboard": "Copiar al portapapeles",
+	"AllRightsReserved": "Todos los derechos reservados",
 }
 
 var en = Dictionary{
@@ -80,6 +85,10 @@ var en = Dictionary{
 	"RecentPapers":    "Recent Publications",
 	"RecentPublications": "Recent Publications",
 	"InstituteOfPhysics": "Institute of Physics",
+	"FacultyOfSciences": "Faculty of Sciences",
+	"HeroTitle":       "Institute of Physics",
+	"HeroSubtitle":    "Research and Science at the service of the nation.",
+	"ViewProjects":    "View Projects",
 	"UASD":            "UASD",
 	"Search":          "Search",
 	"Apps": "Apps",
@@ -102,6 +111,7 @@ var en = Dictionary{
 	"ToggleTheme": "Toggle dark/light theme",
 	"VisitProfile": "Visit profile on",
 	"CopyClipboard": "Copy to clipboard",
+	"AllRightsReserved": "All rights reserved",
 }
 
 // GetDictionary returns the dictionary for the requested language.

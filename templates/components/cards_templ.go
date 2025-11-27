@@ -36,7 +36,7 @@ func ProjectCard(project *types.Project, lang string, dict map[string]string) te
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 templ.SafeURL
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/projects/"+project.Slug, lang)))
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/projects/"+project.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 9, Col: 74}
 		}
@@ -90,7 +90,7 @@ func ProjectCard(project *types.Project, lang string, dict map[string]string) te
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var5 templ.SafeURL
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/projects/"+project.Slug, lang)))
+		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/projects/"+project.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 22, Col: 74}
 		}
@@ -166,7 +166,7 @@ func PersonCard(person *types.Person, lang string, dict map[string]string) templ
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var9 templ.SafeURL
-		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/people/"+person.Slug, lang)))
+		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/people/"+person.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 35, Col: 71}
 		}
@@ -205,7 +205,7 @@ func PersonCard(person *types.Person, lang string, dict map[string]string) templ
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var12 templ.SafeURL
-		templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/people/"+person.Slug, lang)))
+		templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/people/"+person.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 41, Col: 71}
 		}
@@ -322,7 +322,7 @@ func NewsCard(news *types.NewsItem, lang string, dict map[string]string) templ.C
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var19 templ.SafeURL
-		templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/news/"+news.Slug, lang)))
+		templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/news/"+news.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 59, Col: 67}
 		}
@@ -361,7 +361,7 @@ func NewsCard(news *types.NewsItem, lang string, dict map[string]string) templ.C
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var22 templ.SafeURL
-		templ_7745c5c3_Var22, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/news/"+news.Slug, lang)))
+		templ_7745c5c3_Var22, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/news/"+news.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 65, Col: 67}
 		}
@@ -475,7 +475,7 @@ func ToolCard(tool *types.Tool, lang string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var28 templ.SafeURL
-		templ_7745c5c3_Var28, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath(tool.Link, lang)))
+		templ_7745c5c3_Var28, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath(tool.Link, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/cards.templ`, Line: 88, Col: 56}
 		}

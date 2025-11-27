@@ -38,7 +38,7 @@ func PublicationRow(pub *types.Publication, lang string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 templ.SafeURL
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(prefixPath("/publications/"+pub.Slug, lang)))
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(PrefixPath("/publications/"+pub.Slug, lang)))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/components/publication.templ`, Line: 8, Col: 71}
 		}

@@ -3,7 +3,7 @@ package components
 import "time"
 import "strconv"
 
-templ Footer() {
+templ Footer(dict map[string]string) {
 	<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-auto">
 		<div class="grid grid-flow-col gap-4">
 			<a href="/" class="link link-hover">Home</a>
@@ -25,7 +25,9 @@ templ Footer() {
 			</div>
 		</div>
 		<div>
-			<p>Copyright © { strconv.Itoa(time.Now().Year()) } - Universidad Autónoma de Santo Domingo</p>
+			<div class="flex flex-col items-center gap-1 text-sm opacity-80">
+				<p class="mt-4 text-xs opacity-60">© { strconv.Itoa(time.Now().Year()) } Universidad Autónoma de Santo Domingo - { dict["AllRightsReserved"] }</p>
+			</div>
 		</div>
 	</footer>
 }
