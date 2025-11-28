@@ -58,6 +58,9 @@ var es = Dictionary{
 	"VisitProfile": "Visitar perfil en",
 	"CopyClipboard": "Copiar al portapapeles",
 	"AllRightsReserved": "Todos los derechos reservados",
+	"PageNotFound": "Página No Encontrada",
+	"PageNotFoundMessage": "Lo sentimos, la página que buscas no existe.",
+	"BackToHome": "Volver al Inicio",
 }
 
 var en = Dictionary{
@@ -114,6 +117,9 @@ var en = Dictionary{
 	"VisitProfile": "Visit profile on",
 	"CopyClipboard": "Copy to clipboard",
 	"AllRightsReserved": "All rights reserved",
+	"PageNotFound": "Page Not Found",
+	"PageNotFoundMessage": "Sorry, the page you are looking for does not exist.",
+	"BackToHome": "Back to Home",
 }
 
 // GetDictionary returns the dictionary for the requested language.

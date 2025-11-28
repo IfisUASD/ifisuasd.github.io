@@ -552,6 +552,17 @@ func buildSite(lang string, outputDir string) error {
 		return err
 	}
 
+	// 13. Generar Página 404
+	f404, err := os.Create(outputDir + "/404.html")
+	if err != nil {
+		return err
+	}
+	defer f404.Close()
+
+	if err := pages.NotFound(lang, dict).Render(context.Background(), f404); err != nil {
+		return err
+	}
+
 	return nil
 }
 

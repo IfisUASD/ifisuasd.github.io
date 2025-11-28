@@ -1,0 +1,55 @@
+package pages
+
+import "github.com/IfisUASD/ifisuasd.github.io/templates/layouts"
+
+templ NotFound(lang string, dict map[string]string) {
+	@layouts.Base("404 - " + dict["PageNotFound"], lang, layouts.MetaTags{
+		Description: dict["PageNotFoundMessage"],
+		Keywords:    "404, Not Found",
+	}, dict) {
+		<div class="hero min-h-[60vh] bg-base-200 rounded-box mb-12">
+			<div class="hero-content text-center">
+				<div class="max-w-md">
+					<h1 class="text-9xl font-bold text-primary">404</h1>
+					<h2 class="text-3xl font-bold mt-4">{ dict["PageNotFound"] }</h2>
+					<p class="py-6 text-lg">
+						{ dict["PageNotFoundMessage"] }
+					</p>
+					<div class="flex flex-col gap-4 justify-center">
+						<a href={ templ.SafeURL(prefixPath("/", lang)) } class="btn btn-primary">
+							{ dict["BackToHome"] }
+						</a>
+						
+						<!-- Optional: Link to the other language if we are on the root 404 -->
+						if lang == "es" {
+							<a href="/en" class="btn btn-ghost btn-sm">
+								Looking for the English site?
+							</a>
+						} else {
+							<a href="/" class="btn btn-ghost btn-sm">
+								¿Buscas el sitio en Español?
+							</a>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Script to handle language redirection for root 404 -->
+		if lang == "es" {
+			<script>
+				(function() {
+					// If we are on the root 404 page and the path starts with /en/, redirect to English 404 if it exists, 
+					// or just let the user know.
+					// Since we can't easily check if file exists without a request, we might just show the English link above.
+					// But we can try to be smart.
+					if (window.location.pathname.startsWith('/en/') && !window.location.pathname.startsWith('/en/404.html')) {
+						// We are in English territory but hit the Spanish 404 (root).
+						// We could redirect to /en/404.html
+						window.location.replace('/en/404.html');
+					}
+				})();
+			</script>
+		}
+	}
+}
