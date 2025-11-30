@@ -13,7 +13,7 @@ La distinción, otorgada a la maestra Montero Lebrón (oriunda de esta provincia
 
 La actividad, celebrada los días 28 y 29 de noviembre de 2025, reunió a docentes, investigadores y estudiantes bajo el lema: *“IA y Ciberseguridad: Retos Emergentes para la Ciencia del Futuro”*. El evento se consolidó como uno de los encuentros científicos más relevantes de la región Sur, con un programa que incluyó una conferencia magistral, múltiples talleres y más de 40 ponencias académicas.
 
-El acto inaugural estuvo encabezado por las autoridades del recinto: el **Dr. Manuel Antonio De la Cruz Fernández**, Director General; la Dra. Ana Lucía Beltré, Subdirectora Académica; y la Dra. Mary Janet Díaz Romero, Coordinadora de Investigación, quien tuvo a cargo la presentación formal del evento.
+El acto inaugural estuvo encabezado por las autoridades del recinto: el **Dr. Manuel Antonio De la Cruz Fernández**, Director General; la Dra. Ana Lucía Beltré, Subdirectora Académica; la Mtra. Biridiana Batista, subdirectora administrativa; y la Dra. Mary Janet Díaz Romero, Coordinadora de Investigación, quien tuvo a cargo la presentación formal del evento.
 
 La conferencia magistral de apertura fue dictada por el **Dr. César Díaz**, Director General de Investigación, en representación del Vicerrector de Investigación y Postgrado, **Dr. Radhamés Silverio González**. Asimismo, como invitado especial y aliado estratégico, participó el Sr. Roland Angerer, Director de *Plan International República Dominicana*.
 

@@ -13,7 +13,7 @@ The distinction, awarded to Prof. Montero Lebrón (a native of this province), h
 
 The activity, held on November 28 and 29, 2025, brought together teachers, researchers, and students under the theme: *"AI and Cybersecurity: Emerging Challenges for the Science of the Future."* The event consolidated itself as one of the most relevant scientific gatherings in the Southern region, with a program that included a keynote lecture, multiple workshops, and over 40 academic presentations.
 
-The opening ceremony was led by the campus authorities: **Dr. Manuel Antonio De la Cruz Fernández**, Director General; Dr. Ana Lucía Beltré, Academic Deputy Director; and Dr. Mary Janet Díaz Romero, Research Coordinator, who was in charge of the formal presentation of the event.
+The opening ceremony was led by the campus authorities: **Dr. Manuel Antonio De la Cruz Fernández**, Director General; Dr. Ana Lucía Beltré, Academic Deputy Director; Prof. Biridiana Batista, Administrative Deputy Director; and Dr. Mary Janet Díaz Romero, Research Coordinator, who was in charge of the formal presentation of the event.
 
 The opening keynote lecture was delivered by **Dr. César Díaz**, Director General of Research, representing the Vice-Rector for Research and Postgraduate Studies, **Dr. Radhamés Silverio González**. Additionally, Mr. Roland Angerer, Director of *Plan International Dominican Republic*, participated as a special guest and strategic ally.
 
