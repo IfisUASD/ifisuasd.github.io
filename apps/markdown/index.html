@@ -1,0 +1,346 @@
+<!doctype html><html lang="es" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Editor Markdown | Instituto de Física UASD</title><!-- SEO Metadata --><meta name="description" content="Previsualizador de contenido para el Instituto de Física."><!-- Open Graph --><meta property="og:title" content="Editor Markdown"><!-- Styles --><link rel="stylesheet" href="/assets/css/styles.css?v=1764568860"><!-- KaTeX Global --><link rel="stylesheet" href="/assets/vendor/katex/katex.min.css"><script defer src="/assets/vendor/katex/katex.min.js"></script><script defer src="/assets/vendor/katex/auto-render.min.js"></script><script>
+				document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+						delimiters: [
+							{left: '$$', right: '$$', display: true},
+							{left: '$', right: '$', display: false},
+							{left: '\\(', right: '\\)', display: false},
+							{left: '\\[', right: '\\]', display: true}
+						],
+						throwOnError : false
+					});
+				});
+			</script><!-- Dark Mode Script (Inline to prevent FOUC) --><script>
+				(function() {
+					try {
+						var localTheme = localStorage.getItem('theme');
+						var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+						if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+							document.documentElement.setAttribute('data-theme', 'dark');
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.setAttribute('data-theme', 'light');
+							document.documentElement.classList.remove('dark');
+						}
+					} catch (e) {}
+				})();
+			</script></head><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-S71TGJY11G"></script><script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-S71TGJY11G');
+		</script><body class="min-h-screen bg-base-100 text-base-content flex flex-col"><!-- Navbar --><div class="navbar bg-base-100 shadow-sm sticky top-0 z-50"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Abrir menú"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div><ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80"><li><a href="/">Inicio</a></li><li><details><summary>Investigación</summary><ul><li><a href="/projects">Proyectos</a></li><li><a href="/publications">Publicaciones</a></li></ul></details></li><li><a href="/people">Equipo</a></li><li><a href="/news">Actualidad</a></li><li><a href="/blog">Blog</a></li><li><a href="/apps">Herramientas</a></li></ul></div><a class="btn btn-ghost text-xl h-auto py-2" href="/"><img src="/images/logos/ifis-logo-azul.png" alt="Logo IFIS" class="h-10 w-auto mr-2"><div class="flex flex-col items-start leading-tight"><span class="text-primary font-bold text-sm">Instituto de Física</span> <span class="text-xs">UASD</span></div></a></div><div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal px-1"><li><a href="/">Inicio</a></li><li><details><summary>Investigación</summary><ul class="p-2 bg-base-100 rounded-t-none z-[1]"><li><a href="/projects">Proyectos</a></li><li><a href="/publications">Publicaciones</a></li></ul></details></li><li><a href="/people">Equipo</a></li><li><a href="/news">Actualidad</a></li><li><a href="/blog">Blog</a></li><li><a href="/apps">Herramientas</a></li></ul></div><div class="navbar-end gap-2"><!-- Search Icon --><!-- Search Icon --><a href="/search" class="btn btn-ghost btn-circle btn-sm" aria-label="Buscar"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a><!-- Language Selector --><button onclick="switchLanguage('en')" class="btn btn-ghost btn-sm hover:text-primary" aria-label="Cambiar a Inglés">EN</button><!-- Theme Controller --><label class="swap swap-rotate btn btn-ghost btn-circle btn-sm hover:text-primary" aria-label="Alternar tema oscuro/claro"><!-- this hidden checkbox controls the state --><input type="checkbox" class="theme-controller" value="dark" onchange="toggleTheme(this)"><!-- sun icon --><svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,4.93l.71.71A1,1,0,0,0,5.64,7.05Zm12,1.41a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,16.93,4.93l.71.71A1,1,0,0,0,17.64,8.46Zm1.06,10.9a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71a1,1,0,0,0-1.41-1.41l-.71.71A1,1,0,0,0,18.7,19.36ZM12,18a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V19A1,1,0,0,0,12,18Zm7-6a1,1,0,0,0-1-1H17a1,1,0,0,0,0,2h1A1,1,0,0,0,19,12ZM12,7a5,5,0,1,0,5,5A5,5,0,0,0,12,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"></path></svg><!-- moon icon --><svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"></path></svg></label></div></div><script>
+		function toggleTheme(checkbox) {
+			const html = document.querySelector('html');
+			const next = checkbox.checked ? 'dark' : 'light';
+			html.setAttribute('data-theme', next);
+			localStorage.setItem('theme', next);
+			if (next === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		}
+		
+		function switchLanguage(targetLang) {
+			const currentPath = window.location.pathname;
+			let newPath = currentPath;
+
+			// Remove existing language prefix if any
+			if (currentPath.startsWith('/en/')) {
+				newPath = currentPath.substring(3);
+			} else if (currentPath === '/en') {
+				newPath = '/';
+			}
+
+			// Add new prefix if target is english
+			if (targetLang === 'en') {
+				if (newPath === '/' || newPath === '') {
+					newPath = '/en/';
+				} else {
+					newPath = '/en' + newPath;
+				}
+			}
+			
+			window.location.href = newPath;
+		}
+
+		// Sync checkbox state on load
+		document.addEventListener('DOMContentLoaded', () => {
+			const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			const checkbox = document.querySelector('.theme-controller');
+			if (checkbox) {
+				checkbox.checked = theme === 'dark';
+			}
+		});
+	</script><main class="flex-grow container mx-auto px-4 py-8"><!-- Highlight.js para resaltado de sintaxis - Temas controlados por JS --> <link id="hljs-light" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" disabled><link id="hljs-dark" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" disabled><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script> <script>
+			// Script para sincronizar el tema de Highlight.js con el tema del sitio
+			(function() {
+				function updateHljsTheme() {
+					const theme = document.documentElement.getAttribute('data-theme');
+					const light = document.getElementById('hljs-light');
+					const dark = document.getElementById('hljs-dark');
+					
+					if (theme === 'dark') {
+						light.disabled = true;
+						dark.disabled = false;
+					} else {
+						light.disabled = false;
+						dark.disabled = true;
+					}
+				}
+
+				// Ejecutar al inicio
+				document.addEventListener('DOMContentLoaded', updateHljsTheme);
+
+				// Observar cambios
+				const observer = new MutationObserver(updateHljsTheme);
+				observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			})();
+		</script> <!-- CodeMirror para resaltado en el editor --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/github.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/github-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/overlay.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/gfm/gfm.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/shell/shell.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/stex/stex.min.js"></script> <!-- Mermaid para diagramas --> <script type="module">
+			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+			mermaid.initialize({ 
+				startOnLoad: true,
+				theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+			});
+			window.mermaid = mermaid;
+		</script> <!-- Estilos personalizados para el markdown --> <style>
+			/* Estilos adaptativos para bloques de código */
+			#mdOutput pre {
+				background-color: hsl(var(--b2)) !important;
+				border: 1px solid hsl(var(--bc) / 0.1);
+				border-radius: 0.5rem;
+				padding: 1rem;
+			}
+			
+			#mdOutput pre code {
+				background-color: transparent !important;
+				color: hsl(var(--bc)) !important;
+			}
+			
+			/* Mejorar encabezados */
+			#mdOutput h1 {
+				border-bottom: 3px solid hsl(var(--p));
+				padding-bottom: 0.5rem;
+				margin-top: 2rem;
+				margin-bottom: 1.5rem;
+			}
+			
+			#mdOutput h2 {
+				border-bottom: 2px solid hsl(var(--p) / 0.3);
+				padding-bottom: 0.4rem;
+				margin-top: 1.75rem;
+				margin-bottom: 1.25rem;
+			}
+			
+			#mdOutput h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 1rem;
+				position: relative;
+				padding-left: 1rem;
+			}
+			
+			#mdOutput h3::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0.25rem;
+				bottom: 0.25rem;
+				width: 4px;
+				background-color: hsl(var(--p));
+				border-radius: 2px;
+			}
+			
+			/* Mejorar listas */
+			#mdOutput ul, #mdOutput ol {
+				padding-left: 2rem;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+			
+			#mdOutput ul {
+				list-style-type: disc;
+			}
+			
+			#mdOutput ul ul {
+				list-style-type: circle;
+				margin-top: 0.5rem;
+			}
+			
+			#mdOutput ul ul ul {
+				list-style-type: square;
+			}
+			
+			#mdOutput ol {
+				list-style-type: decimal;
+			}
+			
+			#mdOutput li {
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				padding-left: 0.5rem;
+			}
+			
+			#mdOutput li > p {
+				margin-top: 0.25rem;
+				margin-bottom: 0.25rem;
+			}
+			
+			/* Checkboxes en listas de tareas */
+			#mdOutput input[type="checkbox"] {
+				margin-right: 0.5rem;
+			}
+			
+			/* Mejorar párrafos */
+			#mdOutput p {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				line-height: 1.75;
+			}
+			
+			/* Mejorar citas */
+			#mdOutput blockquote {
+				border-left: 4px solid hsl(var(--p));
+				background-color: hsl(var(--b2));
+				padding: 1rem 1.5rem;
+				margin: 1.5rem 0;
+				font-style: italic;
+			}
+			
+			#mdOutput blockquote p:first-child {
+				margin-top: 0;
+			}
+			
+			#mdOutput blockquote p:last-child {
+				margin-bottom: 0;
+			}
+			
+			/* Mejorar tablas */
+			#mdOutput table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 1.5rem 0;
+				border: 1px solid hsl(var(--bc) / 0.2);
+			}
+			
+			#mdOutput th {
+				background-color: hsl(var(--p) / 0.1);
+				font-weight: 600;
+				padding: 0.75rem 1rem;
+				text-align: left;
+				border-bottom: 2px solid hsl(var(--p));
+			}
+			
+			#mdOutput td {
+				padding: 0.75rem 1rem;
+				border-bottom: 1px solid hsl(var(--bc) / 0.1);
+			}
+			
+			#mdOutput tr:hover {
+				background-color: hsl(var(--b2));
+			}
+			
+			/* Código inline */
+			#mdOutput code {
+				background-color: hsl(var(--b2));
+				color: hsl(var(--s));
+				padding: 0.2rem 0.4rem;
+				border-radius: 0.25rem;
+				font-size: 0.9em;
+				font-family: 'Courier New', monospace;
+			}
+			
+			#mdOutput pre code {
+				padding: 0;
+				font-size: 0.875rem;
+			}
+			
+			/* Separadores horizontales */
+			#mdOutput hr {
+				border: none;
+				border-top: 2px solid hsl(var(--bc) / 0.2);
+				margin: 2rem 0;
+			}
+			
+			/* Enlaces */
+			#mdOutput a {
+				color: hsl(var(--p));
+				text-decoration: none;
+				font-weight: 500;
+				transition: all 0.2s;
+			}
+			
+			#mdOutput a:hover {
+				text-decoration: underline;
+				color: hsl(var(--pf));
+			}
+			
+			/* Imágenes */
+			#mdOutput img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 0.5rem;
+				box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+				margin: 1.5rem 0;
+			}
+			
+			/* CodeMirror personalizado */
+			.CodeMirror {
+				height: 100% !important;
+				font-family: 'Courier New', monospace;
+				font-size: 14px;
+				border: none;
+				border-radius: 0.5rem;
+			}
+			
+			.CodeMirror-scroll {
+				min-height: 100%;
+			}
+			
+			/* Tema adaptativo para CodeMirror */
+			[data-theme="dark"] .CodeMirror {
+				background-color: hsl(var(--b1));
+				color: hsl(var(--bc));
+			}
+			
+			[data-theme="light"] .CodeMirror {
+				background-color: hsl(var(--b1));
+				color: hsl(var(--bc));
+			}
+			
+			/* Números de línea (gutters) con mejor contraste en tema oscuro */
+			[data-theme="dark"] .CodeMirror-gutters {
+				background-color: hsl(var(--b2));
+				border-right: 1px solid hsl(var(--bc) / 0.2);
+			}
+			
+			[data-theme="dark"] .CodeMirror-linenumber {
+				color: hsl(var(--bc) / 0.4);
+			}
+
+			/* Cursor adaptativo */
+			[data-theme="dark"] .CodeMirror-cursor,
+			.cm-s-github-dark .CodeMirror-cursor {
+				border-left: 2px solid #ffffff !important;
+				border-right: 0 !important;
+			}
+			
+			[data-theme="light"] .CodeMirror-gutters {
+				background-color: hsl(var(--b2));
+				border-right: 1px solid hsl(var(--bc) / 0.1);
+			}
+			
+			[data-theme="light"] .CodeMirror-linenumber {
+				color: hsl(var(--bc) / 0.5);
+			}
+			
+			/* Mejorar contraste de los contenedores en tema oscuro */
+			[data-theme="dark"] .border-base-300 {
+				border-color: hsl(var(--bc) / 0.2) !important;
+			}
+			
+			[data-theme="dark"] #mdOutput {
+				background-color: hsl(var(--b1));
+			}
+		</style> <script src="/assets/js/wasm_exec.js"></script> <script src="/assets/js/markdown.js" defer></script> <div class="container mx-auto px-4 h-[calc(100vh-200px)] flex flex-col"><div class="flex justify-between items-center mb-4"><h1 class="text-3xl font-bold text-primary">Editor de Contenido</h1><div class="badge badge-info gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Renderizado idéntico al sitio web</div></div><div id="md-loader" class="flex-grow flex items-center justify-center"><span class="loading loading-spinner loading-lg text-primary"></span></div><div id="md-app" class="hidden flex-grow flex flex-col lg:flex-row gap-6 h-full"><div class="w-full lg:w-1/2 flex flex-col"><label class="label font-semibold">Markdown (Entrada)</label><div class="border border-base-300 rounded-box bg-base-100 w-full flex-grow overflow-hidden shadow-sm"><div id="editor-container" class="h-full"></div></div></div><div class="w-full lg:w-1/2 flex flex-col h-full overflow-hidden"><label class="label font-semibold">Previsualización (Salida)</label><div class="border border-base-300 rounded-box bg-base-100 w-full flex-grow overflow-y-auto p-8 shadow-sm"><div id="mdOutput" class="prose prose-lg max-w-none"></div></div></div></div></div></main><!-- Footer --><footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-auto"><div><div class="grid grid-flow-col gap-4"><!-- Twitter / X --><a href="https://twitter.com/UASD" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a><!-- YouTube --><a href="https://www.youtube.com/@institutodefisica-ifis420" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a></div></div><div><div class="flex flex-col items-center gap-1 text-sm opacity-80"><p class="mt-4 text-xs opacity-100">© 2025 Universidad Autónoma de Santo Domingo - Todos los derechos reservados</p></div></div></footer></body></html>

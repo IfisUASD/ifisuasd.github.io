@@ -1,0 +1,77 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Search | Institute of Physics UASD</title><!-- SEO Metadata --><meta name="description" content="Search"><meta name="keywords" content="Search, Buscador, UASD"><!-- Open Graph --><meta property="og:title" content="Search"><!-- Styles --><link rel="stylesheet" href="/assets/css/styles.css?v=1764568860"><!-- KaTeX Global --><link rel="stylesheet" href="/assets/vendor/katex/katex.min.css"><script defer src="/assets/vendor/katex/katex.min.js"></script><script defer src="/assets/vendor/katex/auto-render.min.js"></script><script>
+				document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+						delimiters: [
+							{left: '$$', right: '$$', display: true},
+							{left: '$', right: '$', display: false},
+							{left: '\\(', right: '\\)', display: false},
+							{left: '\\[', right: '\\]', display: true}
+						],
+						throwOnError : false
+					});
+				});
+			</script><!-- Dark Mode Script (Inline to prevent FOUC) --><script>
+				(function() {
+					try {
+						var localTheme = localStorage.getItem('theme');
+						var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+						if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+							document.documentElement.setAttribute('data-theme', 'dark');
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.setAttribute('data-theme', 'light');
+							document.documentElement.classList.remove('dark');
+						}
+					} catch (e) {}
+				})();
+			</script></head><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-S71TGJY11G"></script><script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-S71TGJY11G');
+		</script><body class="min-h-screen bg-base-100 text-base-content flex flex-col"><!-- Navbar --><div class="navbar bg-base-100 shadow-sm sticky top-0 z-50"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div><ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80"><li><a href="/en/">Home</a></li><li><details><summary>Research</summary><ul><li><a href="/en/projects">Projects</a></li><li><a href="/en/publications">Publications</a></li></ul></details></li><li><a href="/en/people">People</a></li><li><a href="/en/news">News</a></li><li><a href="/en/blog">Blog</a></li><li><a href="/en/apps">Apps</a></li></ul></div><a class="btn btn-ghost text-xl h-auto py-2" href="/en/"><img src="/images/logos/ifis-logo-azul.png" alt="Logo IFIS" class="h-10 w-auto mr-2"><div class="flex flex-col items-start leading-tight"><span class="text-primary font-bold text-sm">Institute of Physics</span> <span class="text-xs">UASD</span></div></a></div><div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal px-1"><li><a href="/en/">Home</a></li><li><details><summary>Research</summary><ul class="p-2 bg-base-100 rounded-t-none z-[1]"><li><a href="/en/projects">Projects</a></li><li><a href="/en/publications">Publications</a></li></ul></details></li><li><a href="/en/people">People</a></li><li><a href="/en/news">News</a></li><li><a href="/en/blog">Blog</a></li><li><a href="/en/apps">Apps</a></li></ul></div><div class="navbar-end gap-2"><!-- Search Icon --><!-- Search Icon --><a href="/en/search" class="btn btn-ghost btn-circle btn-sm" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a><!-- Language Selector --><button onclick="switchLanguage('es')" class="btn btn-ghost btn-sm hover:text-primary" aria-label="Switch to Spanish">ES</button><!-- Theme Controller --><label class="swap swap-rotate btn btn-ghost btn-circle btn-sm hover:text-primary" aria-label="Toggle dark/light theme"><!-- this hidden checkbox controls the state --><input type="checkbox" class="theme-controller" value="dark" onchange="toggleTheme(this)"><!-- sun icon --><svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,4.93l.71.71A1,1,0,0,0,5.64,7.05Zm12,1.41a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,16.93,4.93l.71.71A1,1,0,0,0,17.64,8.46Zm1.06,10.9a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71a1,1,0,0,0-1.41-1.41l-.71.71A1,1,0,0,0,18.7,19.36ZM12,18a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V19A1,1,0,0,0,12,18Zm7-6a1,1,0,0,0-1-1H17a1,1,0,0,0,0,2h1A1,1,0,0,0,19,12ZM12,7a5,5,0,1,0,5,5A5,5,0,0,0,12,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"></path></svg><!-- moon icon --><svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"></path></svg></label></div></div><script>
+		function toggleTheme(checkbox) {
+			const html = document.querySelector('html');
+			const next = checkbox.checked ? 'dark' : 'light';
+			html.setAttribute('data-theme', next);
+			localStorage.setItem('theme', next);
+			if (next === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		}
+		
+		function switchLanguage(targetLang) {
+			const currentPath = window.location.pathname;
+			let newPath = currentPath;
+
+			// Remove existing language prefix if any
+			if (currentPath.startsWith('/en/')) {
+				newPath = currentPath.substring(3);
+			} else if (currentPath === '/en') {
+				newPath = '/';
+			}
+
+			// Add new prefix if target is english
+			if (targetLang === 'en') {
+				if (newPath === '/' || newPath === '') {
+					newPath = '/en/';
+				} else {
+					newPath = '/en' + newPath;
+				}
+			}
+			
+			window.location.href = newPath;
+		}
+
+		// Sync checkbox state on load
+		document.addEventListener('DOMContentLoaded', () => {
+			const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			const checkbox = document.querySelector('.theme-controller');
+			if (checkbox) {
+				checkbox.checked = theme === 'dark';
+			}
+		});
+	</script><main class="flex-grow container mx-auto px-4 py-8"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-2">Search</h2><div class="form-control w-full mb-8"><input type="text" id="searchInput" placeholder="" class="input input-bordered input-lg w-full" autofocus></div><div id="searchResults" class="grid grid-cols-1 gap-4"><!-- Results will be injected here via JS --><div class="text-center opacity-50 py-12 hidden" id="searchLoading"><span class="loading loading-spinner loading-lg"></span></div><div class="text-center opacity-50 py-12 hidden" id="searchNoResults">No results found.</div></div></div><script src="/assets/js/search.js"></script></main><!-- Footer --><footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-auto"><div><div class="grid grid-flow-col gap-4"><!-- Twitter / X --><a href="https://twitter.com/UASD" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a><!-- YouTube --><a href="https://www.youtube.com/@institutodefisica-ifis420" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a></div></div><div><div class="flex flex-col items-center gap-1 text-sm opacity-80"><p class="mt-4 text-xs opacity-100">© 2025 Universidad Autónoma de Santo Domingo - All rights reserved</p></div></div></footer></body></html>
