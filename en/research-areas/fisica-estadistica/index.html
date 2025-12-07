@@ -1,0 +1,81 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Física Estadística, Física Matemática y Sistemas Complejos | Institute of Physics UASD</title><!-- SEO Metadata --><meta name="description" content="La Física de Sistemas Complejos utiliza herramientas analíticas como la Física Estadística y los modelos matemáticos para describir y predecir cómo las interacciones entre múltiples componentes generan comportamientos colectivos emergentes y fenómenos críticos distintos a la simple suma de sus partes individuales"><!-- Open Graph --><meta property="og:title" content="Física Estadística, Física Matemática y Sistemas Complejos"><meta property="og:image" content="https://ifis.edu.do/assets/images/logos/uasd-ifis-logo-azul.png"><meta property="og:url" content="https://ifis.edu.do/en/research-areas/fisica-estadistica"><meta property="og:type" content="article"><!-- Styles --><link rel="stylesheet" href="/assets/css/styles.css?v=1765128010"><!-- KaTeX Global --><link rel="stylesheet" href="/assets/vendor/katex/katex.min.css"><script defer src="/assets/vendor/katex/katex.min.js"></script><script defer src="/assets/vendor/katex/auto-render.min.js"></script><script>
+				document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+						delimiters: [
+							{left: '$$', right: '$$', display: true},
+							{left: '$', right: '$', display: false},
+							{left: '\\(', right: '\\)', display: false},
+							{left: '\\[', right: '\\]', display: true}
+						],
+						throwOnError : false
+					});
+				});
+			</script><!-- Dark Mode Script (Inline to prevent FOUC) --><script>
+				(function() {
+					try {
+						var localTheme = localStorage.getItem('theme');
+						var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+						if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+							document.documentElement.setAttribute('data-theme', 'dark');
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.setAttribute('data-theme', 'light');
+							document.documentElement.classList.remove('dark');
+						}
+					} catch (e) {}
+				})();
+			</script></head><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-S71TGJY11G"></script><script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-S71TGJY11G');
+		</script><body class="min-h-screen bg-base-100 text-base-content flex flex-col"><!-- Navbar --><div class="navbar bg-base-100 shadow-sm sticky top-0 z-50"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div><ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80"><li><a href="/en/">Home</a></li><li><details><summary>Research</summary><ul><li><a href="/en/research-areas">Research Areas</a></li><li><a href="/en/projects">Projects</a></li><li><a href="/en/publications">Publications</a></li><li><a href="/en/people">People</a></li></ul></details></li><li><a href="/en/services">Services</a></li><li><a href="/en/news">News</a></li><li><a href="/en/blog">Blog</a></li><li><a href="/en/apps">Apps</a></li></ul></div><a class="btn btn-ghost text-xl h-auto py-2" href="/en/"><img src="/images/logos/ifis-logo-azul.png" alt="Logo IFIS" class="h-10 w-auto mr-2"><div class="flex flex-col items-start leading-tight"><span class="text-primary font-bold text-sm">Institute of Physics</span> <span class="text-xs">UASD</span></div></a></div><div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal px-1"><li><a href="/en/">Home</a></li><li><details><summary>Research</summary><ul class="p-2 bg-base-100 rounded-t-none z-[1]"><li><a href="/en/research-areas">Research Areas</a></li><li><a href="/en/projects">Projects</a></li><li><a href="/en/publications">Publications</a></li><li><a href="/en/people">People</a></li></ul></details></li><li><a href="/en/services">Services</a></li><li><a href="/en/news">News</a></li><li><a href="/en/blog">Blog</a></li><li><a href="/en/apps">Apps</a></li></ul></div><div class="navbar-end gap-2"><!-- Search Icon --><!-- Search Icon --><a href="/en/search" class="btn btn-ghost btn-circle btn-sm" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></a><!-- About Button --><!-- About Link (Text) --><a href="/en/about" class="btn btn-ghost btn-sm hidden lg:flex font-normal" aria-label="About Us">About Us</a><!-- Language Selector --><button onclick="switchLanguage('es')" class="btn btn-ghost btn-sm hover:text-primary" aria-label="Switch to Spanish">ES</button><!-- Theme Controller --><label class="swap swap-rotate btn btn-ghost btn-circle btn-sm hover:text-primary" aria-label="Toggle dark/light theme"><!-- this hidden checkbox controls the state --><input type="checkbox" class="theme-controller" value="dark" onchange="toggleTheme(this)"><!-- sun icon --><svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,4.93l.71.71A1,1,0,0,0,5.64,7.05Zm12,1.41a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,16.93,4.93l.71.71A1,1,0,0,0,17.64,8.46Zm1.06,10.9a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71a1,1,0,0,0-1.41-1.41l-.71.71A1,1,0,0,0,18.7,19.36ZM12,18a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V19A1,1,0,0,0,12,18Zm7-6a1,1,0,0,0-1-1H17a1,1,0,0,0,0,2h1A1,1,0,0,0,19,12ZM12,7a5,5,0,1,0,5,5A5,5,0,0,0,12,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"></path></svg><!-- moon icon --><svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"></path></svg></label></div></div><script>
+		function toggleTheme(checkbox) {
+			const html = document.querySelector('html');
+			const next = checkbox.checked ? 'dark' : 'light';
+			html.setAttribute('data-theme', next);
+			localStorage.setItem('theme', next);
+			if (next === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		}
+		
+		function switchLanguage(targetLang) {
+			const currentPath = window.location.pathname;
+			let newPath = currentPath;
+
+			// Remove existing language prefix if any
+			if (currentPath.startsWith('/en/')) {
+				newPath = currentPath.substring(3);
+			} else if (currentPath === '/en') {
+				newPath = '/';
+			}
+
+			// Add new prefix if target is english
+			if (targetLang === 'en') {
+				if (newPath === '/' || newPath === '') {
+					newPath = '/en/';
+				} else {
+					newPath = '/en' + newPath;
+				}
+			}
+			
+			window.location.href = newPath;
+		}
+
+		// Sync checkbox state on load
+		document.addEventListener('DOMContentLoaded', () => {
+			const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			const checkbox = document.querySelector('.theme-controller');
+			if (checkbox) {
+				checkbox.checked = theme === 'dark';
+			}
+		});
+	</script><main class="flex-grow container mx-auto px-4 py-8"><div class="container mx-auto px-4 py-8"><!-- Breadcrumbs --><div class="text-sm breadcrumbs mb-6"><ul><li><a href="/en/">Home</a></li><li><a href="/en/research-areas">Research Areas</a></li><li>Física Estadística, Física Matemática y Sistemas Complejos</li></ul></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-8"><!-- Left Column: Coordinator (3 cols) --><div class="lg:col-span-3"><div class="card bg-base-100 shadow-xl border border-base-200 sticky top-24"><figure class="px-10 pt-10"><img src="/images/nelphy-de-la-cruz.jpeg" alt="Nelphy De la Cruz Félix, Ph.D." class="rounded-full w-32 h-32 object-cover"></figure><div class="card-body items-center text-center p-6"><h2 class="card-title text-sm">Coordinator</h2><a href="/en/people/nelphy-de-la-cruz" class="link link-hover font-bold text-lg text-primary">Nelphy De la Cruz Félix, Ph.D.</a> <a href="mailto:ndelacruz72@uasd.edu.do" class="text-xs opacity-70 break-all">ndelacruz72@uasd.edu.do</a></div></div></div><!-- Center Column: Content (6 cols) --><div class="lg:col-span-6 space-y-12"><!-- Header --><section><div class="flex items-center gap-4 mb-4"><h1 class="text-4xl font-bold">Física Estadística, Física Matemática y Sistemas Complejos</h1></div><p class="text-xl opacity-80 leading-relaxed">La Física de Sistemas Complejos utiliza herramientas analíticas como la Física Estadística y los modelos matemáticos para describir y predecir cómo las interacciones entre múltiples componentes generan comportamientos colectivos emergentes y fenómenos críticos distintos a la simple suma de sus partes individuales</p></section><!-- Research Lines --><section id="lines" class="scroll-mt-24"><h2 class="text-2xl font-bold mb-6 flex items-center gap-2">Research Lines</h2><div class="space-y-4"><div id="line-estadistica-clasica" class="scroll-mt-32"><h3 class="font-bold text-lg text-primary mb-1">Mecánica Estadística Clásica</h3><div class="opacity-80 text-sm leading-relaxed"><p>Esta línea de investigación se centra en el análisis integral de <strong>sistemas macroscópicos en equilibrio</strong>, empleando la teoría estadística y la integración termodinámica para derivar sus propiedades fundamentales. El estudio abarca desde la investigación de <strong>transiciones de fase</strong> y fenómenos críticos hasta la distribución de sistemas regidos por la exclusión estadística de estados correlacionados, complementándose con la caracterización detallada de los procesos de <strong>adsorción en superficies</strong>.</p>
+</div></div><div id="line-estadistica-no-equilibrio" class="scroll-mt-32"><h3 class="font-bold text-lg text-primary mb-1">Mecánica Estadística Fuera del Equilibrio</h3><div class="opacity-80 text-sm leading-relaxed"><p>Esta área de estudio se enfoca en el análisis de <strong>procesos irreversibles y dinámicas de no-equilibrio</strong>, integrando conceptos de la <strong>teoría de la información</strong> para ampliar el alcance de la física estadística. A través de la modelación de la <strong>percolación</strong> y el análisis de <strong>redes complejas</strong>, se investigan los mecanismos de <strong>autoorganización</strong> y los fenómenos emergentes —como el comportamiento colectivo y las transiciones de fase—, complementando la teoría con el estudio físico del <strong>crecimiento superficial por deposición</strong>.</p>
+</div></div><div id="line-transporte" class="scroll-mt-32"><h3 class="font-bold text-lg text-primary mb-1">Fenómeno de Transporte</h3><div class="opacity-80 text-sm leading-relaxed"><p>Esta línea de trabajo se dedica al <strong>modelado matemático</strong> y la <strong>simulación numérica</strong> de los fenómenos de transporte, con énfasis en su comportamiento dentro de <strong>sistemas complejos</strong>. Este enfoque teórico-computacional se aplica directamente al análisis riguroso y la <strong>optimización de dispositivos y sistemas térmicos</strong>, permitiendo mejorar su diseño y eficiencia funcional mediante la comprensión detallada de las dinámicas de transferencia.</p>
+</div></div><div id="line-fisica-matematica" class="scroll-mt-32"><h3 class="font-bold text-lg text-primary mb-1">Física Matemática</h3><div class="opacity-80 text-sm leading-relaxed"><p>Esta línea de investigación aborda el modelado riguroso de fenómenos físicos mediante la aplicación de <strong>polinomios ortogonales</strong> estándar y no estándar (incluyendo los de Sobolev) para la representación precisa de potenciales electrostáticos y cuánticos. El enfoque integra el uso de <strong>métodos asintóticos</strong> y la resolución de <strong>ecuaciones diferenciales parciales</strong> para abordar la complejidad de los sistemas en física teórica, culminando con la aplicación de la <strong>geometría diferencial</strong> para interpretar las interacciones fundamentales dentro de la <strong>teoría cuántica de campos</strong>.</p>
+</div></div></div></section><!-- Members --><!-- Programs --><!-- Projects --><!-- Publications --></div><!-- Right Column: Navigation (3 cols) --><div class="hidden lg:block lg:col-span-3"><div class="sticky top-24"><h3 class="font-bold mb-4 px-2 uppercase text-xs tracking-wider opacity-50"></h3><ul class="menu bg-base-100 rounded-box p-2 w-full"><li><span class="font-bold opacity-70 mb-1">Research Lines</span><ul><li><a href="#line-estadistica-clasica">Mecánica Estadística Clásica</a></li><li><a href="#line-estadistica-no-equilibrio">Mecánica Estadística Fuera del Equilibrio</a></li><li><a href="#line-transporte">Fenómeno de Transporte</a></li><li><a href="#line-fisica-matematica">Física Matemática</a></li></ul></li></ul></div></div></div></div></main><!-- Footer --><footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-auto"><div><div class="grid grid-flow-col gap-4"><!-- Twitter / X --><a href="https://twitter.com/UASD" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a><!-- YouTube --><a href="https://www.youtube.com/@institutodefisica-ifis420" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a></div></div><div><div class="flex flex-col items-center gap-1 text-sm opacity-80"><p class="mt-4 text-xs opacity-100">© 2025 Universidad Autónoma de Santo Domingo - All rights reserved</p></div></div></footer></body></html>
