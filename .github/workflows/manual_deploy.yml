@@ -27,8 +27,10 @@ jobs:
 
       # 1. Bajar el ejecutable "prisma" y darle permisos de ejecución
       - name: Download Prisma
+        env:
+          GH_TOKEN: ${{ secrets.PRISMA_REPO_TOKEN }}
         run: |
-          wget -O prisma https://github.com/vladimirck/prisma/releases/latest/download/prisma
+          gh release download --repo vladimirck/prisma -p "prisma" -O prisma
           chmod +x prisma
 
       # 2. Clonar el contenido del repositorio web-content
