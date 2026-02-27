@@ -22,9 +22,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       # 1. Bajar el ejecutable "prisma" y darle permisos de ejecución
       - name: Download Prisma
         env:
@@ -39,7 +36,7 @@ jobs:
         with:
           repository: IfisUASD/web-content
           path: web-content
-          token: ${{ secrets.PRISMA_REPO_TOKEN }}
+          token: ${{ secrets.WEB_CONTENT_TOKEN }}
 
       # 3. Crear la página web usando el comando prisma
       - name: Build static site with Prisma
