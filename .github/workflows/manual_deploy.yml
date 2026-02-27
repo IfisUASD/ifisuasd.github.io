@@ -1,0 +1,56 @@
+name: Manual Deploy with Prisma
+
+on:
+  # Este evento permite ejecutar el workflow manualmente desde la pestaña "Actions" en GitHub
+  workflow_dispatch: 
+
+# Establece los permisos del GITHUB_TOKEN para permitir la implementación en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite solo un despliegue concurrente
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 1. Bajar el ejecutable "prisma" y darle permisos de ejecución
+      - name: Download Prisma
+        run: |
+          wget -O prisma https://github.com/vladimirck/prisma/releases/latest/download/prisma
+          chmod +x prisma
+
+      # 2. Clonar el contenido del repositorio web-content
+      - name: Clone web-content
+        run: |
+          git clone https://github.com/IfisUASD/web-content web-content
+
+      # 3. Crear la página web usando el comando prisma
+      - name: Build static site with Prisma
+        run: |
+          ./prisma -content "web-content" -output "public" -url "https://ifis.edu.do"
+          echo "ifis.edu.do" > public/CNAME
+
+      # 4. Publicar la carpeta "public" como la página web estática
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
