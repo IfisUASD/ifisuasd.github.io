@@ -35,8 +35,11 @@ jobs:
 
       # 2. Clonar el contenido del repositorio web-content
       - name: Clone web-content
-        run: |
-          git clone https://github.com/IfisUASD/web-content web-content
+        uses: actions/checkout@v4
+        with:
+          repository: IfisUASD/web-content
+          path: web-content
+          token: ${{ secrets.PRISMA_REPO_TOKEN }}
 
       # 3. Crear la página web usando el comando prisma
       - name: Build static site with Prisma
