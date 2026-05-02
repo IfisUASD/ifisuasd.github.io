@@ -41,7 +41,7 @@ jobs:
       # 3. Crear la página web usando el comando prisma
       - name: Build static site with Prisma
         run: |
-          ./prisma -content "web-content" -output "public" -url "https://ifis.edu.do"
+          ./prisma -content "web-content" -output "public" -url "https://ifis.edu.do" -manifest "https://ifis.edu.do/sitemap_manifest.json"
           echo "ifis.edu.do" > public/CNAME
 
       # 4. Publicar la carpeta "public" como la página web estática
