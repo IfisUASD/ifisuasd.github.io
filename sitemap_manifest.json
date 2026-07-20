@@ -1,0 +1,1284 @@
+{
+  "pages": {
+    "https://ifis.edu.do/": {
+      "path": "ifisuasd.github.io/index.html",
+      "last_mod": "2026-07-19T23:06:37.120415279-04:00",
+      "hash": "6114612c2d7080f6211d4a2b6b9fa105c0a2748b"
+    },
+    "https://ifis.edu.do/about": {
+      "path": "ifisuasd.github.io/about/index.html",
+      "last_mod": "2026-05-25T01:48:10.141486414-04:00",
+      "hash": "d313c15eede2c775e2c2778b4d526a01f7042156"
+    },
+    "https://ifis.edu.do/apps": {
+      "path": "ifisuasd.github.io/apps/index.html",
+      "last_mod": "2026-05-25T01:48:10.14083722-04:00",
+      "hash": "6781ee16cafdcf3a11a4e72527fc61a083fdfcbb"
+    },
+    "https://ifis.edu.do/apps/markdown": {
+      "path": "ifisuasd.github.io/apps/markdown/index.html",
+      "last_mod": "2026-05-25T01:48:10.140983025-04:00",
+      "hash": "669f19404273eefe8e04704141a5f7d9185b08ca"
+    },
+    "https://ifis.edu.do/apps/qr": {
+      "path": "ifisuasd.github.io/apps/qr/index.html",
+      "last_mod": "2026-05-25T01:48:10.140909767-04:00",
+      "hash": "306155e288cefcf97106e8d0c5cb28fd9937171d"
+    },
+    "https://ifis.edu.do/blog": {
+      "path": "ifisuasd.github.io/blog/index.html",
+      "last_mod": "2026-05-25T01:59:41.372304738-04:00",
+      "hash": "07763bd4ebd5b3d7d4a5c1558cb88b0c752f7823"
+    },
+    "https://ifis.edu.do/blog/espacio-tiempo-intercambian-papeles": {
+      "path": "ifisuasd.github.io/blog/espacio-tiempo-intercambian-papeles/index.html",
+      "last_mod": "2026-05-25T01:48:10.130448815-04:00",
+      "hash": "df491b4fe46e5ced8d0d794ae04b6d3ec8697ccd"
+    },
+    "https://ifis.edu.do/blog/formacion-capital-humano-2025": {
+      "path": "ifisuasd.github.io/blog/formacion-capital-humano-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.130821748-04:00",
+      "hash": "e15b01e582046015545b2a19c892a6ae076c7042"
+    },
+    "https://ifis.edu.do/blog/lo-que-el-viento-no-se-llevo": {
+      "path": "ifisuasd.github.io/blog/lo-que-el-viento-no-se-llevo/index.html",
+      "last_mod": "2026-05-25T01:48:10.130252425-04:00",
+      "hash": "1acd350b5664ec0f4da51cffc299c3c73cf971a8"
+    },
+    "https://ifis.edu.do/blog/produccion-ciencias-ifis": {
+      "path": "ifisuasd.github.io/blog/produccion-ciencias-ifis/index.html",
+      "last_mod": "2026-05-25T01:48:10.130629306-04:00",
+      "hash": "a36b750929133cd2f404bc270cc7104e483364e8"
+    },
+    "https://ifis.edu.do/en/": {
+      "path": "ifisuasd.github.io/en/index.html",
+      "last_mod": "2026-07-19T23:06:37.168096949-04:00",
+      "hash": "50cebc5c1da6d3f6b653cb7fa5ae5c935416bd10"
+    },
+    "https://ifis.edu.do/en/about": {
+      "path": "ifisuasd.github.io/en/about/index.html",
+      "last_mod": "2026-05-25T01:48:10.186972226-04:00",
+      "hash": "ef095076ce9efa6abdc9e2c4f0598d9f89f2386e"
+    },
+    "https://ifis.edu.do/en/apps": {
+      "path": "ifisuasd.github.io/en/apps/index.html",
+      "last_mod": "2026-05-25T01:48:10.18615191-04:00",
+      "hash": "464b88ca1601df7afcc14dbd12cf66d654d18831"
+    },
+    "https://ifis.edu.do/en/apps/markdown": {
+      "path": "ifisuasd.github.io/en/apps/markdown/index.html",
+      "last_mod": "2026-05-25T01:48:10.186570439-04:00",
+      "hash": "286d87323678e11d9b026e3317fa1ba86bd46e3a"
+    },
+    "https://ifis.edu.do/en/apps/qr": {
+      "path": "ifisuasd.github.io/en/apps/qr/index.html",
+      "last_mod": "2026-05-25T01:48:10.186400078-04:00",
+      "hash": "f9dddfa95d62a1f7fced77adad2c87cfb5ebbd61"
+    },
+    "https://ifis.edu.do/en/blog": {
+      "path": "ifisuasd.github.io/en/blog/index.html",
+      "last_mod": "2026-05-25T01:59:41.423542473-04:00",
+      "hash": "d690c103ff810ff84811a5e430e39bd5b059801e"
+    },
+    "https://ifis.edu.do/en/blog/espacio-tiempo-intercambian-papeles": {
+      "path": "ifisuasd.github.io/en/blog/espacio-tiempo-intercambian-papeles/index.html",
+      "last_mod": "2026-05-25T01:48:10.175228687-04:00",
+      "hash": "bea82a52168adb8bc98a78175140c0c6a6e78ee7"
+    },
+    "https://ifis.edu.do/en/blog/formacion-capital-humano-2025": {
+      "path": "ifisuasd.github.io/en/blog/formacion-capital-humano-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.175523953-04:00",
+      "hash": "9cc74509c23d651c11f68c0fe210a01bc26cb501"
+    },
+    "https://ifis.edu.do/en/blog/lo-que-el-viento-no-se-llevo": {
+      "path": "ifisuasd.github.io/en/blog/lo-que-el-viento-no-se-llevo/index.html",
+      "last_mod": "2026-05-25T01:48:10.175073103-04:00",
+      "hash": "8ec2207b1f2b1670220ded692036a6a5c8a2ebaf"
+    },
+    "https://ifis.edu.do/en/blog/produccion-ciencias-ifis": {
+      "path": "ifisuasd.github.io/en/blog/produccion-ciencias-ifis/index.html",
+      "last_mod": "2026-05-25T01:48:10.175372828-04:00",
+      "hash": "33d564e120c2e6de23590d69b102592778badf37"
+    },
+    "https://ifis.edu.do/en/news": {
+      "path": "ifisuasd.github.io/en/news/index.html",
+      "last_mod": "2026-05-25T01:59:41.422230984-04:00",
+      "hash": "3ce262ffc7ba6808966c1883c354e79f0ef6c8b8"
+    },
+    "https://ifis.edu.do/en/news/apertura-doctorado-en-fisica": {
+      "path": "ifisuasd.github.io/en/news/apertura-doctorado-en-fisica/index.html",
+      "last_mod": "2026-05-25T01:48:10.173481202-04:00",
+      "hash": "d9f0a50becae810515e07f41aaece5910e85230e"
+    },
+    "https://ifis.edu.do/en/news/auxiliar-graduacion-saul": {
+      "path": "ifisuasd.github.io/en/news/auxiliar-graduacion-saul/index.html",
+      "last_mod": "2026-05-25T01:48:10.173319457-04:00",
+      "hash": "ab42c7399fee9cf46493c7d8f3b6ebc1b0577447"
+    },
+    "https://ifis.edu.do/en/news/erika-reconocimiento-jornada-barahona-2025": {
+      "path": "ifisuasd.github.io/en/news/erika-reconocimiento-jornada-barahona-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.173795585-04:00",
+      "hash": "4abaf6973e3df21b6efb2bb4628dbe300aea58b4"
+    },
+    "https://ifis.edu.do/en/news/finalista-pnj-2025": {
+      "path": "ifisuasd.github.io/en/news/finalista-pnj-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.173635293-04:00",
+      "hash": "d7b64cb0146ea1b3be8173aa26a1cb7f5b98d75a"
+    },
+    "https://ifis.edu.do/en/news/franmis-investigador-del-año-2025": {
+      "path": "ifisuasd.github.io/en/news/franmis-investigador-del-año-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.174032261-04:00",
+      "hash": "19ef77f276761c1ffa17e0def3388923fdf07a31"
+    },
+    "https://ifis.edu.do/en/news/nuclear-training-11-2025": {
+      "path": "ifisuasd.github.io/en/news/nuclear-training-11-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.174615771-04:00",
+      "hash": "2cac292ec8aa2d68565f6040e3ab26538b10135e"
+    },
+    "https://ifis.edu.do/en/news/nuevas-carreras-esc-fisica-disponibles": {
+      "path": "ifisuasd.github.io/en/news/nuevas-carreras-esc-fisica-disponibles/index.html",
+      "last_mod": "2026-05-25T01:48:10.173177219-04:00",
+      "hash": "b7a5b19b24dd14f932afca1c715b21125af93aca"
+    },
+    "https://ifis.edu.do/en/news/premiacion-vip-2025": {
+      "path": "ifisuasd.github.io/en/news/premiacion-vip-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.174288154-04:00",
+      "hash": "b91a6317e546bdf290e1c830848e3cfc5a799f45"
+    },
+    "https://ifis.edu.do/en/news/reconocimiento-ceicyt-2025": {
+      "path": "ifisuasd.github.io/en/news/reconocimiento-ceicyt-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.174767457-04:00",
+      "hash": "171a06441b6f72657a5b1ee38378e69ae8edf367"
+    },
+    "https://ifis.edu.do/en/people": {
+      "path": "ifisuasd.github.io/en/people/index.html",
+      "last_mod": "2026-07-19T23:06:37.168298776-04:00",
+      "hash": "57e3ecd0b249921ab29af665a0b86a8402c55461"
+    },
+    "https://ifis.edu.do/en/people/Albert-De-La-Cruz": {
+      "path": "ifisuasd.github.io/en/people/Albert-De-La-Cruz/index.html",
+      "last_mod": "2026-05-25T01:48:10.169528861-04:00",
+      "hash": "bb7cc228d6dad4b84b008c42462bdadb5498b061"
+    },
+    "https://ifis.edu.do/en/people/Amaury-Rosario": {
+      "path": "ifisuasd.github.io/en/people/Amaury-Rosario/index.html",
+      "last_mod": "2026-07-19T23:06:37.170821599-04:00",
+      "hash": "d4678be2153987e8d21e12efc528d4c2fd700050"
+    },
+    "https://ifis.edu.do/en/people/Anyelina-Adon-Villanueva": {
+      "path": "ifisuasd.github.io/en/people/Anyelina-Adon-Villanueva/index.html",
+      "last_mod": "2026-05-25T01:48:10.170379164-04:00",
+      "hash": "5a60936ff4fd8518495b775fccf586527ff9ef22"
+    },
+    "https://ifis.edu.do/en/people/Carime-Matos": {
+      "path": "ifisuasd.github.io/en/people/Carime-Matos/index.html",
+      "last_mod": "2026-07-19T23:06:37.168411667-04:00",
+      "hash": "929ada4b5ad647680aef1c5c09c9e6a60bcd91aa"
+    },
+    "https://ifis.edu.do/en/people/Dorka-Amarilis-Luciano-Brioso": {
+      "path": "ifisuasd.github.io/en/people/Dorka-Amarilis-Luciano-Brioso/index.html",
+      "last_mod": "2026-05-25T01:48:10.168482047-04:00",
+      "hash": "0a09972e4d3e785d73e73d048b29388d8472d3ff"
+    },
+    "https://ifis.edu.do/en/people/Emma-Encarnación": {
+      "path": "ifisuasd.github.io/en/people/Emma-Encarnación/index.html",
+      "last_mod": "2026-07-19T23:06:37.170524093-04:00",
+      "hash": "5d8c02a567050b6b8bd1c1efd356abc009eab565"
+    },
+    "https://ifis.edu.do/en/people/Enrique-Casanova": {
+      "path": "ifisuasd.github.io/en/people/Enrique-Casanova/index.html",
+      "last_mod": "2026-05-25T01:48:10.171450073-04:00",
+      "hash": "45b007d8c61b75085f5147a3576ab10bc02fcb21"
+    },
+    "https://ifis.edu.do/en/people/Erika-Montero": {
+      "path": "ifisuasd.github.io/en/people/Erika-Montero/index.html",
+      "last_mod": "2026-05-25T01:48:10.168598958-04:00",
+      "hash": "926d6875e2954950f935e7864ca5a8650ca6380d"
+    },
+    "https://ifis.edu.do/en/people/Giovanny-Paulino": {
+      "path": "ifisuasd.github.io/en/people/Giovanny-Paulino/index.html",
+      "last_mod": "2026-07-19T23:06:37.170610525-04:00",
+      "hash": "2435810ac6902de00626e59dc5600ca9de543e44"
+    },
+    "https://ifis.edu.do/en/people/Joan-Mieses": {
+      "path": "ifisuasd.github.io/en/people/Joan-Mieses/index.html",
+      "last_mod": "2026-05-25T01:48:10.170607895-04:00",
+      "hash": "3ffa2c64bb1f42cf0500406da182297b78ecab9b"
+    },
+    "https://ifis.edu.do/en/people/José-Ysrael": {
+      "path": "ifisuasd.github.io/en/people/José-Ysrael/index.html",
+      "last_mod": "2026-07-19T23:06:37.171655537-04:00",
+      "hash": "2f3a086fbe1a3b53a70a8527f8557bcee6df0ad8"
+    },
+    "https://ifis.edu.do/en/people/Maicol-Cabrera": {
+      "path": "ifisuasd.github.io/en/people/Maicol-Cabrera/index.html",
+      "last_mod": "2026-07-19T23:06:37.170911116-04:00",
+      "hash": "941f496598fb20ea865a606a2f565cf7fea12b50"
+    },
+    "https://ifis.edu.do/en/people/Manuela-Paulino": {
+      "path": "ifisuasd.github.io/en/people/Manuela-Paulino/index.html",
+      "last_mod": "2026-05-25T01:48:10.168693937-04:00",
+      "hash": "22a840c28f454952e493053d4b8a76622b841490"
+    },
+    "https://ifis.edu.do/en/people/Rafelina-Vargas": {
+      "path": "ifisuasd.github.io/en/people/Rafelina-Vargas/index.html",
+      "last_mod": "2026-05-25T01:48:10.170725357-04:00",
+      "hash": "345a2b692c05d4381acd8e192227653309becced"
+    },
+    "https://ifis.edu.do/en/people/Ramón-Delanoy": {
+      "path": "ifisuasd.github.io/en/people/Ramón-Delanoy/index.html",
+      "last_mod": "2026-07-19T23:06:37.169506502-04:00",
+      "hash": "c7d7153486568c97df2a2170938a4b555b518335"
+    },
+    "https://ifis.edu.do/en/people/Reynaldo-González": {
+      "path": "ifisuasd.github.io/en/people/Reynaldo-González/index.html",
+      "last_mod": "2026-05-25T01:48:10.170851845-04:00",
+      "hash": "b6625828140dce0c101da036b7bb37a78ce85691"
+    },
+    "https://ifis.edu.do/en/people/Thara-Caba": {
+      "path": "ifisuasd.github.io/en/people/Thara-Caba/index.html",
+      "last_mod": "2026-05-25T01:48:10.17158098-04:00",
+      "hash": "8ac0be5f0af57dba3000fcf9ef5e7e03113e1dc1"
+    },
+    "https://ifis.edu.do/en/people/Yamilesa-Herrera": {
+      "path": "ifisuasd.github.io/en/people/Yamilesa-Herrera/index.html",
+      "last_mod": "2026-05-25T01:48:10.169608902-04:00",
+      "hash": "27a2ca9abab622c0e27e561d404e0b7fcc8f4139"
+    },
+    "https://ifis.edu.do/en/people/breezy-ocaña": {
+      "path": "ifisuasd.github.io/en/people/breezy-ocaña/index.html",
+      "last_mod": "2026-05-25T01:48:10.171167049-04:00",
+      "hash": "b8005cf3a9731838654426a7065458486e4e7ed3"
+    },
+    "https://ifis.edu.do/en/people/carla-valdez": {
+      "path": "ifisuasd.github.io/en/people/carla-valdez/index.html",
+      "last_mod": "2026-07-19T23:06:37.171013447-04:00",
+      "hash": "f0485c922f5803c2faf7498f5705a3d6564745a1"
+    },
+    "https://ifis.edu.do/en/people/daisy-contreras": {
+      "path": "ifisuasd.github.io/en/people/daisy-contreras/index.html",
+      "last_mod": "2026-05-25T01:48:10.169765948-04:00",
+      "hash": "e5ea7f3a335ccfa90a6875fe1d7e3f80287f51ff"
+    },
+    "https://ifis.edu.do/en/people/franmis-rodriguez": {
+      "path": "ifisuasd.github.io/en/people/franmis-rodriguez/index.html",
+      "last_mod": "2026-07-19T23:06:37.16922131-04:00",
+      "hash": "9e7a4f29be8790faf969923c74e192bdfbaafc6c"
+    },
+    "https://ifis.edu.do/en/people/gabriel-barreiro": {
+      "path": "ifisuasd.github.io/en/people/gabriel-barreiro/index.html",
+      "last_mod": "2026-05-25T01:48:10.16889689-04:00",
+      "hash": "7e64908403ed6b1e065749fa4bba9645765d5a54"
+    },
+    "https://ifis.edu.do/en/people/jesus-olivera": {
+      "path": "ifisuasd.github.io/en/people/jesus-olivera/index.html",
+      "last_mod": "2026-07-19T23:06:37.170296167-04:00",
+      "hash": "64da1657b906300122130ad9cadd34929feed43d"
+    },
+    "https://ifis.edu.do/en/people/jose-garcia": {
+      "path": "ifisuasd.github.io/en/people/jose-garcia/index.html",
+      "last_mod": "2026-07-19T23:06:37.169719851-04:00",
+      "hash": "992c69f1bb87cba800f5f05172898e844ecc2145"
+    },
+    "https://ifis.edu.do/en/people/jose-rojas": {
+      "path": "ifisuasd.github.io/en/people/jose-rojas/index.html",
+      "last_mod": "2026-05-25T01:48:10.170256212-04:00",
+      "hash": "a0e84e2d2b9b70bc9a4a7d08c290cd34e3636710"
+    },
+    "https://ifis.edu.do/en/people/kety-jimenez": {
+      "path": "ifisuasd.github.io/en/people/kety-jimenez/index.html",
+      "last_mod": "2026-07-19T23:06:37.170728365-04:00",
+      "hash": "3817560527af40559e3ce090d07657390d3954d8"
+    },
+    "https://ifis.edu.do/en/people/mariella-mateo": {
+      "path": "ifisuasd.github.io/en/people/mariella-mateo/index.html",
+      "last_mod": "2026-05-25T01:48:10.16910394-04:00",
+      "hash": "823ed42cd3f523817b2b4a67f77a161391761249"
+    },
+    "https://ifis.edu.do/en/people/miledy-alberto": {
+      "path": "ifisuasd.github.io/en/people/miledy-alberto/index.html",
+      "last_mod": "2026-07-19T23:06:37.171204404-04:00",
+      "hash": "bf4595a48f2861914528f70bb3ba77a55f3b0143"
+    },
+    "https://ifis.edu.do/en/people/narciso-villar": {
+      "path": "ifisuasd.github.io/en/people/narciso-villar/index.html",
+      "last_mod": "2026-07-19T23:06:37.169838182-04:00",
+      "hash": "65f8656fa3852bf270082a0825fca47ab549ba43"
+    },
+    "https://ifis.edu.do/en/people/nelphy-de-la-cruz": {
+      "path": "ifisuasd.github.io/en/people/nelphy-de-la-cruz/index.html",
+      "last_mod": "2026-07-19T23:06:37.170424878-04:00",
+      "hash": "dd134482dc2ab315abc31c082ca0d9a4051e2a62"
+    },
+    "https://ifis.edu.do/en/people/saul-castillo": {
+      "path": "ifisuasd.github.io/en/people/saul-castillo/index.html",
+      "last_mod": "2026-05-25T01:48:10.169688953-04:00",
+      "hash": "fd03211ae8f6e4d7cfc70a36fc8a7f3eeb528df3"
+    },
+    "https://ifis.edu.do/en/people/taira-batista": {
+      "path": "ifisuasd.github.io/en/people/taira-batista/index.html",
+      "last_mod": "2026-07-19T23:06:37.17006764-04:00",
+      "hash": "282ff994e438699c0781c5ac2c5e2af8e942106e"
+    },
+    "https://ifis.edu.do/en/people/vladimir-perez": {
+      "path": "ifisuasd.github.io/en/people/vladimir-perez/index.html",
+      "last_mod": "2026-05-25T01:48:10.171940988-04:00",
+      "hash": "ab105f75c361ea46718d43afb40f72ab6797ff2d"
+    },
+    "https://ifis.edu.do/en/projects": {
+      "path": "ifisuasd.github.io/en/projects/index.html",
+      "last_mod": "2026-07-19T23:06:37.17203733-04:00",
+      "hash": "399e3d67421c467ce28c9f95b9fcf7e383ac1114"
+    },
+    "https://ifis.edu.do/en/projects/FONDOCYT-2020-2A2-102": {
+      "path": "ifisuasd.github.io/en/projects/FONDOCYT-2020-2A2-102/index.html",
+      "last_mod": "2026-07-19T23:06:37.172159538-04:00",
+      "hash": "81c62f9cba11fa097b71f369ea3de76d5be013ed"
+    },
+    "https://ifis.edu.do/en/projects/aula-invertida-2024": {
+      "path": "ifisuasd.github.io/en/projects/aula-invertida-2024/index.html",
+      "last_mod": "2026-05-25T01:48:10.172868267-04:00",
+      "hash": "a8ca700fc8ab8f9aa00a6de75f39c15df787cb41"
+    },
+    "https://ifis.edu.do/en/projects/habla-con-ellas": {
+      "path": "ifisuasd.github.io/en/projects/habla-con-ellas/index.html",
+      "last_mod": "2026-05-25T01:48:10.172558302-04:00",
+      "hash": "9b4f12491a6757dd38fc3daa27a4f57272b22ea0"
+    },
+    "https://ifis.edu.do/en/projects/pisa-machine-learning": {
+      "path": "ifisuasd.github.io/en/projects/pisa-machine-learning/index.html",
+      "last_mod": "2026-05-25T01:48:10.172694098-04:00",
+      "hash": "cafb474abcbc621136fe273af20749cff54b13d7"
+    },
+    "https://ifis.edu.do/en/publications": {
+      "path": "ifisuasd.github.io/en/publications/index.html",
+      "last_mod": "2026-07-19T23:06:37.175842197-04:00",
+      "hash": "8d529af6595673e9347561041043a403fde95136"
+    },
+    "https://ifis.edu.do/en/publications/10-1002_adpr-202000207": {
+      "path": "ifisuasd.github.io/en/publications/10-1002_adpr-202000207/index.html",
+      "last_mod": "2026-07-19T23:06:37.182826354-04:00",
+      "hash": "101cef4508a8c3f1538ecfb1fbc266060547d465"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-apsusc-2018-08-190": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-apsusc-2018-08-190/index.html",
+      "last_mod": "2026-07-19T23:06:37.185466456-04:00",
+      "hash": "f46a32afdef634e6382e16d0aa0117aec97b3bb6"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-bioelechem-2024-108799": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-bioelechem-2024-108799/index.html",
+      "last_mod": "2026-07-19T23:06:37.179635253-04:00",
+      "hash": "7dc8e99d92d9b5cc115add0fa3209742cb447e3a"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-commatsci-2023-112546": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-commatsci-2023-112546/index.html",
+      "last_mod": "2026-07-19T23:06:37.181867132-04:00",
+      "hash": "9c56a12d0a3529c9ab588c627d461ca6639b47f3"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-ijrefrig-2023-10-003": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-ijrefrig-2023-10-003/index.html",
+      "last_mod": "2026-07-19T23:06:37.181371116-04:00",
+      "hash": "4c00b7073aaa2251e03c161e4979367524952f7d"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-intermet-2019-106660": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-intermet-2019-106660/index.html",
+      "last_mod": "2026-07-19T23:06:37.184607711-04:00",
+      "hash": "197e91ab9e919758f02caf832ad4e16efd696c88"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-jlumin-2016-10-018": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-jlumin-2016-10-018/index.html",
+      "last_mod": "2026-07-19T23:06:37.186415418-04:00",
+      "hash": "8e01b498194a408d6246df6a6f381313c3a3c135"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-jmmm-2023-171358": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-jmmm-2023-171358/index.html",
+      "last_mod": "2026-07-19T23:06:37.181724576-04:00",
+      "hash": "8afdc9f02dd2643112728a9ad334547853091688"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-molliq-2025-129086": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-molliq-2025-129086/index.html",
+      "last_mod": "2026-07-19T23:06:37.176634918-04:00",
+      "hash": "c285dd6818c17b31404fe60b827f18b119c4deca"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-nexres-2025-100292": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-nexres-2025-100292/index.html",
+      "last_mod": "2026-07-19T23:06:37.178097741-04:00",
+      "hash": "17d58783c422c93eab9b21dcca72a900ceed15a7"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-nutos-2024-10-006": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-nutos-2024-10-006/index.html",
+      "last_mod": "2026-07-19T23:06:37.179486365-04:00",
+      "hash": "a64b316abfd5d5a564a56f82100ee6833a79a140"
+    },
+    "https://ifis.edu.do/en/publications/10-1016_j-tsf-2019-137739": {
+      "path": "ifisuasd.github.io/en/publications/10-1016_j-tsf-2019-137739/index.html",
+      "last_mod": "2026-07-19T23:06:37.184456289-04:00",
+      "hash": "80a8a16e87282d5255a2d0ce8c983bc87d02273a"
+    },
+    "https://ifis.edu.do/en/publications/10-1038_s41598-026-42922-0": {
+      "path": "ifisuasd.github.io/en/publications/10-1038_s41598-026-42922-0/index.html",
+      "last_mod": "2026-07-19T23:06:37.176360265-04:00",
+      "hash": "2dbc1a53e2a9183d826cb60998c1d2713f5dbd0a"
+    },
+    "https://ifis.edu.do/en/publications/10-1039_d5cp00254k": {
+      "path": "ifisuasd.github.io/en/publications/10-1039_d5cp00254k/index.html",
+      "last_mod": "2026-07-19T23:06:37.178810182-04:00",
+      "hash": "a9b40b176dad20c4ae85e64facc56b7667e855b0"
+    },
+    "https://ifis.edu.do/en/publications/10-1063_1-5010786": {
+      "path": "ifisuasd.github.io/en/publications/10-1063_1-5010786/index.html",
+      "last_mod": "2026-07-19T23:06:37.185621285-04:00",
+      "hash": "487878912645b92d75ea37cc680ddd6cfc72ce1f"
+    },
+    "https://ifis.edu.do/en/publications/10-1063_9-0000884": {
+      "path": "ifisuasd.github.io/en/publications/10-1063_9-0000884/index.html",
+      "last_mod": "2026-07-19T23:06:37.178662476-04:00",
+      "hash": "d3405d2bd43646eae9c957f34089317b58e39ef0"
+    },
+    "https://ifis.edu.do/en/publications/10-1080_00150193-2015-1056699": {
+      "path": "ifisuasd.github.io/en/publications/10-1080_00150193-2015-1056699/index.html",
+      "last_mod": "2026-07-19T23:06:37.186692286-04:00",
+      "hash": "89b26571c819476139f3b5153dc80d90a82e4318"
+    },
+    "https://ifis.edu.do/en/publications/10-1088_1742-5468_aa58f2": {
+      "path": "ifisuasd.github.io/en/publications/10-1088_1742-5468_aa58f2/index.html",
+      "last_mod": "2026-07-19T23:06:37.186279635-04:00",
+      "hash": "60f338f92145b4338aa91fcd0fc1f510a2e532ae"
+    },
+    "https://ifis.edu.do/en/publications/10-1098_rsos-220552": {
+      "path": "ifisuasd.github.io/en/publications/10-1098_rsos-220552/index.html",
+      "last_mod": "2026-07-19T23:06:37.182275806-04:00",
+      "hash": "6c3a2e69a2fa612e899912859c95f22951be0984"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_PhysRevE-102-012106": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_PhysRevE-102-012106/index.html",
+      "last_mod": "2026-07-19T23:06:37.1839218-04:00",
+      "hash": "c942c2dbb6b3c2f12fc815dee9ebe8ba195cf977"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_PhysRevE-102-012153": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_PhysRevE-102-012153/index.html",
+      "last_mod": "2026-07-19T23:06:37.183711928-04:00",
+      "hash": "e1e2f4e3fccc6b63df7bd8ce873278f799019e28"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_PhysRevE-104-034103": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_PhysRevE-104-034103/index.html",
+      "last_mod": "2026-07-19T23:06:37.182660424-04:00",
+      "hash": "9bd3c6abcff18a9541fea88b8d9c876d754be442"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_PhysRevE-107-064128": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_PhysRevE-107-064128/index.html",
+      "last_mod": "2026-07-19T23:06:37.182078487-04:00",
+      "hash": "aec161b3b7f7a90b3b1be9a42ee4002d65f34f05"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_PhysRevE-109-034107": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_PhysRevE-109-034107/index.html",
+      "last_mod": "2026-07-19T23:06:37.180677109-04:00",
+      "hash": "4730e11e6e92366688a8c5bbb94a83df729c8231"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_kt92-y6j6": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_kt92-y6j6/index.html",
+      "last_mod": "2026-07-19T23:06:37.176494937-04:00",
+      "hash": "6c1e9baf32174ff908624937e1338a4c9ceac8c9"
+    },
+    "https://ifis.edu.do/en/publications/10-1103_physreve-111-044110": {
+      "path": "ifisuasd.github.io/en/publications/10-1103_physreve-111-044110/index.html",
+      "last_mod": "2026-07-19T23:06:37.177939345-04:00",
+      "hash": "1112fb738825ca7405fe9ad4aa1f7d5e98daea77"
+    },
+    "https://ifis.edu.do/en/publications/10-1109_INTERMAGShortPapers61879-2024-10576775": {
+      "path": "ifisuasd.github.io/en/publications/10-1109_INTERMAGShortPapers61879-2024-10576775/index.html",
+      "last_mod": "2026-07-19T23:06:37.17981048-04:00",
+      "hash": "7b8b4b8c0d3b8bfdbd42a167b6ba98ee8e238f20"
+    },
+    "https://ifis.edu.do/en/publications/10-1109_REEPE-2019-8708774": {
+      "path": "ifisuasd.github.io/en/publications/10-1109_REEPE-2019-8708774/index.html",
+      "last_mod": "2026-07-19T23:06:37.184944941-04:00",
+      "hash": "1d061be607ba31384fdca2b644bcdef80f8af915"
+    },
+    "https://ifis.edu.do/en/publications/10-1117_12-2265592": {
+      "path": "ifisuasd.github.io/en/publications/10-1117_12-2265592/index.html",
+      "last_mod": "2026-07-19T23:06:37.185940631-04:00",
+      "hash": "b9434f447b154c4dbf4033c9984bb7ff86bff0d7"
+    },
+    "https://ifis.edu.do/en/publications/10-1117_12-2267348": {
+      "path": "ifisuasd.github.io/en/publications/10-1117_12-2267348/index.html",
+      "last_mod": "2026-07-19T23:06:37.186124575-04:00",
+      "hash": "f25f81722904def9034a6e60c4843b4503df047c"
+    },
+    "https://ifis.edu.do/en/publications/10-1117_12-2520834": {
+      "path": "ifisuasd.github.io/en/publications/10-1117_12-2520834/index.html",
+      "last_mod": "2026-07-19T23:06:37.185188016-04:00",
+      "hash": "d96e5d485a5e7bae82b923f6b78f65c1447f7e59"
+    },
+    "https://ifis.edu.do/en/publications/10-1134_S0031918X20040183": {
+      "path": "ifisuasd.github.io/en/publications/10-1134_S0031918X20040183/index.html",
+      "last_mod": "2026-07-19T23:06:37.184101005-04:00",
+      "hash": "a88c3d3bd4c5026485b17bb2f4ffd24f5bc2af58"
+    },
+    "https://ifis.edu.do/en/publications/10-1186_s12887-024-04789-w": {
+      "path": "ifisuasd.github.io/en/publications/10-1186_s12887-024-04789-w/index.html",
+      "last_mod": "2026-07-19T23:06:37.180437982-04:00",
+      "hash": "ec885550b040192d94be5e3b1049abdc1f4cbcef"
+    },
+    "https://ifis.edu.do/en/publications/10-1186_s12887-024-04841-9": {
+      "path": "ifisuasd.github.io/en/publications/10-1186_s12887-024-04841-9/index.html",
+      "last_mod": "2026-07-19T23:06:37.180022045-04:00",
+      "hash": "1b30cb27e7fdbadc2c17a11ec8c809e89cc08919"
+    },
+    "https://ifis.edu.do/en/publications/10-1186_s12967-020-02352-6": {
+      "path": "ifisuasd.github.io/en/publications/10-1186_s12967-020-02352-6/index.html",
+      "last_mod": "2026-07-19T23:06:37.184294136-04:00",
+      "hash": "1f2920137dc84d9b38bc8ace2e89d4278d03bf1f"
+    },
+    "https://ifis.edu.do/en/publications/10-1186_s41231-022-00127-3": {
+      "path": "ifisuasd.github.io/en/publications/10-1186_s41231-022-00127-3/index.html",
+      "last_mod": "2026-07-19T23:06:37.182474877-04:00",
+      "hash": "a845599a385c5cf9bd8e26dd2ecd0fb415a83c10"
+    },
+    "https://ifis.edu.do/en/publications/10-13140_RG-2-2-10807-55208_1": {
+      "path": "ifisuasd.github.io/en/publications/10-13140_RG-2-2-10807-55208_1/index.html",
+      "last_mod": "2026-05-25T01:48:10.184255114-04:00",
+      "hash": "91b8806245f7ebd78b23a0579e6c3d7aab115a68"
+    },
+    "https://ifis.edu.do/en/publications/10-13140_RG-2-2-23105-62566": {
+      "path": "ifisuasd.github.io/en/publications/10-13140_RG-2-2-23105-62566/index.html",
+      "last_mod": "2026-05-25T01:48:10.180146528-04:00",
+      "hash": "4157340b7f013a40b9b37bab2f3e7f1879419f07"
+    },
+    "https://ifis.edu.do/en/publications/10-13140_RG-2-2-30030-48963": {
+      "path": "ifisuasd.github.io/en/publications/10-13140_RG-2-2-30030-48963/index.html",
+      "last_mod": "2026-05-25T01:48:10.185625217-04:00",
+      "hash": "3204db16db00d1d0d5243d7aa2b04afc36f39a10"
+    },
+    "https://ifis.edu.do/en/publications/10-1371_journal-pone-0224978": {
+      "path": "ifisuasd.github.io/en/publications/10-1371_journal-pone-0224978/index.html",
+      "last_mod": "2026-07-19T23:06:37.184791795-04:00",
+      "hash": "916c9260f27c746349d3603bb305f38ec1d0b840"
+    },
+    "https://ifis.edu.do/en/publications/10-2478_joeb-2024-0018": {
+      "path": "ifisuasd.github.io/en/publications/10-2478_joeb-2024-0018/index.html",
+      "last_mod": "2026-07-19T23:06:37.179235256-04:00",
+      "hash": "c9d8c4c98bcf4463416ecf82a838adfed48cadd5"
+    },
+    "https://ifis.edu.do/en/publications/10-2478_joeb-2025-0009": {
+      "path": "ifisuasd.github.io/en/publications/10-2478_joeb-2025-0009/index.html",
+      "last_mod": "2026-07-19T23:06:37.177735895-04:00",
+      "hash": "66b63f31c5d715f2a3a040543520d50e622cbdc7"
+    },
+    "https://ifis.edu.do/en/publications/10-2478_joeb-2025-0012": {
+      "path": "ifisuasd.github.io/en/publications/10-2478_joeb-2025-0012/index.html",
+      "last_mod": "2026-07-19T23:06:37.177204081-04:00",
+      "hash": "f24e1c8a7d0f13b03a3081dddc36e256cea400d8"
+    },
+    "https://ifis.edu.do/en/publications/10-30827_profesorado-v29i1-30751": {
+      "path": "ifisuasd.github.io/en/publications/10-30827_profesorado-v29i1-30751/index.html",
+      "last_mod": "2026-07-19T23:06:37.178253482-04:00",
+      "hash": "86598f2f3c8e9bec41c14cfeae6ae1d4c0b9fed9"
+    },
+    "https://ifis.edu.do/en/publications/10-31349_RevMexFis-66-632": {
+      "path": "ifisuasd.github.io/en/publications/10-31349_RevMexFis-66-632/index.html",
+      "last_mod": "2026-07-19T23:06:37.183183571-04:00",
+      "hash": "748d2ca1f4383216bd1766587aa5f9e7d795fa84"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_atmos16060734": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_atmos16060734/index.html",
+      "last_mod": "2026-07-19T23:06:37.177361996-04:00",
+      "hash": "21b42d126ef8aff4a70e10f358b0fc4d1bf90261"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_atmos16111236": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_atmos16111236/index.html",
+      "last_mod": "2026-07-19T23:06:37.176791661-04:00",
+      "hash": "b37d883421dd27b9f296a66a80c532f465994cba"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_land13050684": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_land13050684/index.html",
+      "last_mod": "2026-07-19T23:06:37.180243379-04:00",
+      "hash": "c2020f445854779bf20e804936dba1171c43dfbf"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_magnetochemistry9100222": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_magnetochemistry9100222/index.html",
+      "last_mod": "2026-07-19T23:06:37.181553426-04:00",
+      "hash": "3632551374917c2591a93ae75bda82c787577489"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_nano10122407": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_nano10122407/index.html",
+      "last_mod": "2026-07-19T23:06:37.183023232-04:00",
+      "hash": "b30a144ef5600023cc8a4b845b8b94479e65344a"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_pr8081006": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_pr8081006/index.html",
+      "last_mod": "2026-07-19T23:06:37.183468033-04:00",
+      "hash": "e06eaf37a6876f3ff85c98cc6eb4b268f9ede0bc"
+    },
+    "https://ifis.edu.do/en/publications/10-3390_su152316510": {
+      "path": "ifisuasd.github.io/en/publications/10-3390_su152316510/index.html",
+      "last_mod": "2026-07-19T23:06:37.181009761-04:00",
+      "hash": "ac7210e2f04ee51fd7fb6b159ba6c1743cd0749b"
+    },
+    "https://ifis.edu.do/en/publications/10-37394_232031-2025-4-1": {
+      "path": "ifisuasd.github.io/en/publications/10-37394_232031-2025-4-1/index.html",
+      "last_mod": "2026-07-19T23:06:37.178397551-04:00",
+      "hash": "02b5f534017f1407f75f7a0df6f17ba5414c4b70"
+    },
+    "https://ifis.edu.do/en/publications/10-4236_epe-2017-911044": {
+      "path": "ifisuasd.github.io/en/publications/10-4236_epe-2017-911044/index.html",
+      "last_mod": "2026-07-19T23:06:37.185783207-04:00",
+      "hash": "b33fbc6e1a97c914657dc693d477b065f4822769"
+    },
+    "https://ifis.edu.do/en/publications/10-4236_gep-2026-147004": {
+      "path": "ifisuasd.github.io/en/publications/10-4236_gep-2026-147004/index.html",
+      "last_mod": "2026-07-19T23:06:37.176119195-04:00",
+      "hash": "87ed5512f97be81d6ad40296b0fc604cb0c02e7f"
+    },
+    "https://ifis.edu.do/en/publications/10-56048_mqr20225-9-2-2025-e664": {
+      "path": "ifisuasd.github.io/en/publications/10-56048_mqr20225-9-2-2025-e664/index.html",
+      "last_mod": "2026-07-19T23:06:37.177555608-04:00",
+      "hash": "3b5780deaabaa40cd8150050e80cab37337f5c8d"
+    },
+    "https://ifis.edu.do/en/publications/10-70577_asce_1762-1792_2025": {
+      "path": "ifisuasd.github.io/en/publications/10-70577_asce_1762-1792_2025/index.html",
+      "last_mod": "2026-07-19T23:06:37.177004068-04:00",
+      "hash": "eee8514cf2bc5e6bc43706506fc28fbb8ea53ad2"
+    },
+    "https://ifis.edu.do/en/publications/10-7716_aem-v12i3-2240": {
+      "path": "ifisuasd.github.io/en/publications/10-7716_aem-v12i3-2240/index.html",
+      "last_mod": "2026-07-19T23:06:37.181187813-04:00",
+      "hash": "6a3d23141762423f4ac7ea800658c0fb6842aff4"
+    },
+    "https://ifis.edu.do/en/research-areas": {
+      "path": "ifisuasd.github.io/en/research-areas/index.html",
+      "last_mod": "2026-07-19T23:06:37.18838653-04:00",
+      "hash": "541b02754cd403a48452e506b630e5e4e160fac1"
+    },
+    "https://ifis.edu.do/en/research-areas/ciencias-ambientales": {
+      "path": "ifisuasd.github.io/en/research-areas/ciencias-ambientales/index.html",
+      "last_mod": "2026-07-19T23:06:37.188598486-04:00",
+      "hash": "77bd3503315c1eeb095dd7688f9a79ba02972a24"
+    },
+    "https://ifis.edu.do/en/research-areas/ciencias-materiales": {
+      "path": "ifisuasd.github.io/en/research-areas/ciencias-materiales/index.html",
+      "last_mod": "2026-05-25T01:48:10.187179467-04:00",
+      "hash": "0709aef382b2474f46af2a55562393a23ebbf772"
+    },
+    "https://ifis.edu.do/en/research-areas/ciencias-nucleares": {
+      "path": "ifisuasd.github.io/en/research-areas/ciencias-nucleares/index.html",
+      "last_mod": "2026-05-25T01:48:10.187365297-04:00",
+      "hash": "5a26367c4fe274baf20cbf3d0ca2e5b2a4901dab"
+    },
+    "https://ifis.edu.do/en/research-areas/fisica-educativa": {
+      "path": "ifisuasd.github.io/en/research-areas/fisica-educativa/index.html",
+      "last_mod": "2026-05-25T01:48:10.187475595-04:00",
+      "hash": "6f26a7b6960bdc771a438a8b6ea8345d575212ad"
+    },
+    "https://ifis.edu.do/en/research-areas/fisica-estadistica": {
+      "path": "ifisuasd.github.io/en/research-areas/fisica-estadistica/index.html",
+      "last_mod": "2026-05-25T01:48:10.187581585-04:00",
+      "hash": "289b5deac26a08e004f5fbae2753f45b9c072206"
+    },
+    "https://ifis.edu.do/en/search": {
+      "path": "ifisuasd.github.io/en/search/index.html",
+      "last_mod": "2026-05-25T01:48:10.186070536-04:00",
+      "hash": "abed1963523da27fd221ed92263d9db35ddc6b73"
+    },
+    "https://ifis.edu.do/en/services": {
+      "path": "ifisuasd.github.io/en/services/index.html",
+      "last_mod": "2026-05-25T01:48:10.186717837-04:00",
+      "hash": "65f4aae2218deb8cf6b67347f5dd05a72d494356"
+    },
+    "https://ifis.edu.do/en/services/eac-fisica": {
+      "path": "ifisuasd.github.io/en/services/eac-fisica/index.html",
+      "last_mod": "2026-05-25T01:48:10.186827744-04:00",
+      "hash": "21e3907652ad63aea1ae8b0507673f0fa85eab94"
+    },
+    "https://ifis.edu.do/news": {
+      "path": "ifisuasd.github.io/news/index.html",
+      "last_mod": "2026-05-25T01:59:41.370546648-04:00",
+      "hash": "fe4199731a0c148b4e400ab3540876371db61501"
+    },
+    "https://ifis.edu.do/news/apertura-doctorado-en-fisica": {
+      "path": "ifisuasd.github.io/news/apertura-doctorado-en-fisica/index.html",
+      "last_mod": "2026-05-25T01:48:10.129174192-04:00",
+      "hash": "138611f1d8f8969bde0a748be6eeed8b76ed847f"
+    },
+    "https://ifis.edu.do/news/auxiliar-graduacion-saul": {
+      "path": "ifisuasd.github.io/news/auxiliar-graduacion-saul/index.html",
+      "last_mod": "2026-05-25T01:48:10.129044508-04:00",
+      "hash": "1b33319327e8067fc9ebb7c11a01f1fd95a4c49f"
+    },
+    "https://ifis.edu.do/news/erika-reconocimiento-jornada-barahona-2025": {
+      "path": "ifisuasd.github.io/news/erika-reconocimiento-jornada-barahona-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.129419765-04:00",
+      "hash": "a94f126ea713e9028b916b7b1832c7767276468c"
+    },
+    "https://ifis.edu.do/news/finalista-pnj-2025": {
+      "path": "ifisuasd.github.io/news/finalista-pnj-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.129297755-04:00",
+      "hash": "8cd3ffca8f05e4384d6302351d8371f93b7eca9b"
+    },
+    "https://ifis.edu.do/news/franmis-investigador-del-año-2025": {
+      "path": "ifisuasd.github.io/news/franmis-investigador-del-año-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.129549269-04:00",
+      "hash": "152a1dff710247c90dc14d37438f64f1fb45d86a"
+    },
+    "https://ifis.edu.do/news/nuclear-training-11-2025": {
+      "path": "ifisuasd.github.io/news/nuclear-training-11-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.129790935-04:00",
+      "hash": "86429011a8f8d48da465987e1ee71cffbd79844e"
+    },
+    "https://ifis.edu.do/news/nuevas-carreras-esc-fisica-disponibles": {
+      "path": "ifisuasd.github.io/news/nuevas-carreras-esc-fisica-disponibles/index.html",
+      "last_mod": "2026-05-25T01:48:10.128924431-04:00",
+      "hash": "092f5c69a5b8d0f4457ead1ddecce67677ce54d7"
+    },
+    "https://ifis.edu.do/news/premiacion-vip-2025": {
+      "path": "ifisuasd.github.io/news/premiacion-vip-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.129682441-04:00",
+      "hash": "b47d4b8fb99ffba1419adbf2bd312beb3222e032"
+    },
+    "https://ifis.edu.do/news/reconocimiento-ceicyt-2025": {
+      "path": "ifisuasd.github.io/news/reconocimiento-ceicyt-2025/index.html",
+      "last_mod": "2026-05-25T01:48:10.129945777-04:00",
+      "hash": "ccb340d384f825c38fa64490c9ee6aca735f12fb"
+    },
+    "https://ifis.edu.do/people": {
+      "path": "ifisuasd.github.io/people/index.html",
+      "last_mod": "2026-07-19T23:06:37.120813403-04:00",
+      "hash": "4810757aa0d63edfe951282331649c8a76476985"
+    },
+    "https://ifis.edu.do/people/Albert-De-La-Cruz": {
+      "path": "ifisuasd.github.io/people/Albert-De-La-Cruz/index.html",
+      "last_mod": "2026-05-25T01:48:10.126164649-04:00",
+      "hash": "4a84c7cd7fc43b69673b14c106223bf67732e574"
+    },
+    "https://ifis.edu.do/people/Amaury-Rosario": {
+      "path": "ifisuasd.github.io/people/Amaury-Rosario/index.html",
+      "last_mod": "2026-07-19T23:06:37.122168895-04:00",
+      "hash": "a5ed2ed9a25769b8994864d0e027618c3e5c0071"
+    },
+    "https://ifis.edu.do/people/Anyelina-Adon-Villanueva": {
+      "path": "ifisuasd.github.io/people/Anyelina-Adon-Villanueva/index.html",
+      "last_mod": "2026-05-25T01:48:10.125390128-04:00",
+      "hash": "1412394a4b1849cf9dee3dac9cd504db1376e8e6"
+    },
+    "https://ifis.edu.do/people/Carime-Matos": {
+      "path": "ifisuasd.github.io/people/Carime-Matos/index.html",
+      "last_mod": "2026-07-19T23:06:37.124938208-04:00",
+      "hash": "62b41d6e131aba4c94db6454a12922c9d795fd35"
+    },
+    "https://ifis.edu.do/people/Dorka-Amarilis-Luciano-Brioso": {
+      "path": "ifisuasd.github.io/people/Dorka-Amarilis-Luciano-Brioso/index.html",
+      "last_mod": "2026-05-25T01:48:10.126798403-04:00",
+      "hash": "93fc6322181beab8162e568955d11d7813106ca6"
+    },
+    "https://ifis.edu.do/people/Emma-Encarnación": {
+      "path": "ifisuasd.github.io/people/Emma-Encarnación/index.html",
+      "last_mod": "2026-07-19T23:06:37.124124869-04:00",
+      "hash": "17ff3b494ee3a4827e34dd6003dfc7157f3af9a6"
+    },
+    "https://ifis.edu.do/people/Enrique-Casanova": {
+      "path": "ifisuasd.github.io/people/Enrique-Casanova/index.html",
+      "last_mod": "2026-05-25T01:48:10.126606151-04:00",
+      "hash": "e6554b66e311a720a3a39a557c64585077104786"
+    },
+    "https://ifis.edu.do/people/Erika-Montero": {
+      "path": "ifisuasd.github.io/people/Erika-Montero/index.html",
+      "last_mod": "2026-05-25T01:48:10.127618379-04:00",
+      "hash": "fe0febadb806e1dc7de43f8bea42f80af1e5daa5"
+    },
+    "https://ifis.edu.do/people/Giovanny-Paulino": {
+      "path": "ifisuasd.github.io/people/Giovanny-Paulino/index.html",
+      "last_mod": "2026-07-19T23:06:37.120966539-04:00",
+      "hash": "f2dd2ebe1ef99eee90288c97d00dce550bae8db5"
+    },
+    "https://ifis.edu.do/people/Joan-Mieses": {
+      "path": "ifisuasd.github.io/people/Joan-Mieses/index.html",
+      "last_mod": "2026-05-25T01:48:10.125053233-04:00",
+      "hash": "7d86cdeabce0c98542706c5f5f8d15ffe6bbfd90"
+    },
+    "https://ifis.edu.do/people/José-Ysrael": {
+      "path": "ifisuasd.github.io/people/José-Ysrael/index.html",
+      "last_mod": "2026-07-19T23:06:37.121795908-04:00",
+      "hash": "c06a6d75006ce9716862aee6e3fb3098a783475c"
+    },
+    "https://ifis.edu.do/people/Maicol-Cabrera": {
+      "path": "ifisuasd.github.io/people/Maicol-Cabrera/index.html",
+      "last_mod": "2026-07-19T23:06:37.123812235-04:00",
+      "hash": "4b78fc68288ab5425c69f8929463cce8a2c6a739"
+    },
+    "https://ifis.edu.do/people/Manuela-Paulino": {
+      "path": "ifisuasd.github.io/people/Manuela-Paulino/index.html",
+      "last_mod": "2026-05-25T01:48:10.125148473-04:00",
+      "hash": "a0ddc9ab470b6d0752121c27a052f71192882456"
+    },
+    "https://ifis.edu.do/people/Rafelina-Vargas": {
+      "path": "ifisuasd.github.io/people/Rafelina-Vargas/index.html",
+      "last_mod": "2026-05-25T01:48:10.125703169-04:00",
+      "hash": "e78085f3088ed6b74774d09380a543a472fce285"
+    },
+    "https://ifis.edu.do/people/Ramón-Delanoy": {
+      "path": "ifisuasd.github.io/people/Ramón-Delanoy/index.html",
+      "last_mod": "2026-07-19T23:06:37.121080021-04:00",
+      "hash": "8703659f3a8d3e9e8d868bb4d85735dc5dac5bdf"
+    },
+    "https://ifis.edu.do/people/Reynaldo-González": {
+      "path": "ifisuasd.github.io/people/Reynaldo-González/index.html",
+      "last_mod": "2026-05-25T01:48:10.127130289-04:00",
+      "hash": "a12900e375d43a15e767cf6c7f37299995d3c6c3"
+    },
+    "https://ifis.edu.do/people/Thara-Caba": {
+      "path": "ifisuasd.github.io/people/Thara-Caba/index.html",
+      "last_mod": "2026-05-25T01:48:10.126698886-04:00",
+      "hash": "bc42d62830af9f7520dd39572b09066b76e55205"
+    },
+    "https://ifis.edu.do/people/Yamilesa-Herrera": {
+      "path": "ifisuasd.github.io/people/Yamilesa-Herrera/index.html",
+      "last_mod": "2026-05-25T01:48:10.127729389-04:00",
+      "hash": "3f8a656ad313af3bf70b8953a28bfb09c7dc8589"
+    },
+    "https://ifis.edu.do/people/breezy-ocaña": {
+      "path": "ifisuasd.github.io/people/breezy-ocaña/index.html",
+      "last_mod": "2026-05-25T01:48:10.127224777-04:00",
+      "hash": "1811032143852263a1eabc9e1a746b7b2fed874a"
+    },
+    "https://ifis.edu.do/people/carla-valdez": {
+      "path": "ifisuasd.github.io/people/carla-valdez/index.html",
+      "last_mod": "2026-07-19T23:06:37.121452277-04:00",
+      "hash": "976ce7f9e3c82c987f312e4fa23ff61692d00fd2"
+    },
+    "https://ifis.edu.do/people/daisy-contreras": {
+      "path": "ifisuasd.github.io/people/daisy-contreras/index.html",
+      "last_mod": "2026-05-25T01:48:10.126353234-04:00",
+      "hash": "03a1e26cff1b10f054a380d39c516bd1bcb5f4bb"
+    },
+    "https://ifis.edu.do/people/franmis-rodriguez": {
+      "path": "ifisuasd.github.io/people/franmis-rodriguez/index.html",
+      "last_mod": "2026-07-19T23:06:37.12392716-04:00",
+      "hash": "09f4495c26123e864265bfb502c05328aacc491a"
+    },
+    "https://ifis.edu.do/people/gabriel-barreiro": {
+      "path": "ifisuasd.github.io/people/gabriel-barreiro/index.html",
+      "last_mod": "2026-05-25T01:48:10.124499299-04:00",
+      "hash": "6d9b1a1d8ba32b487a8d5a3044bf5c0bd7275997"
+    },
+    "https://ifis.edu.do/people/jesus-olivera": {
+      "path": "ifisuasd.github.io/people/jesus-olivera/index.html",
+      "last_mod": "2026-07-19T23:06:37.123257549-04:00",
+      "hash": "7218265f86ec77e426bf252a3cf82abefb9a344a"
+    },
+    "https://ifis.edu.do/people/jose-garcia": {
+      "path": "ifisuasd.github.io/people/jose-garcia/index.html",
+      "last_mod": "2026-07-19T23:06:37.122528026-04:00",
+      "hash": "b20d09e101a20ac5902f9bcfa59f44ff1548a083"
+    },
+    "https://ifis.edu.do/people/jose-rojas": {
+      "path": "ifisuasd.github.io/people/jose-rojas/index.html",
+      "last_mod": "2026-05-25T01:48:10.124803993-04:00",
+      "hash": "35f3d6fef6c2e416f9d618842810f5e50ea1d5f3"
+    },
+    "https://ifis.edu.do/people/kety-jimenez": {
+      "path": "ifisuasd.github.io/people/kety-jimenez/index.html",
+      "last_mod": "2026-07-19T23:06:37.123424781-04:00",
+      "hash": "00121d78caa48bb58c85b9ec6c7f058a7aea6696"
+    },
+    "https://ifis.edu.do/people/mariella-mateo": {
+      "path": "ifisuasd.github.io/people/mariella-mateo/index.html",
+      "last_mod": "2026-05-25T01:48:10.125509453-04:00",
+      "hash": "af7f9d713a7727055cb7f1cd3f03da5bf1bf75ab"
+    },
+    "https://ifis.edu.do/people/miledy-alberto": {
+      "path": "ifisuasd.github.io/people/miledy-alberto/index.html",
+      "last_mod": "2026-07-19T23:06:37.122647329-04:00",
+      "hash": "dade511007fc4c092e7e4c14396fc391f08e556b"
+    },
+    "https://ifis.edu.do/people/narciso-villar": {
+      "path": "ifisuasd.github.io/people/narciso-villar/index.html",
+      "last_mod": "2026-07-19T23:06:37.122775689-04:00",
+      "hash": "2485cb0a21e360c472a8e6f6ecf54ecaa32753fd"
+    },
+    "https://ifis.edu.do/people/nelphy-de-la-cruz": {
+      "path": "ifisuasd.github.io/people/nelphy-de-la-cruz/index.html",
+      "last_mod": "2026-07-19T23:06:37.122062657-04:00",
+      "hash": "fe0347f50ef9194b2d5b5aa10e3f13bf094d0db0"
+    },
+    "https://ifis.edu.do/people/saul-castillo": {
+      "path": "ifisuasd.github.io/people/saul-castillo/index.html",
+      "last_mod": "2026-05-25T01:48:10.127033667-04:00",
+      "hash": "415c193ce9df3fc583bb9c3c60404cd9769eec28"
+    },
+    "https://ifis.edu.do/people/taira-batista": {
+      "path": "ifisuasd.github.io/people/taira-batista/index.html",
+      "last_mod": "2026-07-19T23:06:37.121588962-04:00",
+      "hash": "7a451a6b57238c3a90bbe268b2124615c150bf23"
+    },
+    "https://ifis.edu.do/people/vladimir-perez": {
+      "path": "ifisuasd.github.io/people/vladimir-perez/index.html",
+      "last_mod": "2026-05-25T01:48:10.126064229-04:00",
+      "hash": "2f29c4115453c17046cc1493bf8f0c5171643f7d"
+    },
+    "https://ifis.edu.do/projects": {
+      "path": "ifisuasd.github.io/projects/index.html",
+      "last_mod": "2026-07-19T23:06:37.125068642-04:00",
+      "hash": "61e9c3bb25dd119f71d33f76bc039888af348ac6"
+    },
+    "https://ifis.edu.do/projects/FONDOCYT-2020-2A2-102": {
+      "path": "ifisuasd.github.io/projects/FONDOCYT-2020-2A2-102/index.html",
+      "last_mod": "2026-07-19T23:06:37.125368011-04:00",
+      "hash": "0ceba94bde426dea9e9ff268f44469618a24985a"
+    },
+    "https://ifis.edu.do/projects/aula-invertida-2024": {
+      "path": "ifisuasd.github.io/projects/aula-invertida-2024/index.html",
+      "last_mod": "2026-05-25T01:48:10.12805349-04:00",
+      "hash": "2cb1ac01928265ba32387b2149128d0cd61beb19"
+    },
+    "https://ifis.edu.do/projects/habla-con-ellas": {
+      "path": "ifisuasd.github.io/projects/habla-con-ellas/index.html",
+      "last_mod": "2026-05-25T01:48:10.128233068-04:00",
+      "hash": "6e3d0a8320eaf17d9774838ece4f6cf306383b76"
+    },
+    "https://ifis.edu.do/projects/pisa-machine-learning": {
+      "path": "ifisuasd.github.io/projects/pisa-machine-learning/index.html",
+      "last_mod": "2026-05-25T01:48:10.128470205-04:00",
+      "hash": "dbc785e66b00eb08c524aadd3b89de9e5180fd64"
+    },
+    "https://ifis.edu.do/publications": {
+      "path": "ifisuasd.github.io/publications/index.html",
+      "last_mod": "2026-07-19T23:06:37.129186113-04:00",
+      "hash": "e12b629309a310c5489dbe6a4ecfd00c6a3d76c9"
+    },
+    "https://ifis.edu.do/publications/10-1002_adpr-202000207": {
+      "path": "ifisuasd.github.io/publications/10-1002_adpr-202000207/index.html",
+      "last_mod": "2026-07-19T23:06:37.135500649-04:00",
+      "hash": "ffd9e2e9876b31a742471875b148b01781bc9b1d"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-apsusc-2018-08-190": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-apsusc-2018-08-190/index.html",
+      "last_mod": "2026-07-19T23:06:37.137704586-04:00",
+      "hash": "9f90204c2177765100e5f8a380de612ee9f188f2"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-bioelechem-2024-108799": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-bioelechem-2024-108799/index.html",
+      "last_mod": "2026-07-19T23:06:37.132328283-04:00",
+      "hash": "ba305fbedaab40453f544eee486db28c6d8a6061"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-commatsci-2023-112546": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-commatsci-2023-112546/index.html",
+      "last_mod": "2026-07-19T23:06:37.134375748-04:00",
+      "hash": "a11aaad4b3f3a6e77d2c9eec6f2315f1fba129bf"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-ijrefrig-2023-10-003": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-ijrefrig-2023-10-003/index.html",
+      "last_mod": "2026-07-19T23:06:37.133883969-04:00",
+      "hash": "d3291eb8057fdb16da5a19d0de27c22c053003d1"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-intermet-2019-106660": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-intermet-2019-106660/index.html",
+      "last_mod": "2026-07-19T23:06:37.136813091-04:00",
+      "hash": "5caa4392e40c92a6a5ef7acef576faa4e9a67ba1"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-jlumin-2016-10-018": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-jlumin-2016-10-018/index.html",
+      "last_mod": "2026-07-19T23:06:37.138428839-04:00",
+      "hash": "82d02a79cd4ce2c10795dd2087399d227a2e07d3"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-jmmm-2023-171358": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-jmmm-2023-171358/index.html",
+      "last_mod": "2026-07-19T23:06:37.134239714-04:00",
+      "hash": "b09615d4f319ec7dc6f2890b8bc5f052bd7ca4c1"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-molliq-2025-129086": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-molliq-2025-129086/index.html",
+      "last_mod": "2026-07-19T23:06:37.129919103-04:00",
+      "hash": "e0fe006bc46f7008a2ab09527fe9cc235c4a3a86"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-nexres-2025-100292": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-nexres-2025-100292/index.html",
+      "last_mod": "2026-07-19T23:06:37.131333074-04:00",
+      "hash": "0ab50875c5a4a99fec4539d60df2e0c37c2efac9"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-nutos-2024-10-006": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-nutos-2024-10-006/index.html",
+      "last_mod": "2026-07-19T23:06:37.132183202-04:00",
+      "hash": "e0e784147f2af71b6ff4e0a4658ae804311ad054"
+    },
+    "https://ifis.edu.do/publications/10-1016_j-tsf-2019-137739": {
+      "path": "ifisuasd.github.io/publications/10-1016_j-tsf-2019-137739/index.html",
+      "last_mod": "2026-07-19T23:06:37.136555169-04:00",
+      "hash": "31de77a46b6b9e78139da0184de71a849c9e4220"
+    },
+    "https://ifis.edu.do/publications/10-1038_s41598-026-42922-0": {
+      "path": "ifisuasd.github.io/publications/10-1038_s41598-026-42922-0/index.html",
+      "last_mod": "2026-07-19T23:06:37.129674215-04:00",
+      "hash": "8689266d49ea96086bc8efcd3444498e0e582a3e"
+    },
+    "https://ifis.edu.do/publications/10-1039_d5cp00254k": {
+      "path": "ifisuasd.github.io/publications/10-1039_d5cp00254k/index.html",
+      "last_mod": "2026-07-19T23:06:37.131838248-04:00",
+      "hash": "00ba65a522b33d42a27f9c1efd3ac4f85996b45d"
+    },
+    "https://ifis.edu.do/publications/10-1063_1-5010786": {
+      "path": "ifisuasd.github.io/publications/10-1063_1-5010786/index.html",
+      "last_mod": "2026-07-19T23:06:37.137834208-04:00",
+      "hash": "66794b0d81a0279eddb4b15a3ba06831bf9be2b4"
+    },
+    "https://ifis.edu.do/publications/10-1063_9-0000884": {
+      "path": "ifisuasd.github.io/publications/10-1063_9-0000884/index.html",
+      "last_mod": "2026-07-19T23:06:37.131704788-04:00",
+      "hash": "5bca6e03cf8edede029c5d367b2d09ff3f46e988"
+    },
+    "https://ifis.edu.do/publications/10-1080_00150193-2015-1056699": {
+      "path": "ifisuasd.github.io/publications/10-1080_00150193-2015-1056699/index.html",
+      "last_mod": "2026-07-19T23:06:37.138630816-04:00",
+      "hash": "028a047c9fad897911942b213906e541bbbeb047"
+    },
+    "https://ifis.edu.do/publications/10-1088_1742-5468_aa58f2": {
+      "path": "ifisuasd.github.io/publications/10-1088_1742-5468_aa58f2/index.html",
+      "last_mod": "2026-07-19T23:06:37.138326608-04:00",
+      "hash": "ec0f32c0ed2629dd7826042014d57b512ad79b9f"
+    },
+    "https://ifis.edu.do/publications/10-1098_rsos-220552": {
+      "path": "ifisuasd.github.io/publications/10-1098_rsos-220552/index.html",
+      "last_mod": "2026-07-19T23:06:37.135117934-04:00",
+      "hash": "b932cbeef0fb4beb936312b13b2992d88f413c2a"
+    },
+    "https://ifis.edu.do/publications/10-1103_PhysRevE-102-012106": {
+      "path": "ifisuasd.github.io/publications/10-1103_PhysRevE-102-012106/index.html",
+      "last_mod": "2026-07-19T23:06:37.136196319-04:00",
+      "hash": "b6912e1160758535e2b195ee340f1489841896ff"
+    },
+    "https://ifis.edu.do/publications/10-1103_PhysRevE-102-012153": {
+      "path": "ifisuasd.github.io/publications/10-1103_PhysRevE-102-012153/index.html",
+      "last_mod": "2026-07-19T23:06:37.13603627-04:00",
+      "hash": "6c0d59c8bff4c20db69cea0cd53403f442482f04"
+    },
+    "https://ifis.edu.do/publications/10-1103_PhysRevE-104-034103": {
+      "path": "ifisuasd.github.io/publications/10-1103_PhysRevE-104-034103/index.html",
+      "last_mod": "2026-07-19T23:06:37.135391034-04:00",
+      "hash": "9f3804e4acf8584a9ee053003690794fd7cdf071"
+    },
+    "https://ifis.edu.do/publications/10-1103_PhysRevE-107-064128": {
+      "path": "ifisuasd.github.io/publications/10-1103_PhysRevE-107-064128/index.html",
+      "last_mod": "2026-07-19T23:06:37.134632878-04:00",
+      "hash": "e02a76349983ce8ac9623e24984380bf533ac3eb"
+    },
+    "https://ifis.edu.do/publications/10-1103_PhysRevE-109-034107": {
+      "path": "ifisuasd.github.io/publications/10-1103_PhysRevE-109-034107/index.html",
+      "last_mod": "2026-07-19T23:06:37.133254303-04:00",
+      "hash": "58aafd05ddefbc5fa970d2271d4f4f41d6b80604"
+    },
+    "https://ifis.edu.do/publications/10-1103_kt92-y6j6": {
+      "path": "ifisuasd.github.io/publications/10-1103_kt92-y6j6/index.html",
+      "last_mod": "2026-07-19T23:06:37.129800671-04:00",
+      "hash": "1c204bfebabc2d72aa3d5bfa30ef56289a395f87"
+    },
+    "https://ifis.edu.do/publications/10-1103_physreve-111-044110": {
+      "path": "ifisuasd.github.io/publications/10-1103_physreve-111-044110/index.html",
+      "last_mod": "2026-07-19T23:06:37.13121847-04:00",
+      "hash": "a31b069fe0107bf02f3616d92de9bb588fcfab0e"
+    },
+    "https://ifis.edu.do/publications/10-1109_INTERMAGShortPapers61879-2024-10576775": {
+      "path": "ifisuasd.github.io/publications/10-1109_INTERMAGShortPapers61879-2024-10576775/index.html",
+      "last_mod": "2026-07-19T23:06:37.132480057-04:00",
+      "hash": "80eed76be5751fd8139dae49861a4c476261f6a2"
+    },
+    "https://ifis.edu.do/publications/10-1109_REEPE-2019-8708774": {
+      "path": "ifisuasd.github.io/publications/10-1109_REEPE-2019-8708774/index.html",
+      "last_mod": "2026-07-19T23:06:37.137276757-04:00",
+      "hash": "938d3dfe1ad4a49188f553289a6d318cedca1430"
+    },
+    "https://ifis.edu.do/publications/10-1117_12-2265592": {
+      "path": "ifisuasd.github.io/publications/10-1117_12-2265592/index.html",
+      "last_mod": "2026-07-19T23:06:37.138099654-04:00",
+      "hash": "418c1e8c3d746c7664ff0b4adc1b6c401ca0baa7"
+    },
+    "https://ifis.edu.do/publications/10-1117_12-2267348": {
+      "path": "ifisuasd.github.io/publications/10-1117_12-2267348/index.html",
+      "last_mod": "2026-07-19T23:06:37.138217404-04:00",
+      "hash": "ade880747b554b11f5ecbbef4854e7897331ca1d"
+    },
+    "https://ifis.edu.do/publications/10-1117_12-2520834": {
+      "path": "ifisuasd.github.io/publications/10-1117_12-2520834/index.html",
+      "last_mod": "2026-07-19T23:06:37.137450411-04:00",
+      "hash": "44c0f03b101ca6113fdc23ee659232f61c3769b2"
+    },
+    "https://ifis.edu.do/publications/10-1134_S0031918X20040183": {
+      "path": "ifisuasd.github.io/publications/10-1134_S0031918X20040183/index.html",
+      "last_mod": "2026-07-19T23:06:37.136310752-04:00",
+      "hash": "e2d4f2e69f7c42536c52e5af41d168ae46ed3bab"
+    },
+    "https://ifis.edu.do/publications/10-1186_s12887-024-04789-w": {
+      "path": "ifisuasd.github.io/publications/10-1186_s12887-024-04789-w/index.html",
+      "last_mod": "2026-07-19T23:06:37.133026507-04:00",
+      "hash": "af22936cca1add1cdbb53ac08f37ead0a8dccf1e"
+    },
+    "https://ifis.edu.do/publications/10-1186_s12887-024-04841-9": {
+      "path": "ifisuasd.github.io/publications/10-1186_s12887-024-04841-9/index.html",
+      "last_mod": "2026-07-19T23:06:37.132664361-04:00",
+      "hash": "c48ecb63a92f5751b76e947e4e7088820eea7289"
+    },
+    "https://ifis.edu.do/publications/10-1186_s12967-020-02352-6": {
+      "path": "ifisuasd.github.io/publications/10-1186_s12967-020-02352-6/index.html",
+      "last_mod": "2026-07-19T23:06:37.136449532-04:00",
+      "hash": "2cabbf73114344aae1cb01e0c31b2107179ac625"
+    },
+    "https://ifis.edu.do/publications/10-1186_s41231-022-00127-3": {
+      "path": "ifisuasd.github.io/publications/10-1186_s41231-022-00127-3/index.html",
+      "last_mod": "2026-07-19T23:06:37.135267974-04:00",
+      "hash": "ccabf33057cb0c3d30c6f27ecbd4fe0fcf62845b"
+    },
+    "https://ifis.edu.do/publications/10-13140_RG-2-2-10807-55208_1": {
+      "path": "ifisuasd.github.io/publications/10-13140_RG-2-2-10807-55208_1/index.html",
+      "last_mod": "2026-05-25T01:48:10.138917992-04:00",
+      "hash": "21fbef0f700e279cf0d9e186d9338878864cb66c"
+    },
+    "https://ifis.edu.do/publications/10-13140_RG-2-2-23105-62566": {
+      "path": "ifisuasd.github.io/publications/10-13140_RG-2-2-23105-62566/index.html",
+      "last_mod": "2026-05-25T01:48:10.135463479-04:00",
+      "hash": "b1114c3c3f76b9c51722272936275a8bb311b36a"
+    },
+    "https://ifis.edu.do/publications/10-13140_RG-2-2-30030-48963": {
+      "path": "ifisuasd.github.io/publications/10-13140_RG-2-2-30030-48963/index.html",
+      "last_mod": "2026-05-25T01:48:10.140321037-04:00",
+      "hash": "0e9655ba4fdff02c2ce7cc9c65a7db0728bf6c87"
+    },
+    "https://ifis.edu.do/publications/10-1371_journal-pone-0224978": {
+      "path": "ifisuasd.github.io/publications/10-1371_journal-pone-0224978/index.html",
+      "last_mod": "2026-07-19T23:06:37.137104615-04:00",
+      "hash": "eb92c3aca303c70508628309508a8b6fe78ac4b2"
+    },
+    "https://ifis.edu.do/publications/10-2478_joeb-2024-0018": {
+      "path": "ifisuasd.github.io/publications/10-2478_joeb-2024-0018/index.html",
+      "last_mod": "2026-07-19T23:06:37.131996503-04:00",
+      "hash": "24adca7e2dca2ca8e75c3a3cee3bfdcbdcb8150e"
+    },
+    "https://ifis.edu.do/publications/10-2478_joeb-2025-0009": {
+      "path": "ifisuasd.github.io/publications/10-2478_joeb-2025-0009/index.html",
+      "last_mod": "2026-07-19T23:06:37.131009499-04:00",
+      "hash": "2125db32b0f21ba27b78bac20c6b939b82a4a6df"
+    },
+    "https://ifis.edu.do/publications/10-2478_joeb-2025-0012": {
+      "path": "ifisuasd.github.io/publications/10-2478_joeb-2025-0012/index.html",
+      "last_mod": "2026-07-19T23:06:37.130536987-04:00",
+      "hash": "ec21a88663f78546c7fbd729822e90497c5a2578"
+    },
+    "https://ifis.edu.do/publications/10-30827_profesorado-v29i1-30751": {
+      "path": "ifisuasd.github.io/publications/10-30827_profesorado-v29i1-30751/index.html",
+      "last_mod": "2026-07-19T23:06:37.131452727-04:00",
+      "hash": "b1aac5be11fd0fe87a7298f07e00402c1d0168e3"
+    },
+    "https://ifis.edu.do/publications/10-31349_RevMexFis-66-632": {
+      "path": "ifisuasd.github.io/publications/10-31349_RevMexFis-66-632/index.html",
+      "last_mod": "2026-07-19T23:06:37.13573115-04:00",
+      "hash": "587cfe5d08e160af4874f723ba094827232016d2"
+    },
+    "https://ifis.edu.do/publications/10-3390_atmos16060734": {
+      "path": "ifisuasd.github.io/publications/10-3390_atmos16060734/index.html",
+      "last_mod": "2026-07-19T23:06:37.130688991-04:00",
+      "hash": "5b562db0595c4d58fcf3e942b3c828ae8b8f39ad"
+    },
+    "https://ifis.edu.do/publications/10-3390_atmos16111236": {
+      "path": "ifisuasd.github.io/publications/10-3390_atmos16111236/index.html",
+      "last_mod": "2026-07-19T23:06:37.130062601-04:00",
+      "hash": "8007efbb6a48126ccb782f4b44448c4fa1c244c9"
+    },
+    "https://ifis.edu.do/publications/10-3390_land13050684": {
+      "path": "ifisuasd.github.io/publications/10-3390_land13050684/index.html",
+      "last_mod": "2026-07-19T23:06:37.132831273-04:00",
+      "hash": "ca14eb62c3b4b9b04f3a03536efd7535ae587464"
+    },
+    "https://ifis.edu.do/publications/10-3390_magnetochemistry9100222": {
+      "path": "ifisuasd.github.io/publications/10-3390_magnetochemistry9100222/index.html",
+      "last_mod": "2026-07-19T23:06:37.134080015-04:00",
+      "hash": "f6bcef25cebd04034960da37b2491da27415159d"
+    },
+    "https://ifis.edu.do/publications/10-3390_nano10122407": {
+      "path": "ifisuasd.github.io/publications/10-3390_nano10122407/index.html",
+      "last_mod": "2026-07-19T23:06:37.13561895-04:00",
+      "hash": "809682e51b0cf42f877c54009553e57dd5584a76"
+    },
+    "https://ifis.edu.do/publications/10-3390_pr8081006": {
+      "path": "ifisuasd.github.io/publications/10-3390_pr8081006/index.html",
+      "last_mod": "2026-07-19T23:06:37.135844541-04:00",
+      "hash": "f1b8f59f0caee2d76e2e2ae5b250cb15113c1c70"
+    },
+    "https://ifis.edu.do/publications/10-3390_su152316510": {
+      "path": "ifisuasd.github.io/publications/10-3390_su152316510/index.html",
+      "last_mod": "2026-07-19T23:06:37.133572096-04:00",
+      "hash": "15fce3cf29e7d01a0b34569260ce4c7d8fb20d60"
+    },
+    "https://ifis.edu.do/publications/10-37394_232031-2025-4-1": {
+      "path": "ifisuasd.github.io/publications/10-37394_232031-2025-4-1/index.html",
+      "last_mod": "2026-07-19T23:06:37.131564526-04:00",
+      "hash": "244b2be8b4067e4b7eee512a5c4997ef55065c99"
+    },
+    "https://ifis.edu.do/publications/10-4236_epe-2017-911044": {
+      "path": "ifisuasd.github.io/publications/10-4236_epe-2017-911044/index.html",
+      "last_mod": "2026-07-19T23:06:37.137951367-04:00",
+      "hash": "194b8e516483900e6be904301b3187d27cf7988b"
+    },
+    "https://ifis.edu.do/publications/10-4236_gep-2026-147004": {
+      "path": "ifisuasd.github.io/publications/10-4236_gep-2026-147004/index.html",
+      "last_mod": "2026-07-19T23:06:37.129514327-04:00",
+      "hash": "acb899e3527f6676401ca6a209679c31a212307a"
+    },
+    "https://ifis.edu.do/publications/10-56048_mqr20225-9-2-2025-e664": {
+      "path": "ifisuasd.github.io/publications/10-56048_mqr20225-9-2-2025-e664/index.html",
+      "last_mod": "2026-07-19T23:06:37.130831888-04:00",
+      "hash": "32ca27741854ff2c13802fa3d037bd59e083de58"
+    },
+    "https://ifis.edu.do/publications/10-70577_asce_1762-1792_2025": {
+      "path": "ifisuasd.github.io/publications/10-70577_asce_1762-1792_2025/index.html",
+      "last_mod": "2026-07-19T23:06:37.130364074-04:00",
+      "hash": "5d068f9723b6702f110bf67e314b5d9e9f4389a0"
+    },
+    "https://ifis.edu.do/publications/10-7716_aem-v12i3-2240": {
+      "path": "ifisuasd.github.io/publications/10-7716_aem-v12i3-2240/index.html",
+      "last_mod": "2026-07-19T23:06:37.13372945-04:00",
+      "hash": "5f4374fc5be1b12273fe0015ad0d0cc00b1b5b94"
+    },
+    "https://ifis.edu.do/research-areas": {
+      "path": "ifisuasd.github.io/research-areas/index.html",
+      "last_mod": "2026-07-19T23:06:37.140163349-04:00",
+      "hash": "1386caf8be39e200d85e8c2eaa296c37423b97e5"
+    },
+    "https://ifis.edu.do/research-areas/ciencias-ambientales": {
+      "path": "ifisuasd.github.io/research-areas/ciencias-ambientales/index.html",
+      "last_mod": "2026-07-19T23:06:37.140353113-04:00",
+      "hash": "429f3c9965fec6102373358edbceb048ccfc2af4"
+    },
+    "https://ifis.edu.do/research-areas/ciencias-materiales": {
+      "path": "ifisuasd.github.io/research-areas/ciencias-materiales/index.html",
+      "last_mod": "2026-05-25T01:48:10.142033425-04:00",
+      "hash": "f6ff3aee0da4b9f6991a50728ccaf94ce5f41dce"
+    },
+    "https://ifis.edu.do/research-areas/ciencias-nucleares": {
+      "path": "ifisuasd.github.io/research-areas/ciencias-nucleares/index.html",
+      "last_mod": "2026-05-25T01:48:10.142345423-04:00",
+      "hash": "394fd4d83a97aba38281c296e55f235dc97bd9f6"
+    },
+    "https://ifis.edu.do/research-areas/fisica-educativa": {
+      "path": "ifisuasd.github.io/research-areas/fisica-educativa/index.html",
+      "last_mod": "2026-05-25T01:48:10.142493242-04:00",
+      "hash": "2d7c006cee28484671425279334ea649f5d9a0be"
+    },
+    "https://ifis.edu.do/research-areas/fisica-estadistica": {
+      "path": "ifisuasd.github.io/research-areas/fisica-estadistica/index.html",
+      "last_mod": "2026-05-25T01:48:10.142622035-04:00",
+      "hash": "39621bfd38e3a923a5eab20bb8a8cc806c661375"
+    },
+    "https://ifis.edu.do/search": {
+      "path": "ifisuasd.github.io/search/index.html",
+      "last_mod": "2026-05-25T01:48:10.140756187-04:00",
+      "hash": "d703eab369067df1c75d4ec5c8f3ebda3668e30f"
+    },
+    "https://ifis.edu.do/services": {
+      "path": "ifisuasd.github.io/services/index.html",
+      "last_mod": "2026-05-25T01:48:10.141119803-04:00",
+      "hash": "f74afcd6218e780f85edd3fe6b32cd4b6006880b"
+    },
+    "https://ifis.edu.do/services/eac-fisica": {
+      "path": "ifisuasd.github.io/services/eac-fisica/index.html",
+      "last_mod": "2026-05-25T01:48:10.141287008-04:00",
+      "hash": "53f432fa5265558355bf5d6511b268a1d883327d"
+    }
+  }
+}
